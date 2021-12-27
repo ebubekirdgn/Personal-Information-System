@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "mWhtEIu7jR/6G5gR0p5Cev0m/VZ0gauOJjzesuRN5mFdjdaDOQCE5Rx5tYm0jG/GBnShofx9FxhYGX0re9sgIQ==",
+  "dgSpecHash": "LsVc5fZAmZ5hStPCJ4w/w1hQbEuoTqKEPNnh+BEjKuXqZJv5trJTvU+I+FA1akw50TD5qq/dDuUfzYie3cJ7Sw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Ebubekir Dogan\\Documents\\GitHub\\PersonalInformationSystem\\PersonalInformationSystem\\PersonalInformationSystem.UI\\PersonalInformationSystem.UI.csproj",
+  "projectFilePath": "C:\\Users\\Ebubekir Dogan\\Documents\\GitHub\\PersonelInformationSystem\\PersonalInformationSystem\\PersonalInformationSystem.UI\\PersonalInformationSystem.UI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Ebubekir Dogan\\.nuget\\packages\\microsoft.aspnetcore.mvc.razor.extensions\\6.0.1\\microsoft.aspnetcore.mvc.razor.extensions.6.0.1.nupkg.sha512",
     "C:\\Users\\Ebubekir Dogan\\.nuget\\packages\\microsoft.aspnetcore.mvc.razor.runtimecompilation\\6.0.1\\microsoft.aspnetcore.mvc.razor.runtimecompilation.6.0.1.nupkg.sha512",
