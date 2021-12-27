@@ -12,7 +12,7 @@ using PersonelInformationSystem.Data.DataContext;
 namespace PersonelInformationSystem.Data.Migrations
 {
     [DbContext(typeof(PersonelInformationContext))]
-    [Migration("20211227230035_Iniate")]
+    [Migration("20211227231236_Iniate")]
     partial class Iniate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -261,6 +261,49 @@ namespace PersonelInformationSystem.Data.Migrations
                     b.ToTable("PersonalLeaveAllocations");
                 });
 
+            modelBuilder.Entity("PersonelInformationSystem.Data.Models.PersonalLeaveRequest", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int?>("Approved")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("Cancelled")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime>("DateRequested")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("EndDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("PersonalLeaveTypeId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("RequestComments")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("RequestingPersonalId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<DateTime>("StartDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("PersonalLeaveTypeId");
+
+                    b.HasIndex("RequestingPersonalId");
+
+                    b.ToTable("PersonalLeaveRequest");
+                });
+
             modelBuilder.Entity("PersonelInformationSystem.Data.Models.PersonalLeaveType", b =>
                 {
                     b.Property<int>("Id")
@@ -374,6 +417,25 @@ namespace PersonelInformationSystem.Data.Migrations
                     b.Navigation("Personal");
 
                     b.Navigation("PersonalLeaveType");
+                });
+
+            modelBuilder.Entity("PersonelInformationSystem.Data.Models.PersonalLeaveRequest", b =>
+                {
+                    b.HasOne("PersonelInformationSystem.Data.Models.PersonalLeaveType", "PersonalLeaveType")
+                        .WithMany()
+                        .HasForeignKey("PersonalLeaveTypeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("PersonelInformationSystem.Data.Models.Personal", "RequestingPersonal")
+                        .WithMany()
+                        .HasForeignKey("RequestingPersonalId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("PersonalLeaveType");
+
+                    b.Navigation("RequestingPersonal");
                 });
 #pragma warning restore 612, 618
         }

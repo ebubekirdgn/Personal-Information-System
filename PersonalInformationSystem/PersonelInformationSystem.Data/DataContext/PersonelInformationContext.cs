@@ -10,9 +10,9 @@ namespace PersonelInformationSystem.Data.DataContext
         { }
 
          public DbSet<Personal> Personal { get; set; }
-         public DbSet<PersonalLeaveAllocation> PersonalLeaveAllocations { get; set; } 
-         //public DbSet<PersonalLeaveRequest> PersonalLeaveRequests { get; set; } 
-         public DbSet<PersonalLeaveType> PersonalLeaveTypes { get; set; }
+         public DbSet<PersonalLeaveAllocation> PersonalLeaveAllocations { get; set; }
+        public DbSet<PersonalLeaveRequest> PersonalLeaveRequest { get; set; }
+        public DbSet<PersonalLeaveType> PersonalLeaveTypes { get; set; }
 
 
     }
