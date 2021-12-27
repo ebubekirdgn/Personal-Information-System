@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.32014.148
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersonalInformationSystem.UI", "PersonalInformationSystem.UI\PersonalInformationSystem.UI.csproj", "{84FDD98A-5D35-4152-9159-DFDCD602E9B5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PersonalInformationSystem.UI", "PersonalInformationSystem.UI\PersonalInformationSystem.UI.csproj", "{84FDD98A-5D35-4152-9159-DFDCD602E9B5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersonelInformationSystem.DataAccess", "PersonelInformationSystem.DataAccess\PersonelInformationSystem.DataAccess.csproj", "{ED39BCAE-2676-4147-8B82-51733120C1A6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PersonelInformationSystem.Business", "PersonelInformationSystem.Business\PersonelInformationSystem.Business.csproj", "{2FD68F81-F018-4597-95DB-7E4CB1967DA6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersonelInformationSystem.Business", "PersonelInformationSystem.Business\PersonelInformationSystem.Business.csproj", "{2FD68F81-F018-4597-95DB-7E4CB1967DA6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PersonelInformationSystem.Common", "PersonelInformationSystem.Common\PersonelInformationSystem.Common.csproj", "{E9F97F24-D16F-4A42-9146-C46921D3FD46}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersonelInformationSystem.Common", "PersonelInformationSystem.Common\PersonelInformationSystem.Common.csproj", "{E9F97F24-D16F-4A42-9146-C46921D3FD46}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersonelInformationSystem.Data", "PersonelInformationSystem.Data\PersonelInformationSystem.Data.csproj", "{7D142E86-EE0C-4161-927D-3C6F93AED36B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,10 +21,6 @@ Global
 		{84FDD98A-5D35-4152-9159-DFDCD602E9B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{84FDD98A-5D35-4152-9159-DFDCD602E9B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{84FDD98A-5D35-4152-9159-DFDCD602E9B5}.Release|Any CPU.Build.0 = Release|Any CPU
-		{ED39BCAE-2676-4147-8B82-51733120C1A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{ED39BCAE-2676-4147-8B82-51733120C1A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{ED39BCAE-2676-4147-8B82-51733120C1A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{ED39BCAE-2676-4147-8B82-51733120C1A6}.Release|Any CPU.Build.0 = Release|Any CPU
 		{2FD68F81-F018-4597-95DB-7E4CB1967DA6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{2FD68F81-F018-4597-95DB-7E4CB1967DA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2FD68F81-F018-4597-95DB-7E4CB1967DA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -33,6 +29,10 @@ Global
 		{E9F97F24-D16F-4A42-9146-C46921D3FD46}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E9F97F24-D16F-4A42-9146-C46921D3FD46}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E9F97F24-D16F-4A42-9146-C46921D3FD46}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D142E86-EE0C-4161-927D-3C6F93AED36B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D142E86-EE0C-4161-927D-3C6F93AED36B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D142E86-EE0C-4161-927D-3C6F93AED36B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D142E86-EE0C-4161-927D-3C6F93AED36B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
