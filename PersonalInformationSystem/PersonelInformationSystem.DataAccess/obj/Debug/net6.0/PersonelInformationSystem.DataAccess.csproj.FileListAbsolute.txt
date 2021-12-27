@@ -1,0 +1,11 @@
+C:\Users\Ebubekir Dogan\Documents\GitHub\PersonalInformationSystem\PersonalInformationSystem\PersonelInformationSystem.DataAccess\bin\Debug\net6.0\PersonelInformationSystem.DataAccess.deps.json
+C:\Users\Ebubekir Dogan\Documents\GitHub\PersonalInformationSystem\PersonalInformationSystem\PersonelInformationSystem.DataAccess\bin\Debug\net6.0\PersonelInformationSystem.DataAccess.dll
+C:\Users\Ebubekir Dogan\Documents\GitHub\PersonalInformationSystem\PersonalInformationSystem\PersonelInformationSystem.DataAccess\bin\Debug\net6.0\ref\PersonelInformationSystem.DataAccess.dll
+C:\Users\Ebubekir Dogan\Documents\GitHub\PersonalInformationSystem\PersonalInformationSystem\PersonelInformationSystem.DataAccess\bin\Debug\net6.0\PersonelInformationSystem.DataAccess.pdb
+C:\Users\Ebubekir Dogan\Documents\GitHub\PersonalInformationSystem\PersonalInformationSystem\PersonelInformationSystem.DataAccess\obj\Debug\net6.0\PersonelInformationSystem.DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Ebubekir Dogan\Documents\GitHub\PersonalInformationSystem\PersonalInformationSystem\PersonelInformationSystem.DataAccess\obj\Debug\net6.0\PersonelInformationSystem.DataAccess.AssemblyInfoInputs.cache
+C:\Users\Ebubekir Dogan\Documents\GitHub\PersonalInformationSystem\PersonalInformationSystem\PersonelInformationSystem.DataAccess\obj\Debug\net6.0\PersonelInformationSystem.DataAccess.AssemblyInfo.cs
+C:\Users\Ebubekir Dogan\Documents\GitHub\PersonalInformationSystem\PersonalInformationSystem\PersonelInformationSystem.DataAccess\obj\Debug\net6.0\PersonelInformationSystem.DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\Ebubekir Dogan\Documents\GitHub\PersonalInformationSystem\PersonalInformationSystem\PersonelInformationSystem.DataAccess\obj\Debug\net6.0\PersonelInformationSystem.DataAccess.dll
+C:\Users\Ebubekir Dogan\Documents\GitHub\PersonalInformationSystem\PersonalInformationSystem\PersonelInformationSystem.DataAccess\obj\Debug\net6.0\ref\PersonelInformationSystem.DataAccess.dll
+C:\Users\Ebubekir Dogan\Documents\GitHub\PersonalInformationSystem\PersonalInformationSystem\PersonelInformationSystem.DataAccess\obj\Debug\net6.0\PersonelInformationSystem.DataAccess.pdb
