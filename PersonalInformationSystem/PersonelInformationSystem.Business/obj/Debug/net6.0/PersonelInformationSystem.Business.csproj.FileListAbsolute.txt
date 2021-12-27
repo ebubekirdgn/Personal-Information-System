@@ -10,3 +10,14 @@ C:\Users\Ebubekir Dogan\Documents\GitHub\PersonalInformationSystem\PersonalInfor
 C:\Users\Ebubekir Dogan\Documents\GitHub\PersonalInformationSystem\PersonalInformationSystem\PersonelInformationSystem.Business\obj\Debug\net6.0\PersonelInformationSystem.Business.dll
 C:\Users\Ebubekir Dogan\Documents\GitHub\PersonalInformationSystem\PersonalInformationSystem\PersonelInformationSystem.Business\obj\Debug\net6.0\ref\PersonelInformationSystem.Business.dll
 C:\Users\Ebubekir Dogan\Documents\GitHub\PersonalInformationSystem\PersonalInformationSystem\PersonelInformationSystem.Business\obj\Debug\net6.0\PersonelInformationSystem.Business.pdb
+C:\Users\Ebubekir Dogan\Documents\GitHub\PersonelInformationSystem\PersonalInformationSystem\PersonelInformationSystem.Business\bin\Debug\net6.0\PersonelInformationSystem.Business.deps.json
+C:\Users\Ebubekir Dogan\Documents\GitHub\PersonelInformationSystem\PersonalInformationSystem\PersonelInformationSystem.Business\bin\Debug\net6.0\PersonelInformationSystem.Business.dll
+C:\Users\Ebubekir Dogan\Documents\GitHub\PersonelInformationSystem\PersonalInformationSystem\PersonelInformationSystem.Business\bin\Debug\net6.0\ref\PersonelInformationSystem.Business.dll
+C:\Users\Ebubekir Dogan\Documents\GitHub\PersonelInformationSystem\PersonalInformationSystem\PersonelInformationSystem.Business\bin\Debug\net6.0\PersonelInformationSystem.Business.pdb
+C:\Users\Ebubekir Dogan\Documents\GitHub\PersonelInformationSystem\PersonalInformationSystem\PersonelInformationSystem.Business\obj\Debug\net6.0\PersonelInformationSystem.Business.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Ebubekir Dogan\Documents\GitHub\PersonelInformationSystem\PersonalInformationSystem\PersonelInformationSystem.Business\obj\Debug\net6.0\PersonelInformationSystem.Business.AssemblyInfoInputs.cache
+C:\Users\Ebubekir Dogan\Documents\GitHub\PersonelInformationSystem\PersonalInformationSystem\PersonelInformationSystem.Business\obj\Debug\net6.0\PersonelInformationSystem.Business.AssemblyInfo.cs
+C:\Users\Ebubekir Dogan\Documents\GitHub\PersonelInformationSystem\PersonalInformationSystem\PersonelInformationSystem.Business\obj\Debug\net6.0\PersonelInformationSystem.Business.csproj.CoreCompileInputs.cache
+C:\Users\Ebubekir Dogan\Documents\GitHub\PersonelInformationSystem\PersonalInformationSystem\PersonelInformationSystem.Business\obj\Debug\net6.0\PersonelInformationSystem.Business.dll
+C:\Users\Ebubekir Dogan\Documents\GitHub\PersonelInformationSystem\PersonalInformationSystem\PersonelInformationSystem.Business\obj\Debug\net6.0\ref\PersonelInformationSystem.Business.dll
+C:\Users\Ebubekir Dogan\Documents\GitHub\PersonelInformationSystem\PersonalInformationSystem\PersonelInformationSystem.Business\obj\Debug\net6.0\PersonelInformationSystem.Business.pdb

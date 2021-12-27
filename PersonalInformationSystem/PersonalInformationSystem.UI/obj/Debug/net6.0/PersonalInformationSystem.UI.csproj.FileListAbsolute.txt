@@ -640,6 +640,7 @@ C:\Users\Ebubekir Dogan\Documents\GitHub\PersonelInformationSystem\PersonalInfor
 C:\Users\Ebubekir Dogan\Documents\GitHub\PersonelInformationSystem\PersonalInformationSystem\PersonalInformationSystem.UI\bin\Debug\net6.0\refs\System.Xml.XPath.dll
 C:\Users\Ebubekir Dogan\Documents\GitHub\PersonelInformationSystem\PersonalInformationSystem\PersonalInformationSystem.UI\bin\Debug\net6.0\refs\System.Xml.XPath.XDocument.dll
 C:\Users\Ebubekir Dogan\Documents\GitHub\PersonelInformationSystem\PersonalInformationSystem\PersonalInformationSystem.UI\bin\Debug\net6.0\refs\WindowsBase.dll
+C:\Users\Ebubekir Dogan\Documents\GitHub\PersonelInformationSystem\PersonalInformationSystem\PersonalInformationSystem.UI\bin\Debug\net6.0\Humanizer.dll
 C:\Users\Ebubekir Dogan\Documents\GitHub\PersonelInformationSystem\PersonalInformationSystem\PersonalInformationSystem.UI\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.Internal.dll
 C:\Users\Ebubekir Dogan\Documents\GitHub\PersonelInformationSystem\PersonalInformationSystem\PersonalInformationSystem.UI\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
 C:\Users\Ebubekir Dogan\Documents\GitHub\PersonelInformationSystem\PersonalInformationSystem\PersonalInformationSystem.UI\bin\Debug\net6.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
@@ -652,6 +653,7 @@ C:\Users\Ebubekir Dogan\Documents\GitHub\PersonelInformationSystem\PersonalInfor
 C:\Users\Ebubekir Dogan\Documents\GitHub\PersonelInformationSystem\PersonalInformationSystem\PersonalInformationSystem.UI\bin\Debug\net6.0\Microsoft.Data.SqlClient.dll
 C:\Users\Ebubekir Dogan\Documents\GitHub\PersonelInformationSystem\PersonalInformationSystem\PersonalInformationSystem.UI\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
 C:\Users\Ebubekir Dogan\Documents\GitHub\PersonelInformationSystem\PersonalInformationSystem\PersonalInformationSystem.UI\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\Ebubekir Dogan\Documents\GitHub\PersonelInformationSystem\PersonalInformationSystem\PersonalInformationSystem.UI\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
 C:\Users\Ebubekir Dogan\Documents\GitHub\PersonelInformationSystem\PersonalInformationSystem\PersonalInformationSystem.UI\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
 C:\Users\Ebubekir Dogan\Documents\GitHub\PersonelInformationSystem\PersonalInformationSystem\PersonalInformationSystem.UI\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.SqlServer.dll
 C:\Users\Ebubekir Dogan\Documents\GitHub\PersonelInformationSystem\PersonalInformationSystem\PersonalInformationSystem.UI\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
@@ -730,5 +732,3 @@ C:\Users\Ebubekir Dogan\Documents\GitHub\PersonelInformationSystem\PersonalInfor
 C:\Users\Ebubekir Dogan\Documents\GitHub\PersonelInformationSystem\PersonalInformationSystem\PersonalInformationSystem.UI\obj\Debug\net6.0\ref\PersonalInformationSystem.UI.dll
 C:\Users\Ebubekir Dogan\Documents\GitHub\PersonelInformationSystem\PersonalInformationSystem\PersonalInformationSystem.UI\obj\Debug\net6.0\PersonalInformationSystem.UI.pdb
 C:\Users\Ebubekir Dogan\Documents\GitHub\PersonelInformationSystem\PersonalInformationSystem\PersonalInformationSystem.UI\obj\Debug\net6.0\PersonalInformationSystem.UI.genruntimeconfig.cache
-C:\Users\Ebubekir Dogan\Documents\GitHub\PersonelInformationSystem\PersonalInformationSystem\PersonalInformationSystem.UI\bin\Debug\net6.0\Humanizer.dll
-C:\Users\Ebubekir Dogan\Documents\GitHub\PersonelInformationSystem\PersonalInformationSystem\PersonalInformationSystem.UI\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
