@@ -1,8 +1,16 @@
+using Microsoft.EntityFrameworkCore;
+using PersonelInformationSystem.Data.DataContext;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages().AddRazorRuntimeCompilation();
 
+builder.Services.AddDbContext<PersonelInformationContext>(options =>
+{
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
+
+});
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
