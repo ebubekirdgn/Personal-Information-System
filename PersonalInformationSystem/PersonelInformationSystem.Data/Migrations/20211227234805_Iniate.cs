@@ -210,6 +210,7 @@ namespace PersonelInformationSystem.Data.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     RequestingPersonalId = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    ApprovedPersonalId = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     PersonalLeaveTypeId = table.Column<int>(type: "int", nullable: false),
                     StartDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     EndDate = table.Column<DateTime>(type: "datetime2", nullable: false),
@@ -222,11 +223,17 @@ namespace PersonelInformationSystem.Data.Migrations
                 {
                     table.PrimaryKey("PK_PersonalLeaveRequest", x => x.Id);
                     table.ForeignKey(
+                        name: "FK_PersonalLeaveRequest_AspNetUsers_ApprovedPersonalId",
+                        column: x => x.ApprovedPersonalId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
                         name: "FK_PersonalLeaveRequest_AspNetUsers_RequestingPersonalId",
                         column: x => x.RequestingPersonalId,
                         principalTable: "AspNetUsers",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_PersonalLeaveRequest_PersonalLeaveTypes_PersonalLeaveTypeId",
                         column: x => x.PersonalLeaveTypeId,
@@ -283,6 +290,11 @@ namespace PersonelInformationSystem.Data.Migrations
                 name: "IX_PersonalLeaveAllocations_PersonalLeaveTypelId",
                 table: "PersonalLeaveAllocations",
                 column: "PersonalLeaveTypelId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_PersonalLeaveRequest_ApprovedPersonalId",
+                table: "PersonalLeaveRequest",
+                column: "ApprovedPersonalId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_PersonalLeaveRequest_PersonalLeaveTypeId",

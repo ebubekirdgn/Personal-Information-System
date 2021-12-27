@@ -14,6 +14,7 @@ C:\Users\Ebubekir Dogan\Documents\GitHub\PersonelInformationSystem\PersonalInfor
 C:\Users\Ebubekir Dogan\Documents\GitHub\PersonelInformationSystem\PersonalInformationSystem\PersonelInformationSystem.Business\bin\Debug\net6.0\PersonelInformationSystem.Business.dll
 C:\Users\Ebubekir Dogan\Documents\GitHub\PersonelInformationSystem\PersonalInformationSystem\PersonelInformationSystem.Business\bin\Debug\net6.0\ref\PersonelInformationSystem.Business.dll
 C:\Users\Ebubekir Dogan\Documents\GitHub\PersonelInformationSystem\PersonalInformationSystem\PersonelInformationSystem.Business\bin\Debug\net6.0\PersonelInformationSystem.Business.pdb
+C:\Users\Ebubekir Dogan\Documents\GitHub\PersonelInformationSystem\PersonalInformationSystem\PersonelInformationSystem.Business\obj\Debug\net6.0\PersonelInformationSystem.Business.csproj.AssemblyReference.cache
 C:\Users\Ebubekir Dogan\Documents\GitHub\PersonelInformationSystem\PersonalInformationSystem\PersonelInformationSystem.Business\obj\Debug\net6.0\PersonelInformationSystem.Business.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Ebubekir Dogan\Documents\GitHub\PersonelInformationSystem\PersonalInformationSystem\PersonelInformationSystem.Business\obj\Debug\net6.0\PersonelInformationSystem.Business.AssemblyInfoInputs.cache
 C:\Users\Ebubekir Dogan\Documents\GitHub\PersonelInformationSystem\PersonalInformationSystem\PersonelInformationSystem.Business\obj\Debug\net6.0\PersonelInformationSystem.Business.AssemblyInfo.cs

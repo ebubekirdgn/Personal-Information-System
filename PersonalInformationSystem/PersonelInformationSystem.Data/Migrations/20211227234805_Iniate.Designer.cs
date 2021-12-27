@@ -12,7 +12,7 @@ using PersonelInformationSystem.Data.DataContext;
 namespace PersonelInformationSystem.Data.Migrations
 {
     [DbContext(typeof(PersonelInformationContext))]
-    [Migration("20211227231236_Iniate")]
+    [Migration("20211227234805_Iniate")]
     partial class Iniate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -272,6 +272,10 @@ namespace PersonelInformationSystem.Data.Migrations
                     b.Property<int?>("Approved")
                         .HasColumnType("int");
 
+                    b.Property<string>("ApprovedPersonalId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
                     b.Property<bool>("Cancelled")
                         .HasColumnType("bit");
 
@@ -296,6 +300,8 @@ namespace PersonelInformationSystem.Data.Migrations
                         .HasColumnType("datetime2");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("ApprovedPersonalId");
 
                     b.HasIndex("PersonalLeaveTypeId");
 
@@ -421,6 +427,12 @@ namespace PersonelInformationSystem.Data.Migrations
 
             modelBuilder.Entity("PersonelInformationSystem.Data.Models.PersonalLeaveRequest", b =>
                 {
+                    b.HasOne("PersonelInformationSystem.Data.Models.Personal", "ApprovedPersonal")
+                        .WithMany()
+                        .HasForeignKey("ApprovedPersonalId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("PersonelInformationSystem.Data.Models.PersonalLeaveType", "PersonalLeaveType")
                         .WithMany()
                         .HasForeignKey("PersonalLeaveTypeId")
@@ -430,8 +442,10 @@ namespace PersonelInformationSystem.Data.Migrations
                     b.HasOne("PersonelInformationSystem.Data.Models.Personal", "RequestingPersonal")
                         .WithMany()
                         .HasForeignKey("RequestingPersonalId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
+
+                    b.Navigation("ApprovedPersonal");
 
                     b.Navigation("PersonalLeaveType");
 

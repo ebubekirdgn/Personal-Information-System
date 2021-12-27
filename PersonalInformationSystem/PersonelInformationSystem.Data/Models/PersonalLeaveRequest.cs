@@ -1,4 +1,7 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Text;
 
 namespace PersonelInformationSystem.Data.Models
 {
@@ -10,24 +13,14 @@ namespace PersonelInformationSystem.Data.Models
         [ForeignKey("RequestingPersonalId")]
         public Personal RequestingPersonal { get; set; }
 
-        /*TODO:Onaylayan Kullanıcı Bilgileri
-        public string ApprovedPersonalId { get; set; }
-        [ForeignKey("ApprovedPersonalId")]
-        public Personal ApprovedEmployee { get; set; }
-        */
-
-        public int PersonalLeaveTypeId { get; set; }
-        [ForeignKey("PersonalLeaveTypeId")]
-        public PersonalLeaveType PersonalLeaveType { get; set; }
-
-
-
         //TODO:Onaylayan Kullanıcı Bilgileri
         public string ApprovedPersonalId { get; set; }
         [ForeignKey("ApprovedPersonalId")]
         public Personal ApprovedPersonal { get; set; }
 
-
+        public int PersonalLeaveTypeId { get; set; }
+        [ForeignKey("PersonalLeaveTypeId")]
+        public PersonalLeaveType PersonalLeaveType { get; set; }
 
         //------------------------------------------------------------//
         public DateTime StartDate { get; set; }
