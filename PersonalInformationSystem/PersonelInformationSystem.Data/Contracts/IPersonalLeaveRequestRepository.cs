@@ -2,7 +2,7 @@
 
 namespace PersonelInformationSystem.Data.Contracts
 {
-    public interface IPersonalLeaveRequest : IRepositoryBase<PersonalLeaveRequest>
+    public interface IPersonalLeaveRequestRepository : IRepositoryBase<PersonalLeaveRequest>
     {
     }
 }

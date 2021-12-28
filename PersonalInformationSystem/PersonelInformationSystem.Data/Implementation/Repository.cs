@@ -5,7 +5,7 @@ using System.Linq.Expressions;
 
 namespace PersonelInformationSystem.Data.Implementation
 {
-    internal class Repository<T> : IRepositoryBase<T> where T : class, new()
+    public class Repository<T> : IRepositoryBase<T> where T : class, new()
     {
 
         private readonly PersonelInformationContext _context;
