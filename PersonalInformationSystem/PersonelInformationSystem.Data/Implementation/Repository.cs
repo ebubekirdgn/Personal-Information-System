@@ -22,7 +22,6 @@ namespace PersonelInformationSystem.Data.Implementation
             this.dbSet = context.Set<T>();    
         }
 
-
         /// <summary>
         /// Add To T type entity/Gelen Tipte veriyi Kayıt eder.
         /// </summary>
