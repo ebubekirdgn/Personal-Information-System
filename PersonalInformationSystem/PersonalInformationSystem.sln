@@ -9,7 +9,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PersonelInformationSystem.B
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PersonelInformationSystem.Common", "PersonelInformationSystem.Common\PersonelInformationSystem.Common.csproj", "{E9F97F24-D16F-4A42-9146-C46921D3FD46}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersonelInformationSystem.Data", "PersonelInformationSystem.Data\PersonelInformationSystem.Data.csproj", "{7D142E86-EE0C-4161-927D-3C6F93AED36B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PersonelInformationSystem.Data", "PersonelInformationSystem.Data\PersonelInformationSystem.Data.csproj", "{7D142E86-EE0C-4161-927D-3C6F93AED36B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{7F10C71B-8FFB-4251-A324-30D3D3315BA1}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
