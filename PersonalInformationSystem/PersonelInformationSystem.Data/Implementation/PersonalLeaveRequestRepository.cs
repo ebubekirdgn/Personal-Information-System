@@ -1,4 +1,5 @@
-﻿using PersonelInformationSystem.Data.DataContext;
+﻿using PersonelInformationSystem.Data.Contracts;
+using PersonelInformationSystem.Data.DataContext;
 using PersonelInformationSystem.Data.Models;
 
 namespace PersonelInformationSystem.Data.Implementation
