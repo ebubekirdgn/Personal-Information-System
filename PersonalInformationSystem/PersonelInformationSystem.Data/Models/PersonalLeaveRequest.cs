@@ -14,7 +14,8 @@ namespace PersonelInformationSystem.Data.Models
         public Personal RequestingPersonal { get; set; }
 
         //TODO:Onaylayan Kullanıcı Bilgileri
-        public string ApprovedPersonalId { get; set; }
+        public string ApprovedPersonalId { get; set; } // string vermemizin sebebi tablo ile alakalı normalde yine int 
+
         [ForeignKey("ApprovedPersonalId")]
         public Personal ApprovedPersonal { get; set; }
 
@@ -27,7 +28,7 @@ namespace PersonelInformationSystem.Data.Models
         public DateTime EndDate { get; set; }
         public DateTime DateRequested { get; set; }
         public string RequestComments { get; set; }
-        public int? Approved { get; set; }
+        public bool? Approved { get; set; }
         public bool Cancelled { get; set; }
     }
 }

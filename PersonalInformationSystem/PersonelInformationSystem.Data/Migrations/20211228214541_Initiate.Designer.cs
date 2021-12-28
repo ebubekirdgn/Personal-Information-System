@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using PersonelInformationSystem.Data.DataContext;
 
@@ -11,9 +12,10 @@ using PersonelInformationSystem.Data.DataContext;
 namespace PersonelInformationSystem.Data.Migrations
 {
     [DbContext(typeof(PersonelInformationContext))]
-    partial class PersonelInformationContextModelSnapshot : ModelSnapshot
+    [Migration("20211228214541_Initiate")]
+    partial class Initiate
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -259,55 +261,6 @@ namespace PersonelInformationSystem.Data.Migrations
                     b.ToTable("PersonalLeaveAllocations");
                 });
 
-            modelBuilder.Entity("PersonelInformationSystem.Data.Models.PersonalLeaveRequest", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<bool?>("Approved")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("ApprovedPersonalId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<bool>("Cancelled")
-                        .HasColumnType("bit");
-
-                    b.Property<DateTime>("DateRequested")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime>("EndDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("PersonalLeaveTypeId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("RequestComments")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("RequestingPersonalId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<DateTime>("StartDate")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ApprovedPersonalId");
-
-                    b.HasIndex("PersonalLeaveTypeId");
-
-                    b.HasIndex("RequestingPersonalId");
-
-                    b.ToTable("PersonalLeaveRequests");
-                });
-
             modelBuilder.Entity("PersonelInformationSystem.Data.Models.PersonalLeaveType", b =>
                 {
                     b.Property<int>("Id")
@@ -421,33 +374,6 @@ namespace PersonelInformationSystem.Data.Migrations
                     b.Navigation("Personal");
 
                     b.Navigation("PersonalLeaveType");
-                });
-
-            modelBuilder.Entity("PersonelInformationSystem.Data.Models.PersonalLeaveRequest", b =>
-                {
-                    b.HasOne("PersonelInformationSystem.Data.Models.Personal", "ApprovedPersonal")
-                        .WithMany()
-                        .HasForeignKey("ApprovedPersonalId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("PersonelInformationSystem.Data.Models.PersonalLeaveType", "PersonalLeaveType")
-                        .WithMany()
-                        .HasForeignKey("PersonalLeaveTypeId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("PersonelInformationSystem.Data.Models.Personal", "RequestingPersonal")
-                        .WithMany()
-                        .HasForeignKey("RequestingPersonalId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.Navigation("ApprovedPersonal");
-
-                    b.Navigation("PersonalLeaveType");
-
-                    b.Navigation("RequestingPersonal");
                 });
 #pragma warning restore 612, 618
         }

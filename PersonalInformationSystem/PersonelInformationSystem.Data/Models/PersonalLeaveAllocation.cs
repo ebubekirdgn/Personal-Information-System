@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations.Schema;
 
 namespace PersonelInformationSystem.Data.Models
 {
@@ -18,6 +13,8 @@ namespace PersonelInformationSystem.Data.Models
         
         [ForeignKey("PersonalId")]
         public Personal Personal { get; set; }
+
+
 
         public int PersonalLeaveTypelId { get; set; }
 

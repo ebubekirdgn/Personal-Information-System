@@ -12,8 +12,8 @@ using PersonelInformationSystem.Data.DataContext;
 namespace PersonelInformationSystem.Data.Migrations
 {
     [DbContext(typeof(PersonelInformationContext))]
-    [Migration("20211227234805_Iniate")]
-    partial class Iniate
+    [Migration("20211228214723_AddPersonTables")]
+    partial class AddPersonTables
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -269,8 +269,8 @@ namespace PersonelInformationSystem.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<int?>("Approved")
-                        .HasColumnType("int");
+                    b.Property<bool?>("Approved")
+                        .HasColumnType("bit");
 
                     b.Property<string>("ApprovedPersonalId")
                         .IsRequired()
@@ -307,7 +307,7 @@ namespace PersonelInformationSystem.Data.Migrations
 
                     b.HasIndex("RequestingPersonalId");
 
-                    b.ToTable("PersonalLeaveRequest");
+                    b.ToTable("PersonalLeaveRequests");
                 });
 
             modelBuilder.Entity("PersonelInformationSystem.Data.Models.PersonalLeaveType", b =>
