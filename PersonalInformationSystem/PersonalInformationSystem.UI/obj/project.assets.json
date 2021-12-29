@@ -945,7 +945,7 @@
           }
         }
       },
-      "PersonelInformationSystem.Data/1.0.0": {
+      "PersonalInformationSystem.Data/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
@@ -954,10 +954,10 @@
           "Microsoft.EntityFrameworkCore.SqlServer": "6.0.1"
         },
         "compile": {
-          "bin/placeholder/PersonelInformationSystem.Data.dll": {}
+          "bin/placeholder/PersonalInformationSystem.Data.dll": {}
         },
         "runtime": {
-          "bin/placeholder/PersonelInformationSystem.Data.dll": {}
+          "bin/placeholder/PersonalInformationSystem.Data.dll": {}
         }
       }
     }
@@ -2720,10 +2720,10 @@
         "version.txt"
       ]
     },
-    "PersonelInformationSystem.Data/1.0.0": {
+    "PersonalInformationSystem.Data/1.0.0": {
       "type": "project",
-      "path": "../PersonelInformationSystem.Data/PersonelInformationSystem.Data.csproj",
-      "msbuildProject": "../PersonelInformationSystem.Data/PersonelInformationSystem.Data.csproj"
+      "path": "../PersonelInformationSystem.Data/PersonalInformationSystem.Data.csproj",
+      "msbuildProject": "../PersonelInformationSystem.Data/PersonalInformationSystem.Data.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -2731,7 +2731,7 @@
       "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation >= 6.0.1",
       "Microsoft.EntityFrameworkCore.Design >= 6.0.1",
       "Microsoft.EntityFrameworkCore.SqlServer >= 6.0.1",
-      "PersonelInformationSystem.Data >= 1.0.0"
+      "PersonalInformationSystem.Data >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -2761,8 +2761,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\Ebubekir Dogan\\Documents\\GitHub\\PersonelInformationSystem\\PersonalInformationSystem\\PersonelInformationSystem.Data\\PersonelInformationSystem.Data.csproj": {
-              "projectPath": "C:\\Users\\Ebubekir Dogan\\Documents\\GitHub\\PersonelInformationSystem\\PersonalInformationSystem\\PersonelInformationSystem.Data\\PersonelInformationSystem.Data.csproj"
+            "C:\\Users\\Ebubekir Dogan\\Documents\\GitHub\\PersonelInformationSystem\\PersonalInformationSystem\\PersonalInformationSystem.Data\\PersonalInformationSystem.Data.csproj": {
+              "projectPath": "C:\\Users\\Ebubekir Dogan\\Documents\\GitHub\\PersonelInformationSystem\\PersonalInformationSystem\\PersonalInformationSystem.Data\\PersonalInformationSystem.Data.csproj"
+            },
+            "C:\\Users\\Ebubekir Dogan\\Documents\\GitHub\\PersonelInformationSystem\\PersonalInformationSystem\\PersonelInformationSystem.Data\\PersonalInformationSystem.Data.csproj": {
+              "projectPath": "C:\\Users\\Ebubekir Dogan\\Documents\\GitHub\\PersonelInformationSystem\\PersonalInformationSystem\\PersonelInformationSystem.Data\\PersonalInformationSystem.Data.csproj"
             }
           }
         }

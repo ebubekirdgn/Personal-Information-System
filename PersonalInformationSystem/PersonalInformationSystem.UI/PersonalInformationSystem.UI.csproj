@@ -20,7 +20,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\PersonelInformationSystem.Data\PersonelInformationSystem.Data.csproj" />
+    <ProjectReference Include="..\PersonalInformationSystem.Data\PersonalInformationSystem.Data.csproj" />
+    <ProjectReference Include="..\PersonelInformationSystem.Data\PersonalInformationSystem.Data.csproj" />
   </ItemGroup>
 
 </Project>

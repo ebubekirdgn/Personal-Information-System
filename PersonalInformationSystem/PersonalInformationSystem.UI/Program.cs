@@ -1,15 +1,14 @@
 using Microsoft.EntityFrameworkCore;
-using PersonelInformationSystem.Data.DataContext;
+using PersonalInformationSystem.Data.DataContext;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages().AddRazorRuntimeCompilation();
 
-builder.Services.AddDbContext<PersonelInformationContext>(options =>
+builder.Services.AddDbContext<PersonalInformationContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
-
 });
 var app = builder.Build();
 

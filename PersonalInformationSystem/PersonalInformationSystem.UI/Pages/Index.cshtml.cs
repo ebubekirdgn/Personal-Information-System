@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.RazorPages;
+﻿using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace PersonalInformationSystem.UI.Pages
 {
@@ -14,7 +13,6 @@ namespace PersonalInformationSystem.UI.Pages
 
         public void OnGet()
         {
-
         }
     }
 }
