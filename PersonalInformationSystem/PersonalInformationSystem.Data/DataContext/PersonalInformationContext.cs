@@ -1,7 +1,4 @@
-﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore;
-
-namespace PersonalInformationSystem.Data.DataContext
+﻿namespace PersonalInformationSystem.Data.DataContext
 {
     public class PersonalInformationContext : IdentityDbContext
     {
