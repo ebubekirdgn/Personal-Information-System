@@ -1,9 +1,0 @@
-﻿global using Microsoft.AspNetCore.Identity;
-global using System.ComponentModel.DataAnnotations;
-global using System.ComponentModel.DataAnnotations.Schema;
-global using PersonalInformationSystem.Data.Models;
-global using PersonalInformationSystem.Data.Contracts;
-global using PersonalInformationSystem.Data.DataContext;
-global using System.Linq.Expressions;
-global using Microsoft.EntityFrameworkCore;
-global using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
