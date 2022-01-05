@@ -1,7 +1,4 @@
-﻿using AutoMapper;
-using PersonalInformationSystem.Common.VModels;
-using PersonalInformationSystem.Data.Models;
-
+﻿
 namespace PersonalInformationSystem.Common.Mappings
 {
     public class Maps : Profile
