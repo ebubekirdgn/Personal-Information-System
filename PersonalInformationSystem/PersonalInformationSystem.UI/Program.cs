@@ -1,4 +1,6 @@
 using Microsoft.EntityFrameworkCore;
+using PersonalInformationSystem.Business.Contracts;
+using PersonalInformationSystem.Business.Implementation;
 using PersonalInformationSystem.Data.DataContext;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -10,6 +12,9 @@ builder.Services.AddDbContext<PersonalInformationContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
+
+builder.Services.AddScoped<IPersonalLeaveTypesBusiness, PersonalLeaveTypesBusiness>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
