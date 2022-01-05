@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace PersonalInformationSystem.Common.ResultModels
+﻿namespace PersonalInformationSystem.Common.ResultModels
 {
     public interface IResult
     {
-         bool IsSuccess { get; set; }
-         string Message { get; set; }
+        bool IsSuccess { get; set; }
+        string Message { get; set; }
     }
 }

@@ -1,5 +1,4 @@
-﻿
-namespace PersonalInformationSystem.Common.Mappings
+﻿namespace PersonalInformationSystem.Common.Mappings
 {
     public class Maps : Profile
     {

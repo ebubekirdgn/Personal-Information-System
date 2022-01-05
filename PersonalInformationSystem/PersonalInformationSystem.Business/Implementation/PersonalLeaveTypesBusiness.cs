@@ -1,8 +1,6 @@
-﻿
-
-namespace PersonalInformationSystem.Business.Implementation
+﻿namespace PersonalInformationSystem.Business.Implementation
 {
-    public class PersonalLeaveTypesBusiness: IPersonalLeaveTypesBusiness
+    public class PersonalLeaveTypesBusiness : IPersonalLeaveTypesBusiness
     {
         private readonly IUnitOfWork _unitOfWork;
 
@@ -10,7 +8,5 @@ namespace PersonalInformationSystem.Business.Implementation
         {
             _unitOfWork = unitOfWork;
         }
-
-
     }
 }
