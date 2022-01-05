@@ -21,4 +21,8 @@
     <ProjectReference Include="..\PersonalInformationSystem.Data\PersonalInformationSystem.Data.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Views\PersonalLeaveTypes\" />
+  </ItemGroup>
+
 </Project>
