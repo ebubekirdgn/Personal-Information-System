@@ -12,8 +12,8 @@ namespace PersonalInformationSystem.Common.Mappings
             //CreateMap<PersonalLeaveTypeVM, PersonalLeaveType>();
             CreateMap<PersonalLeaveAllocation, PersonalLeaveAllocationsVM>().ReverseMap();
 
-            CreateMap<PersonalLeaveRequest, EmployeeLeaveRequestVM>().ReverseMap();
-            CreateMap<Employee, EmployeeVM>().ReverseMap();
+            CreateMap<PersonalLeaveRequest, PersonalLeaveRequestVM>().ReverseMap();
+            CreateMap<Personal, PersonalVM>().ReverseMap();
         }
     }
 }

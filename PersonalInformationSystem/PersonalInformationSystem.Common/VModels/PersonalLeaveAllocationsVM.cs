@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace PersonalInformationSystem.Common.VModels
 {
-    public class PersonalLeaveAllocationsVM
+    public class PersonalLeaveAllocationsVM : BaseVM
     {
         public int NumberOfDays { get; set; }
         public DateTime DateCreated { get; set; }
