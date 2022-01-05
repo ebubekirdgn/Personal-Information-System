@@ -2,8 +2,10 @@
 {
     public class PersonalInformationContext : IdentityDbContext
     {
-        public PersonalInformationContext(DbContextOptions options) : base(options)
-        { }
+        public PersonalInformationContext(DbContextOptions<PersonalInformationContext> options)
+            : base(options)
+        { 
+        }
 
         public DbSet<Personal> Personal { get; set; }
         public DbSet<PersonalLeaveAllocation> PersonalLeaveAllocations { get; set; }
@@ -19,5 +21,6 @@
                 .WithMany()
                 .OnDelete(DeleteBehavior.Restrict);
         }
+      
     }
 }

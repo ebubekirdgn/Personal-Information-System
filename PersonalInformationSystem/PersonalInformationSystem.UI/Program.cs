@@ -1,12 +1,18 @@
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using PersonalInformationSystem.Business.Contracts;
 using PersonalInformationSystem.Business.Implementation;
+using PersonalInformationSystem.Common.Mappings;
+using PersonalInformationSystem.Data.Contracts;
 using PersonalInformationSystem.Data.DataContext;
+using PersonalInformationSystem.Data.Implementation;
+using PersonalInformationSystem.Data.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages().AddRazorRuntimeCompilation();
+
 
 builder.Services.AddDbContext<PersonalInformationContext>(options =>
 {
@@ -14,6 +20,9 @@ builder.Services.AddDbContext<PersonalInformationContext>(options =>
 });
 
 builder.Services.AddScoped<IPersonalLeaveTypesBusiness, PersonalLeaveTypesBusiness>();
+
+builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+builder.Services.AddAutoMapper(typeof(Maps));
 
 var app = builder.Build();
 
