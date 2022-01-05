@@ -14,6 +14,18 @@ namespace PersonalInformationSystem.UI.Controllers
 
         public IActionResult Index()
         {
+            var data = _personalLeaveTypesBusiness.GetAllPersonalLeaveType();
+
+            if (data.IsSuccess)
+            {
+                var result = data.Data;
+                return View(result);
+            }
+            return View();
+        }
+
+        public IActionResult Create()
+        {
             return View();
         }
     }
