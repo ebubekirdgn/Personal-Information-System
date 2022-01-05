@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using AutoMapper;
+using PersonalInformationSystem.Common.VModels;
+using PersonalInformationSystem.Data.Models;
 
 namespace PersonalInformationSystem.Common.Mappings
 {
@@ -10,10 +8,11 @@ namespace PersonalInformationSystem.Common.Mappings
     {
         public Maps()
         {
-            CreateMap<EmployeeLeaveType, EmployeeLeaveTypeVM>().ReverseMap();
-            //CreateMap<EmployeeLeaveTypeVM, EmployeeLeaveType>();
-            CreateMap<EmployeeLeaveAllocation, EmployeeLeaveAllocationsVM>().ReverseMap();
-            CreateMap<EmployeeLeaveRequest, EmployeeLeaveRequestVM>().ReverseMap();
+            CreateMap<PersonalLeaveType, PersonalLeaveTypeVM>().ReverseMap();
+            //CreateMap<PersonalLeaveTypeVM, PersonalLeaveType>();
+            CreateMap<PersonalLeaveAllocation, PersonalLeaveAllocationsVM>().ReverseMap();
+
+            CreateMap<PersonalLeaveRequest, EmployeeLeaveRequestVM>().ReverseMap();
             CreateMap<Employee, EmployeeVM>().ReverseMap();
         }
     }
