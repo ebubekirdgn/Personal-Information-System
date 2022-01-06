@@ -55,7 +55,7 @@ namespace PersonalInformationSystem.Business.Implementation
             //Mapperli
             #region 2.Yontem
             var leaveTypes = _mapper.Map<List<PersonalLeaveType>, List<PersonalLeaveTypeVM>>(data);
-            return new Result<List<PersonalLeaveTypeVM>>(true, ResultConstant.RecordCreateSuccessfully, leaveTypes); 
+            return new Result<List<PersonalLeaveTypeVM>>(true, ResultConstant.RecordFound, leaveTypes); 
             #endregion
         }
  

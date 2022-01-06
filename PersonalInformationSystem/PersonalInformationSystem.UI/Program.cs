@@ -1,9 +1,7 @@
-
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages().AddRazorRuntimeCompilation();
-
 
 builder.Services.AddDbContext<PersonalInformationContext>(options =>
 {
@@ -14,7 +12,6 @@ builder.Services.AddScoped<IPersonalLeaveTypesBusiness, PersonalLeaveTypesBusine
 
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddAutoMapper(typeof(Maps));
-
 
 var app = builder.Build();
 
