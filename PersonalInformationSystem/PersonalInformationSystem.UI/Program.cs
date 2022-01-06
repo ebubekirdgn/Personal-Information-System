@@ -1,12 +1,3 @@
-using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
-using PersonalInformationSystem.Business.Contracts;
-using PersonalInformationSystem.Business.Implementation;
-using PersonalInformationSystem.Common.Mappings;
-using PersonalInformationSystem.Data.Contracts;
-using PersonalInformationSystem.Data.DataContext;
-using PersonalInformationSystem.Data.Implementation;
-using PersonalInformationSystem.Data.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -24,12 +15,13 @@ builder.Services.AddScoped<IPersonalLeaveTypesBusiness, PersonalLeaveTypesBusine
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddAutoMapper(typeof(Maps));
 
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
-    app.UseExceptionHandler("/Error");
+    app.UseExceptionHandler("/Home/Error");
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
@@ -41,6 +33,8 @@ app.UseRouting();
 
 app.UseAuthorization();
 
-app.MapRazorPages();
+app.MapControllerRoute(
+    name: "default",
+    pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.Run();

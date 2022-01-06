@@ -7,22 +7,35 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Views\PersonalLeaveTypes\**" />
+    <Content Remove="Views\PersonalLeaveTypes\**" />
+    <EmbeddedResource Remove="Views\PersonalLeaveTypes\**" />
+    <None Remove="Views\PersonalLeaveTypes\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\font-awesome\4.5.0\fonts\fontawesome-webfont.svg" />
+    <None Include="wwwroot\font-awesome\4.5.0\fonts\fontawesome-webfont.woff2" />
+    <None Include="wwwroot\fonts\glyphicons-halflings-regular.svg" />
+    <None Include="wwwroot\fonts\glyphicons-halflings-regular.woff2" />
+    <None Include="wwwroot\swf\flashExport.swf" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor" Version="2.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="6.0.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.1">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.1" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.1" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\PersonalInformationSystem.Business\PersonalInformationSystem.Business.csproj" />
     <ProjectReference Include="..\PersonalInformationSystem.Data\PersonalInformationSystem.Data.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Views\PersonalLeaveTypes\" />
   </ItemGroup>
 
 </Project>
