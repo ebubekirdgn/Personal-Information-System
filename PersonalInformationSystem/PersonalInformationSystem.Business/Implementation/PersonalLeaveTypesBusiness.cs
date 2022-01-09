@@ -58,7 +58,32 @@ namespace PersonalInformationSystem.Business.Implementation
             return new Result<List<PersonalLeaveTypeVM>>(true, ResultConstant.RecordFound, leaveTypes); 
             #endregion
         }
- 
+
+        public Result<PersonalLeaveTypeVM> CreatePersonalLeaveType(PersonalLeaveTypeVM model)
+        {
+            if (model != null)
+            {
+                try
+                {
+                    var leaveType = _mapper.Map<PersonalLeaveTypeVM, PersonalLeaveType>(model);
+                    leaveType.DateCreated = DateTime.Now;
+                    _unitOfWork.personalLeaveTypeRepository.Add(leaveType);
+                    _unitOfWork.Save();
+                    return new Result<PersonalLeaveTypeVM>(true, ResultConstant.RecordCreateSuccessfully);
+
+                }
+                catch (Exception ex)
+                {
+
+                    return new Result<PersonalLeaveTypeVM>(false, ResultConstant.RecordCreateNotSuccessfully + "->" + ex.Message.ToString()); 
+                }
+            }
+            else
+            {
+                return new Result<PersonalLeaveTypeVM>(false, "Parametre olarak geçilen data boş olamaz.");
+            }
+        }
+
         #endregion CustomMethods
     }
 }

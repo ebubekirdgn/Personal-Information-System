@@ -49,11 +49,11 @@ namespace PersonalInformationSystem.UI.Controllers
                 //    return View(model);
                 //} 
                 #endregion
-                //var data = _personalLeaveTypesBusiness.CreateEmployeeLeaveType(model);
-               /* if (data.IsSuccess)
+                var data = _personalLeaveTypesBusiness.CreatePersonalLeaveType(model);
+                if (data.IsSuccess)
                 {
                     return RedirectToAction("Index");
-                }*/
+                }
                 return View(model);
             }
             else
