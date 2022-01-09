@@ -4,15 +4,19 @@
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
 <div class="page-header">
-    <h1>
-        Tables
+    <h3>
         <small>
             <i class="ace-icon fa fa-angle-double-right"></i>
-           Personel İzin Takip
+            Çalışan İzin Takip Listesi
         </small>
-    </h1>
-</div><!-- /.page-header -->
+    </h3>
+</div>
+
+
+<br />
+<My-Email mail-to="ertugrulyilmaz">Mail Gönder</My-Email>
 <div class="col-6 text-left text-white">
     <a class="btn btn-success" asp-controller="PersonalLeaveTypes" asp-action="Create">Tip Ekle</a>
 </div>
@@ -24,7 +28,6 @@
                 <tr>
                     <th>Liste İsmi</th>
                     <th>Oluşturulma Tarihi</th>
-                    <th>İzin Alınan Gün Sayısı</th>
                     <th>İşlemler</th>
                 </tr>
             </thead>
@@ -34,7 +37,6 @@
                     <tr>
                         <td> @item.Name</td>
                         <td>@item.DateCreated</td>
-                        <td>@item.DefaultDays</td>
                         <td>
                             <div class="hidden-sm hidden-xs btn-group">
                                 @*<button class="btn btn-xs btn-info">
@@ -44,7 +46,7 @@
 
                                     <i class="ace-icon fa fa-pencil bigger-120"></i>
                                 </a>
-                                <a class="btn btn-xs btn-danger" asp-controller="PersonalLeaveTypes" asp-action="Delete" id="btnRemove" asp-route-id="@item.Id">
+                                <a class="btn btn-xs btn-danger" id="btnRemove" data-id="@item.Id">
                                     <i class="ace-icon fa fa-trash bigger-120"></i>
                                 </a>
                                 <button class="btn btn-xs btn-warning">
@@ -59,3 +61,40 @@
         </table>
     </div><!-- /.span -->
 </div>
+
+@section Scripts{
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            $("#btnRemove").on("click", function () {
+                var id = $("#btnRemove").data("id");
+
+                swal({
+                    title: 'Silmek İstediğinize Emin Misiniz?',
+                    text: 'Silinen Data Geri Alınamaz!',
+                    icon: 'warning',
+                    buttons: true,
+                    dangerMode: true
+                }).then((willDelete) => {
+                    if (willDelete) {
+                        $.ajax({
+                            type: "DELETE",
+                            url: "/PersonalLeaveTypes/Delete/" + id,
+                            success: function (data) {
+                                if (data.success) {
+                                    toastr.success(data.message);
+                                    location.reload();
+                                } else {
+                                    toastr.error(data.message);
+                                }
+                            }
+
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+
+}
