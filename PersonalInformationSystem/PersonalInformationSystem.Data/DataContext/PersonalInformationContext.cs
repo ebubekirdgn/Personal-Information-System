@@ -4,7 +4,7 @@
     {
         public PersonalInformationContext(DbContextOptions<PersonalInformationContext> options)
             : base(options)
-        { 
+        {
         }
 
         public DbSet<Personal> Personal { get; set; }
@@ -21,6 +21,5 @@
                 .WithMany()
                 .OnDelete(DeleteBehavior.Restrict);
         }
-      
     }
 }
