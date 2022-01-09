@@ -1,6 +1,5 @@
 ﻿using AutoMapper;
 using PersonalInformationSystem.Common.ConstantsModels;
-using PersonalInformationSystem.Common.VModels;
 
 namespace PersonalInformationSystem.Business.Implementation
 {
@@ -27,9 +26,11 @@ namespace PersonalInformationSystem.Business.Implementation
 
         public Result<List<PersonalLeaveTypeVM>> GetAllPersonalLeaveType()
         {
-            var data = _unitOfWork.personalLeaveTypeRepository.GetAll().ToList();
+            var data = _unitOfWork.personalLeaveTypeRepository.GetAll(e => e.IsActive == true).ToList();
             // Mappersiz
+
             #region 1.Yöntem
+
             /*
              if (data != null)
              {
@@ -50,13 +51,17 @@ namespace PersonalInformationSystem.Business.Implementation
              else
                  return new Result<List<PersonalLeaveType>>(true, ResultConstant.RecordNotFound);
              */
-            #endregion
+
+            #endregion 1.Yöntem
 
             //Mapperli
+
             #region 2.Yontem
+
             var leaveTypes = _mapper.Map<List<PersonalLeaveType>, List<PersonalLeaveTypeVM>>(data);
             return new Result<List<PersonalLeaveTypeVM>>(true, ResultConstant.RecordFound, leaveTypes);
-            #endregion
+
+            #endregion 2.Yontem
         }
 
         public Result<PersonalLeaveTypeVM> CreatePersonalLeaveType(PersonalLeaveTypeVM model)
@@ -67,14 +72,13 @@ namespace PersonalInformationSystem.Business.Implementation
                 {
                     var leaveType = _mapper.Map<PersonalLeaveTypeVM, PersonalLeaveType>(model);
                     leaveType.DateCreated = DateTime.Now;
+                    leaveType.IsActive = true;
                     _unitOfWork.personalLeaveTypeRepository.Add(leaveType);
                     _unitOfWork.Save();
                     return new Result<PersonalLeaveTypeVM>(true, ResultConstant.RecordCreateSuccessfully);
-
                 }
                 catch (Exception ex)
                 {
-
                     return new Result<PersonalLeaveTypeVM>(false, ResultConstant.RecordCreateNotSuccessfully + "->" + ex.Message.ToString());
                 }
             }
@@ -116,13 +120,12 @@ namespace PersonalInformationSystem.Business.Implementation
                 return new Result<PersonalLeaveTypeVM>(false, "Parametre Olarak Geçilen Data Boş Olamaz!");
         }
 
-
-
         public Result<PersonalLeaveTypeVM> RemovePersonalLeaveType(int id)
         {
             var data = _unitOfWork.personalLeaveTypeRepository.Get(id);
             if (data != null)
             {
+                data.IsActive = false;
                 _unitOfWork.personalLeaveTypeRepository.Remove(data);
                 _unitOfWork.Save();
                 return new Result<PersonalLeaveTypeVM>(true, ResultConstant.RecordRemoveSuccessfully);
