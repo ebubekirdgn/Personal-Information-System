@@ -5,3 +5,6 @@ global using PersonalInformationSystem.Common.Mappings;
 global using PersonalInformationSystem.Data.Contracts;
 global using PersonalInformationSystem.Data.DataContext;
 global using PersonalInformationSystem.Data.Implementation;
+global using Microsoft.AspNetCore.Mvc;
+global using PersonalInformationSystem.Common.VModels;
+

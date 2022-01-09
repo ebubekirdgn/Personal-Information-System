@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿
 
 namespace PersonalInformationSystem.UI.Controllers
 {
@@ -27,5 +27,39 @@ namespace PersonalInformationSystem.UI.Controllers
         {
             return View();
         }
+
+        [HttpPost]
+        public ActionResult Create(PersonalLeaveTypeVM model)
+        {
+            if (ModelState.IsValid)
+            {
+                #region CreateOrEditExample
+                //if (model.Id > 0)
+                //{
+                //    var data = _employeeLeaveTypeBusinessEngine.EditEmployeeLeaveType(model);
+
+                //}
+                //else
+                //{
+                //    var data = _employeeLeaveTypeBusinessEngine.CreateEmployeeLeaveType(model);
+                //    if (data.IsSuccess)
+                //    {
+                //        return RedirectToAction("Index");
+                //    }
+                //    return View(model);
+                //} 
+                #endregion
+                //var data = _personalLeaveTypesBusiness.CreateEmployeeLeaveType(model);
+               /* if (data.IsSuccess)
+                {
+                    return RedirectToAction("Index");
+                }*/
+                return View(model);
+            }
+            else
+                return View(model);
+        }
+
+
     }
 }
