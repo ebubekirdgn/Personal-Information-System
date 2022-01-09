@@ -36,12 +36,12 @@ namespace PersonalInformationSystem.UI.Controllers
                 #region CreateOrEditExample
                 //if (model.Id > 0)
                 //{
-                //    var data = _personalLeaveTypesBusiness.EditEmployeeLeaveType(model);
+                //    var data = _personalLeaveTypesBusiness.EditPersonalLeaveType(model);
 
                 //}
                 //else
                 //{
-                //    var data = _personalLeaveTypesBusiness.CreateEmployeeLeaveType(model);
+                //    var data = _personalLeaveTypesBusiness.CreatePersonalLeaveType(model);
                 //    if (data.IsSuccess)
                 //    {
                 //        return RedirectToAction("Index");
@@ -66,7 +66,7 @@ namespace PersonalInformationSystem.UI.Controllers
             if (id < 0)
                 return View();
 
-            var data = _personalLeaveTypesBusiness.GetAllEmployeeLeaveType(id);
+            var data = _personalLeaveTypesBusiness.GetAllPersonalLeaveType(id);
             if (data.IsSuccess)
                 return View(data.Data);
             return View();
@@ -78,7 +78,7 @@ namespace PersonalInformationSystem.UI.Controllers
         {
             if (ModelState.IsValid)
             {
-                var data = _personalLeaveTypesBusiness.EditEmployeeLeaveType(model);
+                var data = _personalLeaveTypesBusiness.EditPersonalLeaveType(model);
                 if (data.IsSuccess)
                 {
                     return RedirectToAction("Index");
@@ -89,6 +89,18 @@ namespace PersonalInformationSystem.UI.Controllers
                 return View(model);
         }
 
+        [HttpDelete]
+        public IActionResult Delete(int id)
+        {
+            if (id <= 0)
+                return Json(new { success = false, message = "Silmek için Kayıt Seçiniz" });
+
+            var data = _personalLeaveTypesBusiness.RemovePersonalLeaveType(id);
+            if (data.IsSuccess)
+                return Json(new { success = data.IsSuccess, message = data.Message });
+            else
+                return Json(new { success = data.IsSuccess, message = data.Message });
+        }
 
     }
 }

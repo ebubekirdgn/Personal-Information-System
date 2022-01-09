@@ -44,7 +44,7 @@
 
                                     <i class="ace-icon fa fa-pencil bigger-120"></i>
                                 </a>
-                                <a class="btn btn-xs btn-danger" id="btnRemove" data-id="@item.Id">
+                                <a class="btn btn-xs btn-danger" asp-controller="PersonalLeaveTypes" asp-action="Delete" id="btnRemove" asp-route-id="@item.Id">
                                     <i class="ace-icon fa fa-trash bigger-120"></i>
                                 </a>
                                 <button class="btn btn-xs btn-warning">

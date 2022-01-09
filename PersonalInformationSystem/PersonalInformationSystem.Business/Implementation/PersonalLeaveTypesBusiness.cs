@@ -84,7 +84,7 @@ namespace PersonalInformationSystem.Business.Implementation
             }
         }
 
-        public Result<PersonalLeaveTypeVM> GetAllEmployeeLeaveType(int id)
+        public Result<PersonalLeaveTypeVM> GetAllPersonalLeaveType(int id)
         {
             var data = _unitOfWork.personalLeaveTypeRepository.Get(id);
             if (data != null)
@@ -96,7 +96,7 @@ namespace PersonalInformationSystem.Business.Implementation
                 return new Result<PersonalLeaveTypeVM>(false, ResultConstant.RecordNotFound);
         }
 
-        public Result<PersonalLeaveTypeVM> EditEmployeeLeaveType(PersonalLeaveTypeVM model)
+        public Result<PersonalLeaveTypeVM> EditPersonalLeaveType(PersonalLeaveTypeVM model)
         {
             if (model != null)
             {
@@ -118,17 +118,17 @@ namespace PersonalInformationSystem.Business.Implementation
 
 
 
-        public Result<PersonalLeaveTypeVM> RemoveEmployeeLeaveType(int id)
+        public Result<PersonalLeaveTypeVM> RemovePersonalLeaveType(int id)
         {
             var data = _unitOfWork.personalLeaveTypeRepository.Get(id);
             if (data != null)
             {
-                _unitOfWork.personalLeaveTypeRepository.Update(data);
+                _unitOfWork.personalLeaveTypeRepository.Remove(data);
                 _unitOfWork.Save();
-                return new Result<PersonalLeaveTypeVM>(true, ResultConstant.RecordCreateSuccessfully);
+                return new Result<PersonalLeaveTypeVM>(true, ResultConstant.RecordRemoveSuccessfully);
             }
             else
-                return new Result<PersonalLeaveTypeVM>(false, ResultConstant.RecordCreateNotSuccessfully);
+                return new Result<PersonalLeaveTypeVM>(false, ResultConstant.RecordRemoveNotSuccessfully);
         }
 
         #endregion CustomMethods
