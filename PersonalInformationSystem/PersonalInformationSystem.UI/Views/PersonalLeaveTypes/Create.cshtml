@@ -11,7 +11,7 @@
         <label class="col-sm-3 control-label no-padding-right" asp-for="Name">İzin Tipi</label>
 
         <div class="col-sm-9">
-            <input asp-for="Name" type="text" id="form-field-1" placeholder="Tatil Sebep Tipi" class="col-xs-10 col-sm-5" />
+            <input asp-for="Name" required type="text" id="form-field-1" placeholder="Tatil Sebep Tipi" class="col-xs-10 col-sm-5" />
             <span asp-validation-for="Name"></span>
         </div>
     </div>
@@ -20,8 +20,8 @@
         <label class="col-sm-3 control-label no-padding-right" asp-for="DefaultDays">Sabit Gün Sayısı</label>
 
         <div class="col-sm-9">
-            <input asp-for="DefaultDays" type="number" min="0" max="15" id="form-field-1" placeholder="Sabit Gün Sayısı" class="col-xs-10 col-sm-5" />
-            @*<span asp-validation-for="DefaultDays"></span>*@
+            <input asp-for="DefaultDays" required type="number" min="0" max="15" id="form-field-1" placeholder="Sabit Gün Sayısı" class="col-xs-10 col-sm-5" />
+           @* <span asp-validation-for="DefaultDays"></span>*@
         </div>
     </div>
 
@@ -97,3 +97,7 @@
     </div>
 </form>
 
+
+@section Scripts{
+    <partial name="_ValidationScriptsPartial" />
+}
