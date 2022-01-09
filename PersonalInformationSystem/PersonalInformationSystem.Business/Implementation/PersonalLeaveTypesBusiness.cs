@@ -55,7 +55,7 @@ namespace PersonalInformationSystem.Business.Implementation
             //Mapperli
             #region 2.Yontem
             var leaveTypes = _mapper.Map<List<PersonalLeaveType>, List<PersonalLeaveTypeVM>>(data);
-            return new Result<List<PersonalLeaveTypeVM>>(true, ResultConstant.RecordFound, leaveTypes); 
+            return new Result<List<PersonalLeaveTypeVM>>(true, ResultConstant.RecordFound, leaveTypes);
             #endregion
         }
 
@@ -75,13 +75,60 @@ namespace PersonalInformationSystem.Business.Implementation
                 catch (Exception ex)
                 {
 
-                    return new Result<PersonalLeaveTypeVM>(false, ResultConstant.RecordCreateNotSuccessfully + "->" + ex.Message.ToString()); 
+                    return new Result<PersonalLeaveTypeVM>(false, ResultConstant.RecordCreateNotSuccessfully + "->" + ex.Message.ToString());
                 }
             }
             else
             {
                 return new Result<PersonalLeaveTypeVM>(false, "Parametre olarak geçilen data boş olamaz.");
             }
+        }
+
+        public Result<PersonalLeaveTypeVM> GetAllEmployeeLeaveType(int id)
+        {
+            var data = _unitOfWork.personalLeaveTypeRepository.Get(id);
+            if (data != null)
+            {
+                var leaveType = _mapper.Map<PersonalLeaveType, PersonalLeaveTypeVM>(data);
+                return new Result<PersonalLeaveTypeVM>(true, ResultConstant.RecordFound, leaveType);
+            }
+            else
+                return new Result<PersonalLeaveTypeVM>(false, ResultConstant.RecordNotFound);
+        }
+
+        public Result<PersonalLeaveTypeVM> EditEmployeeLeaveType(PersonalLeaveTypeVM model)
+        {
+            if (model != null)
+            {
+                try
+                {
+                    var leaveType = _mapper.Map<PersonalLeaveTypeVM, PersonalLeaveType>(model);
+                    _unitOfWork.personalLeaveTypeRepository.Update(leaveType);
+                    _unitOfWork.Save();
+                    return new Result<PersonalLeaveTypeVM>(true, ResultConstant.RecordCreateSuccessfully);
+                }
+                catch (Exception ex)
+                {
+                    return new Result<PersonalLeaveTypeVM>(false, ResultConstant.RecordCreateNotSuccessfully + "=>" + ex.Message.ToString());
+                }
+            }
+            else
+                return new Result<PersonalLeaveTypeVM>(false, "Parametre Olarak Geçilen Data Boş Olamaz!");
+        }
+
+
+
+        public Result<PersonalLeaveTypeVM> RemoveEmployeeLeaveType(int id)
+        {
+            var data = _unitOfWork.personalLeaveTypeRepository.Get(id);
+            if (data != null)
+            {
+                _unitOfWork.personalLeaveTypeRepository.Update(data);
+                _unitOfWork.Save();
+                return new Result<PersonalLeaveTypeVM>(true, ResultConstant.RecordCreateSuccessfully);
+            }
+            else
+                return new Result<PersonalLeaveTypeVM>(false, ResultConstant.RecordCreateNotSuccessfully);
         }
 
         #endregion CustomMethods
