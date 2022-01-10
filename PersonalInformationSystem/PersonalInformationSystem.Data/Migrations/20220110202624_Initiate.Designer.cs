@@ -12,7 +12,7 @@ using PersonalInformationSystem.Data.DataContext;
 namespace PersonalInformationSystem.Data.Migrations
 {
     [DbContext(typeof(PersonalInformationContext))]
-    [Migration("20220109184713_Initiate")]
+    [Migration("20220110202624_Initiate")]
     partial class Initiate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -323,6 +323,9 @@ namespace PersonalInformationSystem.Data.Migrations
 
                     b.Property<int>("DefaultDays")
                         .HasColumnType("int");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
 
                     b.Property<string>("Name")
                         .IsRequired()

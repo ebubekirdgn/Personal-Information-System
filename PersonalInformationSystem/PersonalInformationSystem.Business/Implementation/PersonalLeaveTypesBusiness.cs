@@ -26,7 +26,7 @@ namespace PersonalInformationSystem.Business.Implementation
 
         public Result<List<PersonalLeaveTypeVM>> GetAllPersonalLeaveType()
         {
-            var data = _unitOfWork.personalLeaveTypeRepository.GetAll(e => e.IsActive == true).ToList();
+            var data = _unitOfWork.personalLeaveTypeRepository.GetAll().ToList();
             // Mappersiz
 
             #region 1.Yöntem
@@ -109,11 +109,11 @@ namespace PersonalInformationSystem.Business.Implementation
                     var leaveType = _mapper.Map<PersonalLeaveTypeVM, PersonalLeaveType>(model);
                     _unitOfWork.personalLeaveTypeRepository.Update(leaveType);
                     _unitOfWork.Save();
-                    return new Result<PersonalLeaveTypeVM>(true, ResultConstant.RecordCreateSuccessfully);
+                    return new Result<PersonalLeaveTypeVM>(true, ResultConstant.RecordEditSuccessfully);
                 }
                 catch (Exception ex)
                 {
-                    return new Result<PersonalLeaveTypeVM>(false, ResultConstant.RecordCreateNotSuccessfully + "=>" + ex.Message.ToString());
+                    return new Result<PersonalLeaveTypeVM>(false, ResultConstant.RecordEditNotSuccessfully + "=>" + ex.Message.ToString());
                 }
             }
             else

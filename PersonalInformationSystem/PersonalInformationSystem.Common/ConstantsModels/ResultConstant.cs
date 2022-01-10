@@ -8,7 +8,8 @@
         public const string RecordCreateNotSuccessfully = "Kayıt Gerçekleştirirken Hata Oluştu";
         public const string RecordRemoveNotSuccessfully = "Silme Gerçekleştirirken Hata Oluştu";
         public const string RecordRemoveSuccessfully = "Silme Gerçekleştirildi";
-
+        public const string RecordEditSuccessfully = "Güncelleme Gerçekleştirildi";
+        public const string RecordEditNotSuccessfully = "Güncelleme Gerçekleştirilemedi";
         //---------------------------------------------------------------------------------------//
         public const string Admin_Role = "Administrator";
 

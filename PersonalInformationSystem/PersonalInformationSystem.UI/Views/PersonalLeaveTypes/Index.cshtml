@@ -9,14 +9,13 @@
     <h3>
         <small>
             <i class="ace-icon fa fa-angle-double-right"></i>
-            Çalışan İzin Takip Listesi
+            Personel İzin Takip Listesi
         </small>
     </h3>
 </div>
 
 
 <br />
-<My-Email mail-to="ertugrulyilmaz">Mail Gönder</My-Email>
 <div class="col-6 text-left text-white">
     <a class="btn btn-success" asp-controller="PersonalLeaveTypes" asp-action="Create">Tip Ekle</a>
 </div>
@@ -27,6 +26,7 @@
             <thead>
                 <tr>
                     <th>Liste İsmi</th>
+                    <th>Gün Sayısı</th>
                     <th>Oluşturulma Tarihi</th>
                     <th>İşlemler</th>
                 </tr>
@@ -36,6 +36,7 @@
                 {
                     <tr>
                         <td> @item.Name</td>
+                        <td> @item.DefaultDays</td>
                         <td>@item.DateCreated</td>
                         <td>
                             <div class="hidden-sm hidden-xs btn-group">
@@ -43,7 +44,6 @@
                                         <i class="ace-icon fa fa-pencil bigger-120"></i>
                                     </button>*@
                                 <a class="btn btn-xs btn-info" asp-controller="PersonalLeaveTypes" asp-action="Edit" asp-route-id="@item.Id">
-
                                     <i class="ace-icon fa fa-pencil bigger-120"></i>
                                 </a>
                                 <a class="btn btn-xs btn-danger" id="btnRemove" data-id="@item.Id">
@@ -63,13 +63,10 @@
 </div>
 
 @section Scripts{
-
     <script type="text/javascript">
         $(document).ready(function () {
-
             $("#btnRemove").on("click", function () {
                 var id = $("#btnRemove").data("id");
-
                 swal({
                     title: 'Silmek İstediğinize Emin Misiniz?',
                     text: 'Silinen Data Geri Alınamaz!',
@@ -89,12 +86,10 @@
                                     toastr.error(data.message);
                                 }
                             }
-
                         });
                     }
                 });
             });
         });
     </script>
-
 }
