@@ -10,6 +10,8 @@
 
         public DateTime DateCreated { get; set; }
 
+        public bool IsActive { get; set; }
+
         public void SetEmployeeType(string name)
         {
             this.Name = name;
