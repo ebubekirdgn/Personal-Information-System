@@ -1,6 +1,8 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using PersonalInformationSystem.Data.DataContext;
+using PersonalInformationSystem.Data.Models;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -12,7 +14,7 @@ builder.Services.AddDbContext<PersonalInformationContext>(options =>
 });
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
     .AddEntityFrameworkStores<PersonalInformationContext>();builder.Services.AddDbContext<PersonalInformationContext>(options =>
-    options.UseSqlServer(connectionString));
+    options.UseSqlServer("DefaultConnection"));
 builder.Services.AddScoped<IPersonalLeaveTypesBusiness, PersonalLeaveTypesBusiness>();
 
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
