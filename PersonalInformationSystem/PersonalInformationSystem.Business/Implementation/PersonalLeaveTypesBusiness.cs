@@ -27,6 +27,7 @@ namespace PersonalInformationSystem.Business.Implementation
         public Result<List<PersonalLeaveTypeVM>> GetAllPersonalLeaveType()
         {
             var data = _unitOfWork.personalLeaveTypeRepository.GetAll(e => e.IsActive == true).ToList();
+           
             // Mappersiz
 
             #region 1.Yöntem
