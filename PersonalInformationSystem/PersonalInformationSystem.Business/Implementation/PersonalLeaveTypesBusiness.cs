@@ -45,7 +45,6 @@ namespace PersonalInformationSystem.Business.Implementation
                          Name = item.Name,
                      });
                  }
-
                  return new Result<List<PersonalLeaveType>>(true,ResultConstant.RecordCreateSuccessfully, returnData);
              }
              else
