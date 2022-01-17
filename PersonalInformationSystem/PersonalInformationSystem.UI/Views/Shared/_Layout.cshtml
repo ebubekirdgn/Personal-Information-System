@@ -70,15 +70,7 @@
 						
 
 						<li class="light-blue dropdown-modal">
-							@*<a data-toggle="dropdown" href="#" class="dropdown-toggle">
-								<img class="nav-user-photo" src="~/images/avatars/user.jpg" alt="Jason's Photo" />
-								<span class="user-info">
-									<small>Welcome,</small>
-									Jason
-								</span>
-
-								<i class="ace-icon fa fa-caret-down"></i>
-							</a>*@
+						<partial name="_LoginPartial" />
 
 							<ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
 								<li>
@@ -120,32 +112,13 @@
 					try{ace.settings.loadState('sidebar')}catch(e){}
 				</script>
 
-
 				<ul class="nav nav-list">
 					<li class="active">
 						<a href="index.html">
 							<i class="menu-icon fa fa-home"></i>
 							<span class="menu-text"> Anasayfa </span>
 						</a>
-
 						<b class="arrow"></b>
-					</li>
-
-					<li class="">
-						<a asp-area="Identity" asp-page="/Account/Register">
-							 <i class="menu-icon fa fa-registered"></i>
-							<span class="menu-text">
-								Kayıt Ol
-							</span>
-						</a>
-					</li>
-						<li class="">
-						<a asp-area="Identity" asp-page="/Account/Login">
-							 <i class="menu-icon fa fa-sign-in"></i>
-							<span class="menu-text">
-								Login	
-							</span>
-						</a>
 					</li>
 
 					<li class="">

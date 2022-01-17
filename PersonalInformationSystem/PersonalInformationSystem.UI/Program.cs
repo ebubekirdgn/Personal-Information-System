@@ -1,5 +1,4 @@
 using Microsoft.AspNetCore.Identity;
-using PersonalInformationSystem.Data.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,9 +9,9 @@ builder.Services.AddDbContext<PersonalInformationContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
 builder.Services.AddDbContext<PersonalInformationContext>(options =>
-    options.UseSqlServer("DefaultConnection"));builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
-    .AddEntityFrameworkStores<PersonalInformationContext>();builder.Services.AddDbContext<PersonalInformationContext>(options =>
-    options.UseSqlServer("DefaultConnection"));
+    options.UseSqlServer("DefaultConnection")); builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+     .AddEntityFrameworkStores<PersonalInformationContext>(); builder.Services.AddDbContext<PersonalInformationContext>(options =>
+      options.UseSqlServer("DefaultConnection"));
 builder.Services.AddScoped<IPersonalLeaveTypesBusiness, PersonalLeaveTypesBusiness>();
 
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
@@ -25,7 +24,6 @@ builder.Services.AddSession(options =>
 {
     options.IdleTimeout = TimeSpan.FromSeconds(3600);
 });
-
 
 var app = builder.Build();
 
