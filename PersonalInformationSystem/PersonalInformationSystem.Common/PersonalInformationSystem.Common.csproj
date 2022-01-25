@@ -18,4 +18,8 @@
     <ProjectReference Include="..\PersonalInformationSystem.Data\PersonalInformationSystem.DataAccess.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Session\" />
+  </ItemGroup>
+
 </Project>
