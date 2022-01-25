@@ -1,7 +1,11 @@
 ﻿@using Microsoft.AspNetCore.Identity
 
+@using PersonalInformationSystem.Common.Session
 @inject SignInManager<IdentityUser> SignInManager
 @inject UserManager<IdentityUser> UserManager
+@* @inject IHttpContextAccessor HttpContextAccessor*@
+
+@*Session : @HttpContextAccessor.HttpContext.Session.GetString("AppUserInfoSession");*@
 
 @if (SignInManager.IsSignedIn(User))
 {

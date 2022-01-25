@@ -1,4 +1,6 @@
-﻿namespace PersonalInformationSystem.Data.Implementation
+﻿using PersonalInformationSystem.DataAccess.Contracts;
+
+namespace PersonalInformationSystem.Data.Implementation
 {
     public class UnitOfWork : IUnitOfWork
     {
@@ -10,11 +12,13 @@
             personalLeaveAllocationRepository = new PersonalLeaveAllocationRepository(_context);
             personalLeaveRequestRepository = new PersonalLeaveRequestRepository(_context);
             personalLeaveTypeRepository = new PersonalLeaveTypeRepository(_context);
+            personalRepository = new PersonalRepository(_context);
         }
 
         public IPersonalLeaveAllocationRepository personalLeaveAllocationRepository { get; private set; }
         public IPersonalLeaveRequestRepository personalLeaveRequestRepository { get; private set; }
         public IPersonalLeaveTypeRepository personalLeaveTypeRepository { get; private set; }
+        public IPersonalRepository personalRepository { get; private set; }
 
         public void Dispose()
         {

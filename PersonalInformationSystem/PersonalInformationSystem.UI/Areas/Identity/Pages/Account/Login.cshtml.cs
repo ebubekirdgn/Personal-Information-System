@@ -2,6 +2,8 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Newtonsoft.Json;
+using PersonalInformationSystem.Common.Session;
 using System.ComponentModel.DataAnnotations;
 
 namespace PersonalInformationSystem.UI.Areas.Identity.Pages.Account
@@ -12,14 +14,15 @@ namespace PersonalInformationSystem.UI.Areas.Identity.Pages.Account
         private readonly UserManager<IdentityUser> _userManager;
         private readonly SignInManager<IdentityUser> _signInManager;
         private readonly ILogger<LoginModel> _logger;
-
+        private readonly IUnitOfWork _unitOfWork;  
         public LoginModel(SignInManager<IdentityUser> signInManager,
             ILogger<LoginModel> logger,
-            UserManager<IdentityUser> userManager)
+            UserManager<IdentityUser> userManager, IUnitOfWork unitOfWork)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _logger = logger;
+            _unitOfWork = unitOfWork;
         }
 
         [BindProperty]
@@ -77,6 +80,20 @@ namespace PersonalInformationSystem.UI.Areas.Identity.Pages.Account
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("User logged in.");
+
+                    var user = _userManager.FindByEmailAsync(Input.Email);
+
+                    //var user = _unitOfWork.personalRepository.GetFirstOrDefault(u => u.Email == Input.Email);
+                    if (user != null)
+                    {
+                        var sessionContext = new SessionContext();
+                        sessionContext.Email = user.Result.Email;
+                        sessionContext.FirstName = user.Result.NormalizedUserName;
+                        //sessionContext.LastName=user.Result.LastName;
+                        sessionContext.LoginId = user.Result.Id;
+                        HttpContext.Session.SetString("AppUserInfoSession",JsonConvert.SerializeObject(sessionContext));
+                    }
+
                     return LocalRedirect(returnUrl);
                 }
                 if (result.RequiresTwoFactor)
