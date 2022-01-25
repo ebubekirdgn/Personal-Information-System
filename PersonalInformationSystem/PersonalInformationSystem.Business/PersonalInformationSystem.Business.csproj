@@ -8,7 +8,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\PersonalInformationSystem.Common\PersonalInformationSystem.Common.csproj" />
-    <ProjectReference Include="..\PersonalInformationSystem.Data\PersonalInformationSystem.Data.csproj" />
+    <ProjectReference Include="..\PersonalInformationSystem.Data\PersonalInformationSystem.DataAccess.csproj" />
   </ItemGroup>
 
 </Project>

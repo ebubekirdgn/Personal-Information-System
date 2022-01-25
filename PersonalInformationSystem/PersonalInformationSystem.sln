@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PersonalInformationSystem.C
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PersonalInformationSystem.Business", "PersonalInformationSystem.Business\PersonalInformationSystem.Business.csproj", "{CAC69402-EC58-4FBA-B6C2-0D8C7A3A3025}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PersonalInformationSystem.Data", "PersonalInformationSystem.Data\PersonalInformationSystem.Data.csproj", "{99EFE3FA-09D9-4583-ACEB-3B05C841FC81}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PersonalInformationSystem.DataAccess", "PersonalInformationSystem.Data\PersonalInformationSystem.DataAccess.csproj", "{99EFE3FA-09D9-4583-ACEB-3B05C841FC81}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PersonalInformationSystem.UI", "PersonalInformationSystem.UI\PersonalInformationSystem.UI.csproj", "{77F333DA-A18B-498D-B68A-0E7FF40D5677}"
 EndProject

@@ -2,23 +2,24 @@ using Microsoft.AspNetCore.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
 
+// Add services to the container.
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<PersonalInformationContext>(options =>
-{
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
-});
-builder.Services.AddDbContext<PersonalInformationContext>(options =>
-    options.UseSqlServer("DefaultConnection")); builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
-     .AddEntityFrameworkStores<PersonalInformationContext>(); builder.Services.AddDbContext<PersonalInformationContext>(options =>
-      options.UseSqlServer("DefaultConnection"));
+    options.UseSqlServer(connectionString));
+
+builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = false)
+    .AddEntityFrameworkStores<PersonalInformationContext>();
+
+builder.Services.AddRazorPages();
+
+
 builder.Services.AddScoped<IPersonalLeaveTypesBusiness, PersonalLeaveTypesBusiness>();
 
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddAutoMapper(typeof(Maps));
 
 builder.Services.AddControllersWithViews().AddRazorRuntimeCompilation();
-builder.Services.AddRazorPages().AddRazorRuntimeCompilation();
 builder.Services.AddMvc();
 builder.Services.AddSession(options =>
 {
