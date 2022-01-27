@@ -1,4 +1,6 @@
 using Microsoft.AspNetCore.Identity;
+using PersonalInformationSystem.Common.ConstantsModels;
+using PersonalInformationSystem.Data.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,25 +10,45 @@ var connectionString = builder.Configuration.GetConnectionString("DefaultConnect
 builder.Services.AddDbContext<PersonalInformationContext>(options =>
     options.UseSqlServer(connectionString));
 
-builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = false)
+//builder.Services.AddTransient<SeedData>();
+
+
+//builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = false)
+//  .AddEntityFrameworkStores<PersonalInformationContext>();
+
+builder.Services.AddDefaultIdentity<Personal>()
+    .AddRoles<IdentityRole>()
     .AddEntityFrameworkStores<PersonalInformationContext>();
 
+
 builder.Services.AddRazorPages();
-builder.Services.AddSession();
+
 
 builder.Services.AddScoped<IPersonalLeaveTypesBusiness, PersonalLeaveTypesBusiness>();
-
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddAutoMapper(typeof(Maps));
 
 builder.Services.AddControllersWithViews().AddRazorRuntimeCompilation();
 builder.Services.AddMvc();
+
+
 builder.Services.AddSession(options =>
 {
     options.IdleTimeout = TimeSpan.FromSeconds(3600);
 });
 
 var app = builder.Build();
+
+
+var scopedFactory = app.Services.GetService<IServiceScopeFactory>();
+
+    using (var scope = scopedFactory.CreateScope())
+    {
+        var userManager = scope.ServiceProvider.GetRequiredService<UserManager<Personal>>();
+        var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
+        SeedData.Seed(userManager, roleManager);
+    }
+
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
@@ -42,7 +64,6 @@ else
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
-//SeedData.Seed(userManager, roleManager);
 app.UseRouting();
 app.UseSession();
 app.UseAuthentication();

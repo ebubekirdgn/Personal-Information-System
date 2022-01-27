@@ -14,14 +14,14 @@ namespace PersonalInformationSystem.UI.Areas.Identity.Pages.Account
     [AllowAnonymous]
     public class RegisterModel : PageModel
     {
-        private readonly SignInManager<IdentityUser> _signInManager;
-        private readonly UserManager<IdentityUser> _userManager;
+        private readonly SignInManager<Personal> _signInManager;
+        private readonly UserManager<Personal> _userManager;
         private readonly ILogger<RegisterModel> _logger;
         private readonly IEmailSender _emailSender;
 
         public RegisterModel(
-            UserManager<IdentityUser> userManager,
-            SignInManager<IdentityUser> signInManager,
+            UserManager<Personal> userManager,
+            SignInManager<Personal> signInManager,
             ILogger<RegisterModel> logger,
             IEmailSender emailSender)
         {

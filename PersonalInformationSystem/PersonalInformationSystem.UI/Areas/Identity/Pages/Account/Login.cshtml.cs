@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Newtonsoft.Json;
 using PersonalInformationSystem.Common.Session;
+using PersonalInformationSystem.Data.Models;
 using System.ComponentModel.DataAnnotations;
 
 namespace PersonalInformationSystem.UI.Areas.Identity.Pages.Account
@@ -11,13 +12,13 @@ namespace PersonalInformationSystem.UI.Areas.Identity.Pages.Account
     [AllowAnonymous]
     public class LoginModel : PageModel
     {
-        private readonly UserManager<IdentityUser> _userManager;
-        private readonly SignInManager<IdentityUser> _signInManager;
+        private readonly UserManager<Personal> _userManager;
+        private readonly SignInManager<Personal> _signInManager;
         private readonly ILogger<LoginModel> _logger;
         private readonly IUnitOfWork _unitOfWork;  
-        public LoginModel(SignInManager<IdentityUser> signInManager,
+        public LoginModel(SignInManager<Personal> signInManager,
             ILogger<LoginModel> logger,
-            UserManager<IdentityUser> userManager, IUnitOfWork unitOfWork)
+            UserManager<Personal> userManager, IUnitOfWork unitOfWork)
         {
             _userManager = userManager;
             _signInManager = signInManager;
