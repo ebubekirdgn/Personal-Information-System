@@ -14,10 +14,10 @@
         //---------------------------------------------------------------------------------------//
         public const string Admin_Role = "Administrator";
 
-        public const string Employee_Role = "Employee";
+        public const string Personal_Role = "Personal";
 
-        public const string Admin_Email = "ertugrulyilmaz@noktaatisi.com";
-        public const string Admin_Password = "Admin123!";
+        public const string Admin_Email = "abc@123.com";
+        public const string Admin_Password = "12Plp****";
 
         //---------------------------------------------------------------------------------------//
         public const string LoginUserInfo = "Giriş Yapan Kullanıcı Bilgisi";
