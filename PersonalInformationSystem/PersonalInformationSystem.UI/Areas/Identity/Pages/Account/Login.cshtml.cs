@@ -15,7 +15,8 @@ namespace PersonalInformationSystem.UI.Areas.Identity.Pages.Account
         private readonly UserManager<Personal> _userManager;
         private readonly SignInManager<Personal> _signInManager;
         private readonly ILogger<LoginModel> _logger;
-        private readonly IUnitOfWork _unitOfWork;  
+        private readonly IUnitOfWork _unitOfWork;
+
         public LoginModel(SignInManager<Personal> signInManager,
             ILogger<LoginModel> logger,
             UserManager<Personal> userManager, IUnitOfWork unitOfWork)
@@ -92,7 +93,7 @@ namespace PersonalInformationSystem.UI.Areas.Identity.Pages.Account
                         sessionContext.FirstName = user.Result.NormalizedUserName;
                         //sessionContext.LastName=user.Result.LastName;
                         sessionContext.LoginId = user.Result.Id;
-                        HttpContext.Session.SetString("AppUserInfoSession",JsonConvert.SerializeObject(sessionContext));
+                        HttpContext.Session.SetString("AppUserInfoSession", JsonConvert.SerializeObject(sessionContext));
                     }
 
                     return LocalRedirect(returnUrl);

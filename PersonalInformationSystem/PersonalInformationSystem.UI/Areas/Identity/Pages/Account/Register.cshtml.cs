@@ -3,11 +3,8 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.AspNetCore.WebUtilities;
 using PersonalInformationSystem.Data.Models;
 using System.ComponentModel.DataAnnotations;
-using System.Text;
-using System.Text.Encodings.Web;
 
 namespace PersonalInformationSystem.UI.Areas.Identity.Pages.Account
 {
@@ -35,7 +32,7 @@ namespace PersonalInformationSystem.UI.Areas.Identity.Pages.Account
         public InputModel Input { get; set; }
 
         public string ReturnUrl { get; set; }
-       
+
         [TempData]
         public string ErrorMessage { get; set; }
 
@@ -69,6 +66,7 @@ namespace PersonalInformationSystem.UI.Areas.Identity.Pages.Account
             [Display(Name = "Soyisim")]
             public string LastName { get; set; }
         }
+
         public async Task OnGetAsync(string? returnUrl = null)
         {
             if (!string.IsNullOrEmpty(ErrorMessage))
@@ -85,28 +83,27 @@ namespace PersonalInformationSystem.UI.Areas.Identity.Pages.Account
 
             ReturnUrl = returnUrl;
         }
+
         public async Task<IActionResult> OnPostAsync(string? returnUrl = null)
         {
             returnUrl ??= Url.Content("~/");
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
             if (ModelState.IsValid)
             {
-                var user = new Personal 
-                { 
+                var user = new Personal
+                {
                     UserName = Input.Email,
-                    Email = Input.Email ,
+                    Email = Input.Email,
                     FirstName = Input.FirstName,
                     LastName = Input.LastName,
-                
                 };
                 var result = await _userManager.CreateAsync(user, Input.Password);
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("User created a new account with password.");
-                        
+
                     await _signInManager.SignInAsync(user, isPersistent: false);
                     return LocalRedirect(returnUrl);
-                  
                 }
                 foreach (var error in result.Errors)
                 {
