@@ -3,6 +3,7 @@ using PersonalInformationSystem.Common.ConstantsModels;
 
 namespace PersonalInformationSystem.UI.Controllers
 {
+    [Authorize(Roles = ResultConstant.Admin_Role)]
     public class PersonalLeaveTypesController : Controller
     {
         private readonly IPersonalLeaveTypesBusiness _personalLeaveTypesBusiness;
@@ -12,7 +13,6 @@ namespace PersonalInformationSystem.UI.Controllers
             _personalLeaveTypesBusiness = personalLeaveTypesBusiness;
         }
 
-        [Authorize(Roles =ResultConstant.Admin_Role)]
         public IActionResult Index()
         {
             var data = _personalLeaveTypesBusiness.GetAllPersonalLeaveType();
