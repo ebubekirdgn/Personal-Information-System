@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
-
+﻿
 namespace PersonalInformationSystem.UI.Controllers
 {
     public class PersonalLeaveRequestController : Controller
@@ -13,6 +12,8 @@ namespace PersonalInformationSystem.UI.Controllers
         }
         public IActionResult Index()
         {
+            var user = JsonConvert.DeserializeObject<SessionContext>(HttpContext.Session.GetString(ResultConstant.LoginUserInfo));
+
             return View();
         }
     }

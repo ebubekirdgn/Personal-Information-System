@@ -7,3 +7,6 @@ global using PersonalInformationSystem.Common.VModels;
 global using PersonalInformationSystem.Data.Contracts;
 global using PersonalInformationSystem.Data.DataContext;
 global using PersonalInformationSystem.Data.Implementation;
+global using Newtonsoft.Json;
+global using PersonalInformationSystem.Common.ConstantsModels;
+global using PersonalInformationSystem.Common.Session;

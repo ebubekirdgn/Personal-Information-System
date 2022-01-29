@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using System.Text.Json;
 
 namespace PersonalInformationSystem.UI.Areas.Identity.Pages.Account.Manage
 {
@@ -43,7 +42,7 @@ namespace PersonalInformationSystem.UI.Areas.Identity.Pages.Account.Manage
             }
 
             Response.Headers.Add("Content-Disposition", "attachment; filename=PersonalData.json");
-            return new FileContentResult(JsonSerializer.SerializeToUtf8Bytes(personalData), "application/json");
+            return new FileContentResult(System.Text.Json.JsonSerializer.SerializeToUtf8Bytes(personalData), "application/json");
         }
     }
 }
