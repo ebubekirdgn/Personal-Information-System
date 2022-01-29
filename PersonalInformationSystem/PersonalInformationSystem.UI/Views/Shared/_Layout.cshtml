@@ -1,4 +1,8 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Identity
+
+@inject SignInManager<PersonalInformationSystem.Data.Models.Personal> SignInManager
+@inject UserManager<PersonalInformationSystem.Data.Models.Personal> UserManager
+<!DOCTYPE html>
 <html lang="en">
 <head>
      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -113,6 +117,8 @@
 				</script>
 
 				<ul class="nav nav-list">
+					@if (SignInManager.IsSignedIn(User))
+					{
 					<li class="active">
 						<a href="index.html">
 							<i class="menu-icon fa fa-home"></i>
@@ -130,7 +136,7 @@
 						</a>
 					
 					</li>
-
+					}
 				</ul><!-- /.nav-list -->
 
 				<div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">

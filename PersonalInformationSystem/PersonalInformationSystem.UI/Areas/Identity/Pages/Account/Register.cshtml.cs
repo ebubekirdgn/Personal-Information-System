@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using PersonalInformationSystem.Common.ConstantsModels;
 using PersonalInformationSystem.Data.Models;
 using System.ComponentModel.DataAnnotations;
 
@@ -100,6 +101,7 @@ namespace PersonalInformationSystem.UI.Areas.Identity.Pages.Account
                 var result = await _userManager.CreateAsync(user, Input.Password);
                 if (result.Succeeded)
                 {
+                    _userManager.AddToRoleAsync(user, ResultConstant.Personal_Role).Wait();
                     _logger.LogInformation("User created a new account with password.");
 
                     await _signInManager.SignInAsync(user, isPersistent: false);
