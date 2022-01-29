@@ -15,7 +15,7 @@ namespace PersonalInformationSystem.UI.Areas.Identity.Pages.Account
         private readonly SignInManager<Personal> _signInManager;
         private readonly UserManager<Personal> _userManager;
         private readonly ILogger<RegisterModel> _logger;
-        private readonly IEmailSender _emailSender;
+       // private readonly IEmailSender _emailSender;
 
         public RegisterModel(
             UserManager<Personal> userManager,
@@ -26,7 +26,7 @@ namespace PersonalInformationSystem.UI.Areas.Identity.Pages.Account
             _userManager = userManager;
             _signInManager = signInManager;
             _logger = logger;
-            _emailSender = emailSender;
+           // _emailSender = emailSender;
         }
 
         [BindProperty]

@@ -1,4 +1,7 @@
-﻿namespace PersonalInformationSystem.UI.Controllers
+﻿using Microsoft.AspNetCore.Authorization;
+using PersonalInformationSystem.Common.ConstantsModels;
+
+namespace PersonalInformationSystem.UI.Controllers
 {
     public class PersonalLeaveTypesController : Controller
     {
@@ -9,6 +12,7 @@
             _personalLeaveTypesBusiness = personalLeaveTypesBusiness;
         }
 
+        [Authorize(Roles =ResultConstant.Admin_Role)]
         public IActionResult Index()
         {
             var data = _personalLeaveTypesBusiness.GetAllPersonalLeaveType();
