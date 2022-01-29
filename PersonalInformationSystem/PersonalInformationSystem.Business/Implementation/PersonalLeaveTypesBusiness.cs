@@ -1,7 +1,4 @@
-﻿using AutoMapper;
-using PersonalInformationSystem.Common.ConstantsModels;
-
-namespace PersonalInformationSystem.Business.Implementation
+﻿namespace PersonalInformationSystem.Business.Implementation
 {
     public class PersonalLeaveTypesBusiness : IPersonalLeaveTypesBusiness
     {
