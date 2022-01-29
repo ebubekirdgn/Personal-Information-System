@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Newtonsoft.Json;
+using PersonalInformationSystem.Common.ConstantsModels;
 using PersonalInformationSystem.Common.Session;
 using PersonalInformationSystem.Data.Models;
 using System.ComponentModel.DataAnnotations;
@@ -81,21 +82,22 @@ namespace PersonalInformationSystem.UI.Areas.Identity.Pages.Account
                 var result = await _signInManager.PasswordSignInAsync(Input.Email, Input.Password, Input.RememberMe, lockoutOnFailure: false);
                 if (result.Succeeded)
                 {
-                    _logger.LogInformation("User logged in.");
+                    var user = _unitOfWork.personalRepository.GetFirstOrDefault(u => u.Email == Input.Email.ToLower());
 
-                    var user = _userManager.FindByEmailAsync(Input.Email);
-
-                    //var user = _unitOfWork.personalRepository.GetFirstOrDefault(u => u.Email == Input.Email);
-                    if (user != null)
+                    var userInfo = new SessionContext()
                     {
-                        var sessionContext = new SessionContext();
-                        sessionContext.Email = user.Result.Email;
-                        sessionContext.FirstName = user.Result.NormalizedUserName;
-                        //sessionContext.LastName=user.Result.LastName;
-                        sessionContext.LoginId = user.Result.Id;
-                        HttpContext.Session.SetString("AppUserInfoSession", JsonConvert.SerializeObject(sessionContext));
-                    }
+                        Email = user.Email,
+                        FirstName = user.FirstName,
+                        //TODO:Admın Bilgisini dinamic olarak getir
+                        IsAdmin = false,
+                        LastName = user.LastName,
+                        LoginId = user.Id
+                    };
 
+                    //Set To User ınfo Session
+                    HttpContext.Session.SetString(ResultConstant.LoginUserInfo, JsonConvert.SerializeObject(userInfo));
+
+                    _logger.LogInformation("User logged in.");
                     return LocalRedirect(returnUrl);
                 }
                 if (result.RequiresTwoFactor)

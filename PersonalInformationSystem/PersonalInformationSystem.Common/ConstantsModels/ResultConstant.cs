@@ -23,6 +23,6 @@
         public const string LoginUserInfo = "Giriş Yapan Kullanıcı Bilgisi";
 
         //---------------------------------------------------------------------------------------//
-        public const string MailTagHelperSuffix = "noktaatisi.com";
+        public const string MailTagHelperSuffix = "dogan.com";
     }
 }
