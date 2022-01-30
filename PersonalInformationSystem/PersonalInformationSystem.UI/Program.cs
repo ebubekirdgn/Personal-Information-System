@@ -36,7 +36,6 @@ builder.Services.AddSession(options =>
 var app = builder.Build();
 
 var scopedFactory = app.Services.GetService<IServiceScopeFactory>();
-
 using (var scope = scopedFactory.CreateScope())
 {
     var userManager = scope.ServiceProvider.GetRequiredService<UserManager<Personal>>();
