@@ -1,6 +1,6 @@
 ﻿namespace PersonalInformationSystem.Business.Implementation
 {
-    public class PersonalLeaveRequestBusiness: IPersonalLeaveRequestBusiness
+    public class PersonalLeaveRequestBusiness : IPersonalLeaveRequestBusiness
     {
         #region Variables
 
