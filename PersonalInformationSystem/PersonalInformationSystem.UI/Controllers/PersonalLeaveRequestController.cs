@@ -14,7 +14,11 @@ namespace PersonalInformationSystem.UI.Controllers
         {
             var user = JsonConvert.DeserializeObject<SessionContext>(HttpContext.Session.GetString(ResultConstant.LoginUserInfo));
 
-            return View();
+            var requestModel = _personalLeaveRequestBusiness.GetAllLeaveRequestByUserId(user.LoginId);
+            if (requestModel.IsSuccess)
+                return View(requestModel.Data);
+
+            return View(user);
         }
     }
 }
