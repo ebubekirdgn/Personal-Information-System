@@ -36,8 +36,7 @@ namespace PersonalInformationSystem.Business.Implementation
             return new Result<List<PersonalLeaveRequestVM>>(true, ResultConstant.RecordFound, leaveTypes);
             #endregion
 
-
-
+            #region 2.Yöntem
             if (data != null)
             {
                 List<PersonalLeaveRequestVM> returnData = new List<PersonalLeaveRequestVM>();
@@ -46,7 +45,6 @@ namespace PersonalInformationSystem.Business.Implementation
                     returnData.Add(new PersonalLeaveRequestVM()
                     {
                         Id = item.Id,
-                        Approved = item.Approved,
                         ApprovedPersonalId = item.ApprovedPersonalId,
                         Cancelled = item.Cancelled,
                         DateRequested = item.DateRequested,
@@ -55,14 +53,15 @@ namespace PersonalInformationSystem.Business.Implementation
                         EndDate = item.EndDate,
                         StartDate = item.StartDate,
                         RequestComments = item.RequestComments,
-                        RequestingEmployeeId = item.RequestingPersonalId
+                        RequestingPersonalId = item.RequestingPersonalId
                     });
                 }
                 return new Result<List<PersonalLeaveRequestVM>>(true, ResultConstant.RecordFound, returnData);
             }
             else
-                return new Result<List<PersonalLeaveRequestVM>>(false, ResultConstant.RecordNotFound);
-            
+                return new Result<List<PersonalLeaveRequestVM>>(false, ResultConstant.RecordNotFound); 
+            #endregion
+
         }
 
         #endregion CustomMethods
