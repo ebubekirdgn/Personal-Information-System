@@ -13,3 +13,6 @@ global using PersonalInformationSystem.Data.DataContext;
 global using PersonalInformationSystem.Data.Implementation;
 global using Microsoft.AspNetCore.Identity;
 global using PersonalInformationSystem.Data.Models;
+global using Microsoft.AspNetCore.Authentication;
+global using Microsoft.AspNetCore.Mvc.RazorPages;
+global using System.ComponentModel.DataAnnotations;

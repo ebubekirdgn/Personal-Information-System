@@ -1,10 +1,4 @@
-﻿using Microsoft.AspNetCore.Authentication;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Mvc.RazorPages;
-using PersonalInformationSystem.Data.Models;
-using System.ComponentModel.DataAnnotations;
-
-namespace PersonalInformationSystem.UI.Areas.Identity.Pages.Account
+﻿namespace PersonalInformationSystem.UI.Areas.Identity.Pages.Account
 {
     [AllowAnonymous]
     public class LoginModel : PageModel
