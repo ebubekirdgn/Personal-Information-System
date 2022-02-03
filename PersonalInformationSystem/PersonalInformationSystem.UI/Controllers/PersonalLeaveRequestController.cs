@@ -4,6 +4,7 @@
     {
         private readonly IPersonalLeaveRequestBusiness _personalLeaveRequestBusiness;
         private readonly IPersonalLeaveTypesBusiness _personalLeaveTypesBusiness;
+
         public PersonalLeaveRequestController(IPersonalLeaveRequestBusiness personalLeaveRequestBusiness, IPersonalLeaveTypesBusiness personalLeaveTypesBusiness)
         {
             _personalLeaveRequestBusiness = personalLeaveRequestBusiness;
@@ -34,7 +35,9 @@
         public IActionResult Create(PersonalLeaveRequestVM model, int? id)
         {
             var user = JsonConvert.DeserializeObject<SessionContext>(HttpContext.Session.GetString(ResultConstant.LoginUserInfo));
+
             #region CreateOrEditExample
+
             if (id > 0)
             {
                 var data = _personalLeaveRequestBusiness.EditPersonalLeaveRequest(model, user);
@@ -47,7 +50,8 @@
                     return RedirectToAction("Index");
                 return View(model);
             }
-            #endregion
+
+            #endregion CreateOrEditExample
         }
     }
 }

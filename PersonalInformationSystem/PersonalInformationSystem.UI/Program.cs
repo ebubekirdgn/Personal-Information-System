@@ -1,7 +1,3 @@
-using Microsoft.AspNetCore.Identity;
-using PersonalInformationSystem.Common.ConstantsModels;
-using PersonalInformationSystem.Data.Models;
-
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.

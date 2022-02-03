@@ -1,10 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authentication;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Newtonsoft.Json;
-using PersonalInformationSystem.Common.ConstantsModels;
-using PersonalInformationSystem.Common.Session;
 using PersonalInformationSystem.Data.Models;
 using System.ComponentModel.DataAnnotations;
 
