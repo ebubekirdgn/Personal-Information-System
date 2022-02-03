@@ -10,3 +10,5 @@ global using PersonalInformationSystem.Data.Implementation;
 global using Newtonsoft.Json;
 global using PersonalInformationSystem.Common.ConstantsModels;
 global using PersonalInformationSystem.Common.Session;
+global using Microsoft.AspNetCore.Authorization;
+
