@@ -1,6 +1,4 @@
-﻿using PersonalInformationSystem.Common.Session;
-
-namespace PersonalInformationSystem.Business.Implementation
+﻿namespace PersonalInformationSystem.Business.Implementation
 {
     public class PersonalLeaveRequestBusiness : IPersonalLeaveRequestBusiness
     {
@@ -45,13 +43,15 @@ namespace PersonalInformationSystem.Business.Implementation
                 && u.Cancelled == false,
                 includeProperties: "RequestingPersonal,PersonalLeaveType").ToList();
 
-
             #region 1.yöntem
+
             var leaveTypes = _mapper.Map<List<PersonalLeaveRequest>, List<PersonalLeaveRequestVM>>(data);
             return new Result<List<PersonalLeaveRequestVM>>(true, ResultConstant.RecordFound, leaveTypes);
-            #endregion
+
+            #endregion 1.yöntem
 
             #region 2.Yöntem
+
             if (data != null)
             {
                 List<PersonalLeaveRequestVM> returnData = new List<PersonalLeaveRequestVM>();
@@ -74,9 +74,9 @@ namespace PersonalInformationSystem.Business.Implementation
                 return new Result<List<PersonalLeaveRequestVM>>(true, ResultConstant.RecordFound, returnData);
             }
             else
-                return new Result<List<PersonalLeaveRequestVM>>(false, ResultConstant.RecordNotFound); 
-            #endregion
+                return new Result<List<PersonalLeaveRequestVM>>(false, ResultConstant.RecordNotFound);
 
+            #endregion 2.Yöntem
         }
 
         public Result<List<PersonalLeaveRequestVM>> GetSendApprovedLeaveRequests()

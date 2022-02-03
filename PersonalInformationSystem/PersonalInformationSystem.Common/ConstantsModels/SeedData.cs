@@ -1,6 +1,6 @@
 ﻿namespace PersonalInformationSystem.Common.ConstantsModels
 {
-    public static  class SeedData
+    public static class SeedData
     {
         public static void Seed(UserManager<Personal> userManager, RoleManager<IdentityRole> roleManager)
         {
@@ -22,7 +22,6 @@
                     userManager.AddToRoleAsync(user, ResultConstant.Admin_Role);
             }
         }
-
 
         public static void SeedRoles(RoleManager<IdentityRole> roleManager)
         {
