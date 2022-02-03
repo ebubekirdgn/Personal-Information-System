@@ -1,6 +1,4 @@
-﻿using PersonalInformationSystem.DataAccess.Contracts;
-
-namespace PersonalInformationSystem.Data.Contracts
+﻿namespace PersonalInformationSystem.Data.Contracts
 {
     public interface IUnitOfWork : IDisposable
     {
