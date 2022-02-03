@@ -1,9 +1,4 @@
-﻿using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Mvc.RazorPages;
-using PersonalInformationSystem.Data.Models;
-using System.ComponentModel.DataAnnotations;
-
-namespace PersonalInformationSystem.UI.Areas.Identity.Pages.Account.Manage
+﻿namespace PersonalInformationSystem.UI.Areas.Identity.Pages.Account.Manage
 {
     public partial class IndexModel : PageModel
     {
