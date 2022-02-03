@@ -16,3 +16,4 @@ global using PersonalInformationSystem.Data.Models;
 global using Microsoft.AspNetCore.Authentication;
 global using Microsoft.AspNetCore.Mvc.RazorPages;
 global using System.ComponentModel.DataAnnotations;
+global using Microsoft.AspNetCore.Identity.UI.Services;
