@@ -11,7 +11,6 @@
         public DbSet<PersonalLeaveAllocation> PersonalLeaveAllocations { get; set; }
         public DbSet<PersonalLeaveRequest> PersonalLeaveRequests { get; set; }
         public DbSet<PersonalLeaveType> PersonalLeaveTypes { get; set; }
-
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
