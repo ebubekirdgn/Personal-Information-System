@@ -7,6 +7,10 @@
         IPersonalLeaveTypeRepository personalLeaveTypeRepository { get; }
         IPersonalRepository personalRepository { get; }
 
+
+        /// <summary>
+        /// Bu method kaydeder.
+        /// </summary>
         void Save();
 
         /*

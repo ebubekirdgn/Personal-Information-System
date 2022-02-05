@@ -61,6 +61,11 @@
             #endregion 2.Yontem
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
         public Result<PersonalLeaveTypeVM> CreatePersonalLeaveType(PersonalLeaveTypeVM model)
         {
             if (model != null)
@@ -107,6 +112,7 @@
                     leaveType.IsActive = true;
                     _unitOfWork.personalLeaveTypeRepository.Update(leaveType);
                     _unitOfWork.Save();
+
                     return new Result<PersonalLeaveTypeVM>(true, ResultConstant.RecordEditSuccessfully);
                 }
                 catch (Exception ex)

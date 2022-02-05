@@ -85,41 +85,41 @@
         }
 
         /*
-public Result<List<PersonalLeaveRequestVM>> GetSendApprovedLeaveRequests()
-{
-   var data = _unitOfWork.personalLeaveRequestRepository.GetAll(
-       u => u.Approved == (int)EnumEmployeeLeaveRequestStatus.Send_Approved
-       && u.Cancelled == false,
-       includeProperties: "RequestingEmployee,EmployeeLeaveType").ToList();
+        public Result<List<PersonalLeaveRequestVM>> GetSendApprovedLeaveRequests()
+        {
+           var data = _unitOfWork.personalLeaveRequestRepository.GetAll(
+               u => u.Approved == (int)EnumEmployeeLeaveRequestStatus.Send_Approved
+               && u.Cancelled == false,
+               includeProperties: "RequestingEmployee,EmployeeLeaveType").ToList();
 
-   if (data != null)
-   {
-       List<PersonalLeaveRequestVM> returnData = new List<PersonalLeaveRequestVM>();
-       foreach (var item in data)
-       {
-           returnData.Add(new PersonalLeaveRequestVM()
+           if (data != null)
            {
-               Id = item.Id,
-               ApprovedStatus = (EnumEmployeeLeaveRequestStatus)item.Approved,
-               ApprovedText = EnumExtension<EnumEmployeeLeaveRequestStatus>.GetDisplayValue((EnumEmployeeLeaveRequestStatus)item.Approved),
-               ApprovedEmployeeId = item.ApprovedEmployeeId,
-               Cancelled = item.Cancelled,
-               DateRequested = item.DateRequested,
-               EmployeeLeaveTypeId = item.EmployeeLeaveTypeId,
-               LeaveTypeText = item.EmployeeLeaveType.Name,
-               EndDate = item.EndDate,
-               StartDate = item.StartDate,
-               RequestComments = item.RequestComments,
-               RequestingEmployeeId = item.RequestingEmployeeId,
-               RequestEmployeeName = item.RequestingEmployee.Email
-           });
-       }
-       return new Result<List<EmployeeLeaveRequestVM>>(true, ResultConstant.RecordFound, returnData);
-   }
-   else
-       return new Result<List<EmployeeLeaveRequestVM>>(false, ResultConstant.RecordNotFound);
-}
-*/
+               List<PersonalLeaveRequestVM> returnData = new List<PersonalLeaveRequestVM>();
+               foreach (var item in data)
+               {
+                   returnData.Add(new PersonalLeaveRequestVM()
+                   {
+                       Id = item.Id,
+                       ApprovedStatus = (EnumEmployeeLeaveRequestStatus)item.Approved,
+                       ApprovedText = EnumExtension<EnumEmployeeLeaveRequestStatus>.GetDisplayValue((EnumEmployeeLeaveRequestStatus)item.Approved),
+                       ApprovedEmployeeId = item.ApprovedEmployeeId,
+                       Cancelled = item.Cancelled,
+                       DateRequested = item.DateRequested,
+                       EmployeeLeaveTypeId = item.EmployeeLeaveTypeId,
+                       LeaveTypeText = item.EmployeeLeaveType.Name,
+                       EndDate = item.EndDate,
+                       StartDate = item.StartDate,
+                       RequestComments = item.RequestComments,
+                       RequestingEmployeeId = item.RequestingEmployeeId,
+                       RequestEmployeeName = item.RequestingEmployee.Email
+                   });
+               }
+               return new Result<List<EmployeeLeaveRequestVM>>(true, ResultConstant.RecordFound, returnData);
+           }
+           else
+               return new Result<List<EmployeeLeaveRequestVM>>(false, ResultConstant.RecordNotFound);
+        }
+        */
 
         public Result<bool> RejectPersonalLeaveRequest(int id)
         {

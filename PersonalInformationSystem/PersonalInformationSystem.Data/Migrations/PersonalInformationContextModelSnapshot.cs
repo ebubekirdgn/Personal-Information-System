@@ -8,7 +8,7 @@ using PersonalInformationSystem.Data.DataContext;
 
 #nullable disable
 
-namespace PersonalInformationSystem.Data.Migrations
+namespace PersonalInformationSystem.DataAccess.Migrations
 {
     [DbContext(typeof(PersonalInformationContext))]
     partial class PersonalInformationContextModelSnapshot : ModelSnapshot
