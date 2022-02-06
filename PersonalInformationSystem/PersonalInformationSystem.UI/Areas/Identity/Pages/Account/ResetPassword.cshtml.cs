@@ -1,7 +1,4 @@
-﻿using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.AspNetCore.WebUtilities;
-using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.AspNetCore.WebUtilities;
 using System.Text;
 
 namespace PersonalInformationSystem.UI.Areas.Identity.Pages.Account

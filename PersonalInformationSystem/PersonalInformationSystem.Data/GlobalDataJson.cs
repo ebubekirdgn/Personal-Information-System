@@ -1,12 +1,12 @@
 ﻿global using Microsoft.AspNetCore.Identity;
 global using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 global using Microsoft.EntityFrameworkCore;
+global using Microsoft.EntityFrameworkCore.Migrations;
 global using PersonalInformationSystem.Data.Contracts;
 global using PersonalInformationSystem.Data.DataContext;
 global using PersonalInformationSystem.Data.Models;
+global using PersonalInformationSystem.DataAccess.Contracts;
+global using System;
 global using System.ComponentModel.DataAnnotations;
 global using System.ComponentModel.DataAnnotations.Schema;
 global using System.Linq.Expressions;
-global using PersonalInformationSystem.DataAccess.Contracts;
-global using System;
-global using Microsoft.EntityFrameworkCore.Migrations;

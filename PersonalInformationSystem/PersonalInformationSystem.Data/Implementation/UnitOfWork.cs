@@ -1,6 +1,4 @@
-﻿using PersonalInformationSystem.DataAccess.Contracts;
-
-namespace PersonalInformationSystem.Data.Implementation
+﻿namespace PersonalInformationSystem.Data.Implementation
 {
     public class UnitOfWork : IUnitOfWork
     {

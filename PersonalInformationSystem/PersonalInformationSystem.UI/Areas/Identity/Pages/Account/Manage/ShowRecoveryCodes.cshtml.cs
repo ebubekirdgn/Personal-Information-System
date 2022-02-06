@@ -1,6 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc.RazorPages;
-
-namespace PersonalInformationSystem.UI.Areas.Identity.Pages.Account.Manage
+﻿namespace PersonalInformationSystem.UI.Areas.Identity.Pages.Account.Manage
 {
     public class ShowRecoveryCodesModel : PageModel
     {

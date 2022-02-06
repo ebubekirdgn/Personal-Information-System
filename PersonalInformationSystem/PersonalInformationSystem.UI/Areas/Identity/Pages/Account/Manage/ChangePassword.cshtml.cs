@@ -1,8 +1,4 @@
-﻿using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Mvc.RazorPages;
-using System.ComponentModel.DataAnnotations;
-
-namespace PersonalInformationSystem.UI.Areas.Identity.Pages.Account.Manage
+﻿namespace PersonalInformationSystem.UI.Areas.Identity.Pages.Account.Manage
 {
     public class ChangePasswordModel : PageModel
     {

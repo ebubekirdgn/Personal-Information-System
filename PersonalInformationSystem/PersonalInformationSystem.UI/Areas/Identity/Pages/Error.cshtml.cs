@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc.RazorPages;
-using System.Diagnostics;
+﻿using System.Diagnostics;
 
 namespace PersonalInformationSystem.UI.Areas.Identity.Pages
 {

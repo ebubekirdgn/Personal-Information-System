@@ -1,6 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc.RazorPages;
-
-namespace PersonalInformationSystem.UI.Pages
+﻿namespace PersonalInformationSystem.UI.Pages
 {
     public class IndexModel : PageModel
     {

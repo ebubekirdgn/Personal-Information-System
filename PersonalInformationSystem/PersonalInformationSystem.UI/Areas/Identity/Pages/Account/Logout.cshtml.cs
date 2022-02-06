@@ -1,8 +1,4 @@
-﻿using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Mvc.RazorPages;
-using PersonalInformationSystem.Data.Models;
-
-namespace PersonalInformationSystem.UI.Areas.Identity.Pages.Account
+﻿namespace PersonalInformationSystem.UI.Areas.Identity.Pages.Account
 {
     [AllowAnonymous]
     public class LogoutModel : PageModel
