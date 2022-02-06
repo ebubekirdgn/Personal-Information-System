@@ -13,8 +13,10 @@
 
         //---------------------------------------------------------------------------------------//
         public const string Admin_Role = "Administrator";
-
         public const string Personal_Role = "Personal";
+
+        public const string Personal_Email = "ab@g.com";
+        public const string Personal_Password = "12Plp****";
 
         public const string Admin_Email = "abc@123.com";
         public const string Admin_Password = "12Plp****";
