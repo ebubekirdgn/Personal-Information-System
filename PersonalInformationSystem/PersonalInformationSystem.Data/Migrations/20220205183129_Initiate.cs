@@ -1,7 +1,4 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore.Migrations;
-
-#nullable disable
+﻿#nullable disable
 
 namespace PersonalInformationSystem.DataAccess.Migrations
 {
@@ -317,7 +314,6 @@ namespace PersonalInformationSystem.DataAccess.Migrations
                 table: "PersonalLeaveRequests",
                 column: "RequestingPersonalId");
         }
-
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
