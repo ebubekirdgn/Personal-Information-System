@@ -26,7 +26,7 @@
             var data = _unitOfWork.personalLeaveRequestRepository.GetAll(
                 u => u.RequestingPersonalId == userId
                 && u.Cancelled == false,
-                includeProperties: "RequestingEmployee,EmployeeLeaveType").ToList();
+                includeProperties: "RequestingPersonal,PersonalLeaveType").ToList();
 
             if (data != null)
             {
@@ -54,7 +54,7 @@
         }
 
         /// <summary>
-        /// Create Employee Leave Request(Çalışan İzin Talebi oluşturma Methodu)
+        /// Create Personal Leave Request(Çalışan İzin Talebi oluşturma Methodu)
         /// </summary>
         /// <param name="model"></param>
         /// <returns></returns>
@@ -82,7 +82,7 @@
         }
 
         /// <summary>
-        /// Edit To Employee Leave Request(Çalışan İzin Talep Güncelleme)
+        /// Edit To Personal Leave Request(Çalışan İzin Talep Güncelleme)
         /// </summary>
         /// <param name="model"></param>
         /// <returns></returns>
