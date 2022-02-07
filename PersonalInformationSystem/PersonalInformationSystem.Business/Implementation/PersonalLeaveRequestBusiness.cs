@@ -58,7 +58,7 @@
         /// </summary>
         /// <param name="model"></param>
         /// <returns></returns>
-        public Result<PersonalLeaveRequestVM> CreateEmployeeLeaveRequest(PersonalLeaveRequestVM model, SessionContext user)
+        public Result<PersonalLeaveRequestVM> CreatePersonalLeaveRequest(PersonalLeaveRequestVM model, SessionContext user)
         {
             if (model != null)
             {
@@ -86,7 +86,7 @@
         /// </summary>
         /// <param name="model"></param>
         /// <returns></returns>
-        public Result<PersonalLeaveRequestVM> EditEmployeeLeaveRequest(PersonalLeaveRequestVM model, SessionContext user)
+        public Result<PersonalLeaveRequestVM> EditPersonalLeaveRequest(PersonalLeaveRequestVM model, SessionContext user)
         {
             if (model != null)
             {
@@ -119,7 +119,7 @@
                 return new Result<PersonalLeaveRequestVM>(false, ResultConstant.RecordNotFound);
         }
 
-        public Result<PersonalLeaveRequestVM> RemoveEmployeeRequest(int id)
+        public Result<PersonalLeaveRequestVM> RemovePersonalRequest(int id)
         {
             var data = _unitOfWork.personalLeaveRequestRepository.Get(id);
             if (data != null)
