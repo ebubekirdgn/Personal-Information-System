@@ -61,11 +61,6 @@
             #endregion 2.Yontem
         }
 
-        /// <summary>
-        ///
-        /// </summary>
-        /// <param name="model"></param>
-        /// <returns></returns>
         public Result<PersonalLeaveTypeVM> CreatePersonalLeaveType(PersonalLeaveTypeVM model)
         {
             if (model != null)
@@ -109,15 +104,13 @@
                 try
                 {
                     var leaveType = _mapper.Map<PersonalLeaveTypeVM, PersonalLeaveType>(model);
-                    leaveType.IsActive = true;
                     _unitOfWork.personalLeaveTypeRepository.Update(leaveType);
                     _unitOfWork.Save();
-
-                    return new Result<PersonalLeaveTypeVM>(true, ResultConstant.RecordEditSuccessfully);
+                    return new Result<PersonalLeaveTypeVM>(true, ResultConstant.RecordCreateSuccessfully);
                 }
                 catch (Exception ex)
                 {
-                    return new Result<PersonalLeaveTypeVM>(false, ResultConstant.RecordEditNotSuccessfully + "=>" + ex.Message.ToString());
+                    return new Result<PersonalLeaveTypeVM>(false, ResultConstant.RecordCreateNotSuccessfully + "=>" + ex.Message.ToString());
                 }
             }
             else
@@ -130,12 +123,12 @@
             if (data != null)
             {
                 data.IsActive = false;
-                _unitOfWork.personalLeaveTypeRepository.Remove(data);
+                _unitOfWork.personalLeaveTypeRepository.Update(data);
                 _unitOfWork.Save();
-                return new Result<PersonalLeaveTypeVM>(true, ResultConstant.RecordRemoveSuccessfully);
+                return new Result<PersonalLeaveTypeVM>(true, ResultConstant.RecordCreateSuccessfully);
             }
             else
-                return new Result<PersonalLeaveTypeVM>(false, ResultConstant.RecordRemoveNotSuccessfully);
+                return new Result<PersonalLeaveTypeVM>(false, ResultConstant.RecordCreateNotSuccessfully);
         }
 
         #endregion CustomMethods
