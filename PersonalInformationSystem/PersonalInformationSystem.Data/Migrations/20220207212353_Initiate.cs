@@ -246,12 +246,12 @@ namespace PersonalInformationSystem.DataAccess.Migrations
             migrationBuilder.InsertData(
                 table: "PersonalLeaveTypes",
                 columns: new[] { "Id", "DateCreated", "DefaultDays", "IsActive", "Name" },
-                values: new object[] { 1, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 0, false, "Yıllık İzin" });
+                values: new object[] { 1, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 0, true, "Yıllık İzin" });
 
             migrationBuilder.InsertData(
                 table: "PersonalLeaveTypes",
                 columns: new[] { "Id", "DateCreated", "DefaultDays", "IsActive", "Name" },
-                values: new object[] { 2, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 0, false, "Doğum İzni" });
+                values: new object[] { 2, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 0, true, "Doğum İzni" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",

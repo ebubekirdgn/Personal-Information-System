@@ -343,7 +343,7 @@ namespace PersonalInformationSystem.DataAccess.Migrations
                             Id = 1,
                             DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DefaultDays = 0,
-                            IsActive = false,
+                            IsActive = true,
                             Name = "Yıllık İzin"
                         },
                         new
@@ -351,7 +351,7 @@ namespace PersonalInformationSystem.DataAccess.Migrations
                             Id = 2,
                             DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DefaultDays = 0,
-                            IsActive = false,
+                            IsActive = true,
                             Name = "Doğum İzni"
                         });
                 });

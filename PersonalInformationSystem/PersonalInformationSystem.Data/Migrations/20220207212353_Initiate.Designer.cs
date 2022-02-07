@@ -12,7 +12,7 @@ using PersonalInformationSystem.Data.DataContext;
 namespace PersonalInformationSystem.DataAccess.Migrations
 {
     [DbContext(typeof(PersonalInformationContext))]
-    [Migration("20220206215045_Initiate")]
+    [Migration("20220207212353_Initiate")]
     partial class Initiate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -345,7 +345,7 @@ namespace PersonalInformationSystem.DataAccess.Migrations
                             Id = 1,
                             DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DefaultDays = 0,
-                            IsActive = false,
+                            IsActive = true,
                             Name = "Yıllık İzin"
                         },
                         new
@@ -353,7 +353,7 @@ namespace PersonalInformationSystem.DataAccess.Migrations
                             Id = 2,
                             DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DefaultDays = 0,
-                            IsActive = false,
+                            IsActive = true,
                             Name = "Doğum İzni"
                         });
                 });
