@@ -18,7 +18,7 @@
         }
 
         /// <summary>
-        /// Create Employee Leave Request(Çalışan İzin Talebi oluşturma Methodu)
+        /// Create Employee Leave Request(Çalışan İzin Talebi Oluşturma Methodu)
         /// </summary>
         /// <param name="model"></param>
         /// <returns></returns>
