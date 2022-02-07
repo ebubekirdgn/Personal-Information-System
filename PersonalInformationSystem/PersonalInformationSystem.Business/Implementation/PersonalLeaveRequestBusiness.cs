@@ -30,7 +30,7 @@
 
             if (data != null)
             {
-                List<PersonalLeaveRequestVM> returnData = new List<PersonalLeaveRequestVM>();
+                List<PersonalLeaveRequestVM> returnData = new();
                 foreach (var item in data)
                 {
                     returnData.Add(new PersonalLeaveRequestVM()

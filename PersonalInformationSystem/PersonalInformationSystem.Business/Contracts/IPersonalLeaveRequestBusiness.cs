@@ -8,6 +8,6 @@
 
         Result<PersonalLeaveRequestVM> EditPersonalLeaveRequest(PersonalLeaveRequestVM model, SessionContext user);
 
-        Result<PersonalLeaveRequestVM> RemoveEmployeeRequest(int id);
+        Result<PersonalLeaveRequestVM> RemovePersonalRequest(int id);
     }
 }
