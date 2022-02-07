@@ -1,9 +1,8 @@
 ﻿@model IEnumerable<PersonalInformationSystem.Common.VModels.PersonalLeaveRequestVM>
-
 @{
     ViewData["Title"] = "Index";
-    Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
 <div class="page-header">
     <h3>
         <small>
@@ -26,7 +25,7 @@
                 <tr>
                     <th>Başlangıç Tarihi</th>
                     <th>Bitiş Tarihi</th>
-                    <th>İzin Tipi</th>
+                    <th>Sebep</th>
                 </tr>
             </thead>
             <tbody>
@@ -77,4 +76,5 @@
             });
         });
     </script>
+
 }

@@ -11,6 +11,7 @@
         public DbSet<PersonalLeaveAllocation> PersonalLeaveAllocations { get; set; }
         public DbSet<PersonalLeaveRequest> PersonalLeaveRequests { get; set; }
         public DbSet<PersonalLeaveType> PersonalLeaveTypes { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
@@ -21,14 +22,17 @@
                 .OnDelete(DeleteBehavior.Restrict);
 
             modelBuilder.Entity<PersonalLeaveType>().HasData(
-                new PersonalLeaveType() 
-                { 
-                    Id = 1, Name = "Yıllık İzin"
+                new PersonalLeaveType()
+                {
+                    Id = 1,
+                    Name = "Yıllık İzin",
+                    IsActive = true,
                 },
                  new PersonalLeaveType()
                  {
                      Id = 2,
-                     Name = "Doğum İzni"
+                     Name = "Doğum İzni",
+                     IsActive = true,
                  }
                 );
         }

@@ -17,7 +17,6 @@
 
             var requestModel = _personalLeaveRequestBusiness.GetAllLeaveRequestByUserId(user.LoginId);
             ViewBag.PersonalLeaveTypes = _personalLeaveTypesBusiness.GetAllPersonalLeaveType();
-
             if (requestModel.IsSuccess)
                 return View(requestModel.Data);
 
@@ -26,7 +25,7 @@
 
         public IActionResult Create()
         {
-            ViewBag.EmployeeLeaveTypes = _personalLeaveTypesBusiness.GetAllPersonalLeaveType().Data;
+            ViewBag.PersonalLeaveTypes = _personalLeaveTypesBusiness.GetAllPersonalLeaveType().Data;
 
             return View();
         }
