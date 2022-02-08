@@ -41,8 +41,8 @@
                         DateRequested = item.DateRequested,
                         PersonalLeaveTypeId = item.PersonalLeaveTypeId,
                         LeaveTypeText = item.PersonalLeaveType.Name,
-                        EndDate = item.EndDate,
                         StartDate = item.StartDate,
+                        EndDate = item.EndDate,
                         RequestComments = item.RequestComments,
                         RequestingPersonalId = item.RequestingPersonalId
                     });
