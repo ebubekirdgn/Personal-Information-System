@@ -336,24 +336,6 @@ namespace PersonalInformationSystem.DataAccess.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("PersonalLeaveTypes");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DefaultDays = 0,
-                            IsActive = true,
-                            Name = "Yıllık İzin"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DefaultDays = 0,
-                            IsActive = true,
-                            Name = "Doğum İzni"
-                        });
                 });
 
             modelBuilder.Entity("PersonalInformationSystem.Data.Models.Personal", b =>

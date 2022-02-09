@@ -12,7 +12,7 @@ using PersonalInformationSystem.Data.DataContext;
 namespace PersonalInformationSystem.DataAccess.Migrations
 {
     [DbContext(typeof(PersonalInformationContext))]
-    [Migration("20220207212353_Initiate")]
+    [Migration("20220209191435_Initiate")]
     partial class Initiate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -338,24 +338,6 @@ namespace PersonalInformationSystem.DataAccess.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("PersonalLeaveTypes");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DefaultDays = 0,
-                            IsActive = true,
-                            Name = "Yıllık İzin"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DefaultDays = 0,
-                            IsActive = true,
-                            Name = "Doğum İzni"
-                        });
                 });
 
             modelBuilder.Entity("PersonalInformationSystem.Data.Models.Personal", b =>

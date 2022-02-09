@@ -20,7 +20,7 @@
                 .HasOne(e => e.RequestingPersonal)
                 .WithMany()
                 .OnDelete(DeleteBehavior.Restrict);
-
+            /*
             modelBuilder.Entity<PersonalLeaveType>().HasData(
                 new PersonalLeaveType()
                 {
@@ -34,7 +34,7 @@
                      Name = "Doğum İzni",
                      IsActive = true,
                  }
-                );
+                );*/
         }
     }
 }
