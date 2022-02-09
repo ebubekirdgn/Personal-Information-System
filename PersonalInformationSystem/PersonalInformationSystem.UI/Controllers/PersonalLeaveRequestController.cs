@@ -46,7 +46,6 @@
                 var data = _personalLeaveRequestBusiness.CreatePersonalLeaveRequest(model, user);
                 if (data.IsSuccess)
                     return RedirectToAction("Index");
-                ViewBag.PersonalLeaveTypes = _personalLeaveTypesBusiness.GetAllPersonalLeaveType().Data;
                 return View(model);
             }
 
