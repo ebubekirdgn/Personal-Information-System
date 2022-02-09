@@ -13,6 +13,7 @@
 
         [Required]
         public int PersonalLeaveTypeId { get; set; }
+
         public string LeaveTypeText { get; set; }
         public PersonalLeaveTypeVM PersonalLeaveType { get; set; }
 

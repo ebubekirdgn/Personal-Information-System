@@ -39,6 +39,7 @@
                 }
             }
         }
+
         public static void SeedRoles(RoleManager<IdentityRole> roleManager)
         {
             if (!roleManager.RoleExistsAsync(ResultConstant.Admin_Role).Result)
