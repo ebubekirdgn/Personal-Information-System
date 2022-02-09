@@ -6,7 +6,6 @@
             : base(options)
         {
         }
-
         public DbSet<Personal> Personal { get; set; }
         public DbSet<PersonalLeaveAllocation> PersonalLeaveAllocations { get; set; }
         public DbSet<PersonalLeaveRequest> PersonalLeaveRequests { get; set; }
