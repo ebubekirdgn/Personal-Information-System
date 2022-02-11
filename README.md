@@ -162,12 +162,17 @@
  
  ### Project Requirements
 ```
-─ PersonalInformationSystem
+├── PersonalInformationSystem
 │   ├── PersonalInformationSystem.Business
  
 │   ├── PersonalInformationSystem.Common
  
-│   ├── PersonalInformationSystem.Data
+│   ├── PersonalInformationSystem.DataAccess
+|	* AutoMapper.Extensions.Microsoft.DependencyInjection (Version : 11.0.0)
+|	* Microsoft.AspNetCore.Identity.EntityFrameworkCore (Version : 6.0.1)
+|	* Microsoft.EntityFrameworkCore (Version : 6.0.1)
+|	* Microsoft.EntityFrameworkCore.SqlServer (Version : 6.0.1)
+|	* Microsoft.EntityFrameworkCore.Tools (Version : 6.0.1)
 │   
 │   └── PersonalInformationSystem.UI
 │      	* AutoMapper.Extensions.Microsoft.DependencyInjection (Version : 11.0.0)
@@ -181,4 +186,5 @@
 |	* Microsoft.EntityFrameworkCore.Tools (Version : 6.0.1)
 | 	* Microsoft.VisualStudio.Web.CodeGeneration.Design (Version : 6.0.1)
 └── 
+```
 
