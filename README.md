@@ -1,8 +1,7 @@
 # PersonelInformationSystem
 ```
 Project Structure
-
-├── [Github](https://github.com/ebubekirdgn?tab=repositories)
+├── PersonalInformationSystem
 │   ├── PersonalInformationSystem.Business
 │   │   ├── Contracts
 │   │   │   ├── IPersonalLeaveRequestBusiness.cs
