@@ -159,12 +159,5 @@ Project Structure
 │           ├── _ViewImports.cshtml
 │           └── _ViewStart.cshtml
 └── README.md
-
-27 directories, 132 files
-
- 
-
-Projede Kullanılan Kütüphaneler
-1. First list item
-   - First nested list item
-     - Second nested list item
+ ```
+ <hr>
