@@ -2,7 +2,7 @@
 ```
 Project Structure
 
-├── [PersonalInformationSystem](https://github.com/ebubekirdgn/Personal-Information-System/tree/main/PersonalInformationSystem)
+├── [PersonalInformationSystem][Github](https://github.com/ebubekirdgn?tab=repositories)
 │   ├── PersonalInformationSystem.Business
 │   │   ├── Contracts
 │   │   │   ├── IPersonalLeaveRequestBusiness.cs
