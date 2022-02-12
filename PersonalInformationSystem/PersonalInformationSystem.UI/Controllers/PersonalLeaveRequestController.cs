@@ -25,5 +25,12 @@ namespace PersonalInformationSystem.UI.Controllers
                 return View(requestModel.Data);
             return View(user);
         }
+
+        public IActionResult Create()
+        {
+            ViewBag.EmployeeLeaveTypes = _personalLeaveTypesBusiness.GetAllPersonalLeaveType().Data;
+
+            return View();
+        }
     }
 }
