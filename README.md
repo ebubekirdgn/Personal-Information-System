@@ -186,6 +186,4 @@
 |	* Microsoft.EntityFrameworkCore.Tools (Version : 6.0.1)
 | 	* Microsoft.VisualStudio.Web.CodeGeneration.Design (Version : 6.0.1)
 └── 
-
 ```
-
