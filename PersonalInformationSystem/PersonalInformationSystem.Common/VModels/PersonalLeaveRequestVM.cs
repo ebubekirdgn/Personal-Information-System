@@ -19,7 +19,6 @@
 
         [Required]
         public DateTime EndDate { get; set; }
-
         public DateTime DateRequested { get; set; }
 
         [Display(Name = "Talep Açıklama")]
