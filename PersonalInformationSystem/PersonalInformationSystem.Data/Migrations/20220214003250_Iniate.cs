@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace PersonalInformationSystem.DataAccess.Migrations
 {
-    public partial class Initiate : Migration
+    public partial class Iniate : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

@@ -12,8 +12,8 @@ using PersonalInformationSystem.Data.DataContext;
 namespace PersonalInformationSystem.DataAccess.Migrations
 {
     [DbContext(typeof(PersonalInformationContext))]
-    [Migration("20220209191435_Initiate")]
-    partial class Initiate
+    [Migration("20220214003250_Iniate")]
+    partial class Iniate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
