@@ -31,9 +31,6 @@ builder.Services.AddSession(options =>
 
 var app = builder.Build();
 
-
-
-
 var scopedFactory = app.Services.GetService<IServiceScopeFactory>();
 if (scopedFactory is not null)
 {
