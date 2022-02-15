@@ -28,7 +28,7 @@ namespace PersonalInformationSystem.UI.Controllers
 
         public IActionResult Create()
         {
-            ViewBag.EmployeeLeaveTypes = _personalLeaveTypesBusiness.GetAllPersonalLeaveType().Data;
+            ViewBag.PersonalLeaveTypes = _personalLeaveTypesBusiness.GetAllPersonalLeaveType().Data;
 
             return View();
         }
