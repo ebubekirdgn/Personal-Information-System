@@ -3,16 +3,15 @@
     [AllowAnonymous]
     public class LoginModel : PageModel
     {
-        private readonly UserManager<Personal> _userManager;
+       
         private readonly SignInManager<Personal> _signInManager;
         private readonly ILogger<LoginModel> _logger;
         private readonly IUnitOfWork _unitOfWork;
 
         public LoginModel(SignInManager<Personal> signInManager,
             ILogger<LoginModel> logger,
-            UserManager<Personal> userManager, IUnitOfWork unitOfWork)
+            IUnitOfWork unitOfWork)
         {
-            _userManager = userManager;
             _signInManager = signInManager;
             _logger = logger;
             _unitOfWork = unitOfWork;
@@ -72,7 +71,7 @@
                 var result = await _signInManager.PasswordSignInAsync(Input.Email, Input.Password, Input.RememberMe, lockoutOnFailure: false);
                 if (result.Succeeded)
                 {
-                    var user = _unitOfWork.personalRepository.GetFirstOrDefault(u => u.Email == Input.Email.ToLower());
+                    var user = _unitOfWork.PersonalRepository.GetFirstOrDefault(u => u.Email == Input.Email.ToLower());
 
                     var userInfo = new SessionContext()
                     {
@@ -92,7 +91,7 @@
                 }
                 if (result.RequiresTwoFactor)
                 {
-                    return RedirectToPage("./LoginWith2fa", new { ReturnUrl = returnUrl, RememberMe = Input.RememberMe });
+                    return RedirectToPage("./LoginWith2fa", new { ReturnUrl = returnUrl, Input.RememberMe });
                 }
                 if (result.IsLockedOut)
                 {

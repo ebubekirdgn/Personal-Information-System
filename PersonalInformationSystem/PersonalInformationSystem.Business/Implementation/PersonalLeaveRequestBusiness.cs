@@ -23,7 +23,7 @@
 
         public Result<List<PersonalLeaveRequestVM>> GetAllLeaveRequestByUserId(string userId)
         {
-            var data = _unitOfWork.personalLeaveRequestRepository.GetAll(
+            var data = _unitOfWork.PersonalLeaveRequestRepository.GetAll(
                 u => u.RequestingPersonalId == userId
                 && u.Cancelled == false,
                 includeProperties: "RequestingPersonal,PersonalLeaveType").ToList();
@@ -36,7 +36,6 @@
                     returnData.Add(new PersonalLeaveRequestVM()
                     {
                         Id = item.Id,
-                        ApprovedPersonalId = item.ApprovedPersonalId,
                         Cancelled = item.Cancelled,
                         DateRequested = item.DateRequested,
                         PersonalLeaveTypeId = item.PersonalLeaveTypeId,
@@ -68,7 +67,8 @@
                     leaveRequest.RequestingPersonalId = user.LoginId;
                     leaveRequest.Cancelled = false;
                     leaveRequest.DateRequested = DateTime.Now;
-                    _unitOfWork.personalLeaveRequestRepository.Add(leaveRequest);
+
+                    _unitOfWork.PersonalLeaveRequestRepository.Add(leaveRequest);
                     _unitOfWork.Save();
                     return new Result<PersonalLeaveRequestVM>(true, ResultConstant.RecordCreateSuccessfully);
                 }
@@ -94,7 +94,7 @@
                 {
                     var leaveRequest = _mapper.Map<PersonalLeaveRequestVM, PersonalLeaveRequest>(model);
                     leaveRequest.RequestingPersonalId = user.LoginId;
-                    _unitOfWork.personalLeaveRequestRepository.Update(leaveRequest);
+                    _unitOfWork.PersonalLeaveRequestRepository.Update(leaveRequest);
                     _unitOfWork.Save();
                     return new Result<PersonalLeaveRequestVM>(true, ResultConstant.RecordCreateSuccessfully);
                 }
@@ -109,7 +109,7 @@
 
         public Result<PersonalLeaveRequestVM> GetAllLeaveRequestById(int id)
         {
-            var data = _unitOfWork.personalLeaveRequestRepository.Get(id);
+            var data = _unitOfWork.PersonalLeaveRequestRepository.Get(id);
             if (data != null)
             {
                 var leaveRequest = _mapper.Map<PersonalLeaveRequest, PersonalLeaveRequestVM>(data);
@@ -121,11 +121,11 @@
 
         public Result<PersonalLeaveRequestVM> RemovePersonalRequest(int id)
         {
-            var data = _unitOfWork.personalLeaveRequestRepository.Get(id);
+            var data = _unitOfWork.PersonalLeaveRequestRepository.Get(id);
             if (data != null)
             {
                 data.Cancelled = true;
-                _unitOfWork.personalLeaveRequestRepository.Update(data);
+                _unitOfWork.PersonalLeaveRequestRepository.Update(data);
                 _unitOfWork.Save();
                 return new Result<PersonalLeaveRequestVM>(true, ResultConstant.RecordCreateSuccessfully);
             }

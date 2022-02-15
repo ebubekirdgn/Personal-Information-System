@@ -2,10 +2,10 @@
 {
     public interface IUnitOfWork : IDisposable
     {
-        IPersonalLeaveAllocationRepository personalLeaveAllocationRepository { get; }
-        IPersonalLeaveRequestRepository personalLeaveRequestRepository { get; }
-        IPersonalLeaveTypeRepository personalLeaveTypeRepository { get; }
-        IPersonalRepository personalRepository { get; }
+        IPersonalLeaveAllocationRepository PersonalLeaveAllocationRepository { get; }
+        IPersonalLeaveRequestRepository PersonalLeaveRequestRepository { get; }
+        IPersonalLeaveTypeRepository PersonalLeaveTypeRepository { get; }
+        IPersonalRepository PersonalRepository { get; }
 
         /// <summary>
         /// Bu method kaydeder.

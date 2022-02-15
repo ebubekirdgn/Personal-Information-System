@@ -31,9 +31,21 @@ builder.Services.AddSession(options =>
 
 var app = builder.Build();
 
+
+
+
 var scopedFactory = app.Services.GetService<IServiceScopeFactory>();
-using (var scope = scopedFactory.CreateScope())
+if (scopedFactory is not null)
 {
+    using var scope = scopedFactory.CreateScope();
+
+    // Veritabýnýný siler ve yeniden oluþturur.
+
+    // drop create database always
+    /*var context = scope.ServiceProvider.GetRequiredService<PersonalInformationContext>();
+    context.Database.EnsureDeleted();
+    context.Database.EnsureCreated();
+    */
     var userManager = scope.ServiceProvider.GetRequiredService<UserManager<Personal>>();
     var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
     SeedData.Seed(userManager, roleManager);

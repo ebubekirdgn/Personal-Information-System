@@ -27,7 +27,7 @@
             var user = await _userManager.GetUserAsync(User);
             if (user == null)
             {
-                return NotFound($"Unable to load user with ID '{user.Id}'.");
+                return NotFound($"Unable to load user'.");
             }
 
             CurrentLogins = await _userManager.GetLoginsAsync(user);
@@ -43,7 +43,7 @@
             var user = await _userManager.GetUserAsync(User);
             if (user == null)
             {
-                return NotFound($"Unable to load user with ID '{user.Id}'.");
+                return NotFound($"Unable to load user'.");
             }
 
             var result = await _userManager.RemoveLoginAsync(user, loginProvider, providerKey);
@@ -73,7 +73,7 @@
             var user = await _userManager.GetUserAsync(User);
             if (user == null)
             {
-                return NotFound($"Unable to load user with ID '{user.Id}'.");
+                return NotFound($"Unable to load user'.");
             }
 
             var info = await _signInManager.GetExternalLoginInfoAsync(user.Id);

@@ -23,7 +23,7 @@
 
         public Result<List<PersonalLeaveTypeVM>> GetAllPersonalLeaveType()
         {
-            var data = _unitOfWork.personalLeaveTypeRepository.GetAll(e => e.IsActive == true).ToList();
+            var data = _unitOfWork.PersonalLeaveTypeRepository.GetAll(e => e.IsActive == true).ToList();
 
             // Mappersiz
 
@@ -70,7 +70,7 @@
                     var leaveType = _mapper.Map<PersonalLeaveTypeVM, PersonalLeaveType>(model);
                     leaveType.DateCreated = DateTime.Now;
                     leaveType.IsActive = true;
-                    _unitOfWork.personalLeaveTypeRepository.Add(leaveType);
+                    _unitOfWork.PersonalLeaveTypeRepository.Add(leaveType);
                     _unitOfWork.Save();
                     return new Result<PersonalLeaveTypeVM>(true, ResultConstant.RecordCreateSuccessfully);
                 }
@@ -87,7 +87,7 @@
 
         public Result<PersonalLeaveTypeVM> GetAllPersonalLeaveType(int id)
         {
-            var data = _unitOfWork.personalLeaveTypeRepository.Get(id);
+            var data = _unitOfWork.PersonalLeaveTypeRepository.Get(id);
             if (data != null)
             {
                 var leaveType = _mapper.Map<PersonalLeaveType, PersonalLeaveTypeVM>(data);
@@ -104,7 +104,7 @@
                 try
                 {
                     var leaveType = _mapper.Map<PersonalLeaveTypeVM, PersonalLeaveType>(model);
-                    _unitOfWork.personalLeaveTypeRepository.Update(leaveType);
+                    _unitOfWork.PersonalLeaveTypeRepository.Update(leaveType);
                     _unitOfWork.Save();
                     return new Result<PersonalLeaveTypeVM>(true, ResultConstant.RecordCreateSuccessfully);
                 }
@@ -119,11 +119,11 @@
 
         public Result<PersonalLeaveTypeVM> RemovePersonalLeaveType(int id)
         {
-            var data = _unitOfWork.personalLeaveTypeRepository.Get(id);
+            var data = _unitOfWork.PersonalLeaveTypeRepository.Get(id);
             if (data != null)
             {
                 data.IsActive = false;
-                _unitOfWork.personalLeaveTypeRepository.Update(data);
+                _unitOfWork.PersonalLeaveTypeRepository.Update(data);
                 _unitOfWork.Save();
                 return new Result<PersonalLeaveTypeVM>(true, ResultConstant.RecordCreateSuccessfully);
             }

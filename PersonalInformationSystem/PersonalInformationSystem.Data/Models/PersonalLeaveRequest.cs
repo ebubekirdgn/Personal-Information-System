@@ -10,10 +10,10 @@
         public Personal RequestingPersonal { get; set; }
 
         //TODO:Onaylayan Kullanıcı Bilgileri
-        public string ApprovedPersonalId { get; set; } // string vermemizin sebebi tablo ile alakalı normalde yine int
+        public string? ApprovedPersonalId { get; set; } // string vermemizin sebebi tablo ile alakalı normalde yine int
 
         [ForeignKey("ApprovedPersonalId")]
-        public Personal ApprovedPersonal { get; set; }
+        public Personal? ApprovedPersonal { get; set; }
 
         public int PersonalLeaveTypeId { get; set; }
 

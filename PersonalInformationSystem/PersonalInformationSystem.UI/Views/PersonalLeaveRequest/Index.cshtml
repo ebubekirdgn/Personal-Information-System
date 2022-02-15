@@ -1,7 +1,8 @@
 ﻿@model IEnumerable<PersonalInformationSystem.Common.VModels.PersonalLeaveRequestVM>
-
 @{
     ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
 }
 
 <div class="page-header">
@@ -12,7 +13,6 @@
         </small>
     </h3>
 </div>
-
 
 <br />
 <div class="col-6 text-left text-white">
@@ -27,6 +27,7 @@
                     <th>Başlangıç Tarihi</th>
                     <th>Bitiş Tarihi</th>
                     <th>Sebep</th>
+                    <th>İşlemler</th>
                 </tr>
             </thead>
             <tbody>
@@ -36,13 +37,28 @@
                         <td>@item.StartDate.ToShortDateString()</td>
                         <td> @item.EndDate.ToShortDateString()</td>
                         <td>@item.LeaveTypeText</td>
+                        <td>
+                                <div class="hidden-sm hidden-xs btn-group">
+                                    <a class="btn btn-xs btn-info" asp-controller="PersonalLeaveRequest" asp-action="Edit" asp-route-id="@item.Id">
+                                        <i class="ace-icon fa fa-pencil bigger-120"></i>
+                                    </a>
+                                    <a class="btn btn-xs btn-danger" id="btnRemove" data-id="@item.Id">
+                                        <i class="ace-icon fa fa-trash bigger-120"></i>
+                                    </a>
+                                    <button class="btn btn-xs btn-warning">
+                                        <i class="ace-icon fa fa-flag bigger-120"></i>
+                                    </button>
+                                </div>
+                        </td>
+                        }
+
                     </tr>
                 }
             </tbody>
         </table>
     </div><!-- /.span -->
 </div>
-@*
+
 @section Scripts{
 
     <script type="text/javascript">
@@ -78,4 +94,4 @@
         });
     </script>
 
-}*@
+}

@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using PersonalInformationSystem.Data.DataContext;
 
@@ -11,9 +12,10 @@ using PersonalInformationSystem.Data.DataContext;
 namespace PersonalInformationSystem.DataAccess.Migrations
 {
     [DbContext(typeof(PersonalInformationContext))]
-    partial class PersonalInformationContextModelSnapshot : ModelSnapshot
+    [Migration("20220215200851_Update")]
+    partial class Update
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -275,6 +277,7 @@ namespace PersonalInformationSystem.DataAccess.Migrations
                         .HasColumnType("bit");
 
                     b.Property<string>("ApprovedPersonalId")
+                        .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<bool>("Cancelled")
@@ -433,7 +436,9 @@ namespace PersonalInformationSystem.DataAccess.Migrations
                 {
                     b.HasOne("PersonalInformationSystem.Data.Models.Personal", "ApprovedPersonal")
                         .WithMany()
-                        .HasForeignKey("ApprovedPersonalId");
+                        .HasForeignKey("ApprovedPersonalId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("PersonalInformationSystem.Data.Models.PersonalLeaveType", "PersonalLeaveType")
                         .WithMany()

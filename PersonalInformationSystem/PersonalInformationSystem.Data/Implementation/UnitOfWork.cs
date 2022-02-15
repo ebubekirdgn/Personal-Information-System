@@ -7,19 +7,20 @@
         public UnitOfWork(PersonalInformationContext context)
         {
             _context = context;
-            personalLeaveAllocationRepository = new PersonalLeaveAllocationRepository(_context);
-            personalLeaveRequestRepository = new PersonalLeaveRequestRepository(_context);
-            personalLeaveTypeRepository = new PersonalLeaveTypeRepository(_context);
-            personalRepository = new PersonalRepository(_context);
+            PersonalLeaveAllocationRepository = new PersonalLeaveAllocationRepository(_context);
+            PersonalLeaveRequestRepository = new PersonalLeaveRequestRepository(_context);
+            PersonalLeaveTypeRepository = new PersonalLeaveTypeRepository(_context);
+            PersonalRepository = new PersonalRepository(_context);
         }
 
-        public IPersonalLeaveAllocationRepository personalLeaveAllocationRepository { get; private set; }
-        public IPersonalLeaveRequestRepository personalLeaveRequestRepository { get; private set; }
-        public IPersonalLeaveTypeRepository personalLeaveTypeRepository { get; private set; }
-        public IPersonalRepository personalRepository { get; private set; }
-
+        public IPersonalLeaveAllocationRepository PersonalLeaveAllocationRepository { get; private set; }
+        public IPersonalLeaveRequestRepository PersonalLeaveRequestRepository { get; private set; }
+        public IPersonalLeaveTypeRepository PersonalLeaveTypeRepository { get; private set; }
+        public IPersonalRepository PersonalRepository { get; private set; }
+       
         public void Dispose()
         {
+            GC.SuppressFinalize(this);
             _context.Dispose();
         }
 
