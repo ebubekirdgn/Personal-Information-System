@@ -1,7 +1,81 @@
-﻿
+﻿@model IEnumerable<PersonalInformationSystem.Common.VModels.PersonalLeaveRequestVM>
+
 @{
     ViewData["Title"] = "Index";
 }
 
-<h2>Index</h2>
+<div class="page-header">
+    <h3>
+        <small>
+            <i class="ace-icon fa fa-angle-double-right"></i>
+            Çalışan İzin Talep Listesi
+        </small>
+    </h3>
+</div>
 
+
+<br />
+<div class="col-6 text-left text-white">
+    <a class="btn btn-success" asp-controller="PersonalLeaveRequest" asp-action="Create">Talep Ekle</a>
+</div>
+<br />
+<div class="row">
+    <div class="col-xs-12">
+        <table id="simple-table" class="table  table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>Başlangıç Tarihi</th>
+                    <th>Bitiş Tarihi</th>
+                    <th>Sebep</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.StartDate.ToShortDateString()</td>
+                        <td> @item.EndDate.ToShortDateString()</td>
+                        <td>@item.LeaveTypeText</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div><!-- /.span -->
+</div>
+@*
+@section Scripts{
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            $("#btnRemove").on("click", function () {
+                var id = $("#btnRemove").data("id");
+
+                swal({
+                    title: 'Silmek İstediğinize Emin Misiniz?',
+                    text: 'Silinen Data Geri Alınamaz!',
+                    icon: 'warning',
+                    buttons: true,
+                    dangerMode: true
+                }).then((willDelete) => {
+                    if (willDelete) {
+                        $.ajax({
+                            type: "DELETE",
+                            url: "/PersonalLeaveRequest/Delete/" + id,
+                            success: function (data) {
+                                if (data.success) {
+                                    toastr.success(data.message);
+                                    location.reload();
+                                } else {
+                                    toastr.error(data.message);
+                                }
+                            }
+
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+
+}*@

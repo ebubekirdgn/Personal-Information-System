@@ -8,7 +8,7 @@ namespace PersonalInformationSystem.UI.Controllers
         private readonly IPersonalLeaveRequestBusiness _personalLeaveRequestBusiness;
         private readonly IPersonalLeaveTypesBusiness _personalLeaveTypesBusiness;
 
-        public PersonalLeaveRequestController(IPersonalLeaveRequestBusiness personalLeaveRequestBusiness,PersonalLeaveTypesBusiness personalLeaveTypesBusiness)
+        public PersonalLeaveRequestController(IPersonalLeaveRequestBusiness personalLeaveRequestBusiness,IPersonalLeaveTypesBusiness personalLeaveTypesBusiness)
         {
             _personalLeaveRequestBusiness = personalLeaveRequestBusiness;
             _personalLeaveTypesBusiness = personalLeaveTypesBusiness;
