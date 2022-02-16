@@ -36,6 +36,11 @@
                     returnData.Add(new PersonalLeaveRequestVM()
                     {
                         Id = item.Id,
+
+                        #pragma warning disable CS8629 // Nullable value type may be null.
+                        ApprovedStatus = (EnumPersonalLeaveRequestStatus)item.Approved,
+                        #pragma warning restore CS8629 // Nullable value type may be null.
+
                         Cancelled = item.Cancelled,
                         DateRequested = item.DateRequested,
                         PersonalLeaveTypeId = item.PersonalLeaveTypeId,
@@ -66,6 +71,7 @@
                     var leaveRequest = _mapper.Map<PersonalLeaveRequestVM, PersonalLeaveRequest>(model);
                     leaveRequest.RequestingPersonalId = user.LoginId;
                     leaveRequest.Cancelled = false;
+                    leaveRequest.Approved = (int) EnumPersonalLeaveRequestStatus.Send_Approved;
                     leaveRequest.DateRequested = DateTime.Now;
 
                     _unitOfWork.PersonalLeaveRequestRepository.Add(leaveRequest);
