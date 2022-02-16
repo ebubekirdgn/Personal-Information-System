@@ -25,7 +25,7 @@
         [MaxLength(300, ErrorMessage = "300 Karakterden Fazla Değer Girilemez")]
         public string RequestComments { get; set; }
 
-        public bool? Approved { get; set; }
+        public int? Approved { get; set; }
         public bool Cancelled { get; set; }
     }
 }

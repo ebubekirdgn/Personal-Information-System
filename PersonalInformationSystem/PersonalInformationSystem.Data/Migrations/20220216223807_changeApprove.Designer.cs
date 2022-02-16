@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using PersonalInformationSystem.Data.DataContext;
 
@@ -11,9 +12,10 @@ using PersonalInformationSystem.Data.DataContext;
 namespace PersonalInformationSystem.DataAccess.Migrations
 {
     [DbContext(typeof(PersonalInformationContext))]
-    partial class PersonalInformationContextModelSnapshot : ModelSnapshot
+    [Migration("20220216223807_changeApprove")]
+    partial class changeApprove
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -271,7 +273,7 @@ namespace PersonalInformationSystem.DataAccess.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<int?>("Approved")
+                    b.Property<int>("Approved")
                         .HasColumnType("int");
 
                     b.Property<string>("ApprovedPersonalId")
