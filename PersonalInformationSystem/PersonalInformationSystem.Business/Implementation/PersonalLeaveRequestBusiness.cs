@@ -1,4 +1,6 @@
-﻿namespace PersonalInformationSystem.Business.Implementation
+﻿using PersonalInformationSystem.Common.Extension;
+
+namespace PersonalInformationSystem.Business.Implementation
 {
     public class PersonalLeaveRequestBusiness : IPersonalLeaveRequestBusiness
     {
@@ -40,6 +42,11 @@
                         #pragma warning disable CS8629 // Nullable value type may be null.
                         ApprovedStatus = (EnumPersonalLeaveRequestStatus)item.Approved,
                         #pragma warning restore CS8629 // Nullable value type may be null.
+
+                        #pragma warning disable CS8601 // Possible null reference assignment.
+                        ApprovedText = EnumExtension<EnumPersonalLeaveRequestStatus>.GetDisplayValue((EnumPersonalLeaveRequestStatus)item.Approved),
+                        #pragma warning restore CS8601 // Possible null reference assignment.
+                       
 
                         Cancelled = item.Cancelled,
                         DateRequested = item.DateRequested,

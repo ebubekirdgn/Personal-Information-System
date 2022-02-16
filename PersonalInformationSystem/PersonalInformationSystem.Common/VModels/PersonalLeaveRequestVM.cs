@@ -26,8 +26,8 @@ namespace PersonalInformationSystem.Common.VModels
         [Display(Name = "Talep Açıklama")]
         [MaxLength(300, ErrorMessage = "300 Karakterden Fazla Değer Girilemez")]
         public string RequestComments { get; set; }
-
         public EnumPersonalLeaveRequestStatus ApprovedStatus { get; set; }
+        public string ApprovedText { get; set; }
         public bool Cancelled { get; set; }
     }
 }
