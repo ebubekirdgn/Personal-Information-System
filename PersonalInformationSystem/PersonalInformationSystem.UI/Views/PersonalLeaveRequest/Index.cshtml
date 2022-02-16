@@ -31,16 +31,30 @@
                 </tr>
             </thead>
             <tbody>
+              <tbody>
                 @foreach (var item in Model)
                 {
                     <tr>
                         <td>@item.StartDate.ToShortDateString()</td>
                         <td> @item.EndDate.ToShortDateString()</td>
                         <td>@item.LeaveTypeText</td>
-                        <td>@item.ApprovedText</td>
-                        <td>
+                        @if (item.ApprovedStatus == EnumPersonalLeaveRequestStatus.Approved)
+                        {
+                            <td style="color:blue">@item.ApprovedText</td>
+                        }
+                        else if (item.ApprovedStatus == EnumPersonalLeaveRequestStatus.Send_Approved)
+                        {
+                            <td style="color:green">@item.ApprovedText</td>
+                        }
+                        else
+                        {
+                            <td style="color:red">@item.ApprovedText</td>
+                        }
+                        @if (item.ApprovedStatus != EnumPersonalLeaveRequestStatus.Approved)
+                        {
+                            <td>
                                 <div class="hidden-sm hidden-xs btn-group">
-                                    <a class="btn btn-xs btn-info" asp-controller="PersonalLeaveRequest" asp-action="Edit" asp-route-id="@item.Id">
+                                    <a class="btn btn-xs btn-info" asp-controller="EmployeeLeaveRequest" asp-action="Edit" asp-route-id="@item.Id">
                                         <i class="ace-icon fa fa-pencil bigger-120"></i>
                                     </a>
                                     <a class="btn btn-xs btn-danger" id="btnRemove" data-id="@item.Id">
@@ -50,9 +64,12 @@
                                         <i class="ace-icon fa fa-flag bigger-120"></i>
                                     </button>
                                 </div>
-                        </td>
+                            </td>
+                        }
+
                     </tr>
                 }
+            </tbody>
             </tbody>
         </table>
     </div><!-- /.span -->
