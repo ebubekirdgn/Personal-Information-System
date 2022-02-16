@@ -13,7 +13,7 @@
 
         public IActionResult Index()
         {
-            var user = JsonConvert.DeserializeObject<SessionContext>(HttpContext.Session.GetString(ResultConstant.LoginUserInfo));
+            var user = JsonConvert.DeserializeObject<SessionContext?>(HttpContext.Session.GetString(ResultConstant.LoginUserInfo));
 
             var requestModel = _personalLeaveRequestBusiness.GetAllLeaveRequestByUserId(user.LoginId);
             ViewBag.PersonalLeaveTypes = _personalLeaveTypesBusiness.GetAllPersonalLeaveType();

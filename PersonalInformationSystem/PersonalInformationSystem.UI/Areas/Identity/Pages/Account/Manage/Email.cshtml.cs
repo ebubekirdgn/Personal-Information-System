@@ -8,6 +8,12 @@ namespace PersonalInformationSystem.UI.Areas.Identity.Pages.Account.Manage
     {
         private readonly UserManager<IdentityUser> _userManager;
         private readonly SignInManager<IdentityUser> _signInManager;
+
+        public EmailModel(SignInManager<IdentityUser> signInManager)
+        {
+            _signInManager = signInManager;
+        }
+
         private readonly IEmailSender _emailSender;
 
         public EmailModel(
@@ -87,7 +93,7 @@ namespace PersonalInformationSystem.UI.Areas.Identity.Pages.Account.Manage
                 var callbackUrl = Url.Page(
                     "/Account/ConfirmEmailChange",
                     pageHandler: null,
-                    values: new { userId = userId, email = Input.NewEmail, code = code },
+                    values: new { userId, email = Input.NewEmail, code },
                     protocol: Request.Scheme);
                 await _emailSender.SendEmailAsync(
                     Input.NewEmail,
@@ -123,7 +129,7 @@ namespace PersonalInformationSystem.UI.Areas.Identity.Pages.Account.Manage
             var callbackUrl = Url.Page(
                 "/Account/ConfirmEmail",
                 pageHandler: null,
-                values: new { area = "Identity", userId = userId, code = code },
+                values: new { area = "Identity", userId, code },
                 protocol: Request.Scheme);
             await _emailSender.SendEmailAsync(
                 email,
@@ -132,6 +138,12 @@ namespace PersonalInformationSystem.UI.Areas.Identity.Pages.Account.Manage
 
             StatusMessage = "Verification email sent. Please check your email.";
             return RedirectToPage();
+        }
+
+        public override bool Equals(object? obj)
+        {
+            return obj is EmailModel model &&
+                   EqualityComparer<SignInManager<IdentityUser>>.Default.Equals(_signInManager, model._signInManager);
         }
     }
 }

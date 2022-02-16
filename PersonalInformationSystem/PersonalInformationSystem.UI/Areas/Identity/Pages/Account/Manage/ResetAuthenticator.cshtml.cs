@@ -2,9 +2,9 @@
 {
     public class ResetAuthenticatorModel : PageModel
     {
-        private UserManager<IdentityUser> _userManager;
+        private readonly UserManager<IdentityUser> _userManager;
         private readonly SignInManager<IdentityUser> _signInManager;
-        private ILogger<ResetAuthenticatorModel> _logger;
+        private readonly ILogger<ResetAuthenticatorModel> _logger;
 
         public ResetAuthenticatorModel(
             UserManager<IdentityUser> userManager,
@@ -24,7 +24,7 @@
             var user = await _userManager.GetUserAsync(User);
             if (user == null)
             {
-                return NotFound($"Unable to load user with ID '{user.Id}'.");
+                return NotFound($"Unable to load user'.");
             }
 
             return Page();
