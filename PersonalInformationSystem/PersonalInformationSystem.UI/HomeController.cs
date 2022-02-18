@@ -1,6 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
-
-namespace PersonalInformationSystem.UI
+﻿namespace PersonalInformationSystem.UI
 {
     public class HomeController : Controller
     {

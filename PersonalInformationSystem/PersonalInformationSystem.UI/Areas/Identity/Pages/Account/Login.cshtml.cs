@@ -3,7 +3,6 @@
     [AllowAnonymous]
     public class LoginModel : PageModel
     {
-       
         private readonly SignInManager<Personal> _signInManager;
         private readonly ILogger<LoginModel> _logger;
         private readonly IUnitOfWork _unitOfWork;

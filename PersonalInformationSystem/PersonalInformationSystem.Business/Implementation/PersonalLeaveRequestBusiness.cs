@@ -39,14 +39,13 @@ namespace PersonalInformationSystem.Business.Implementation
                     {
                         Id = item.Id,
 
-                        #pragma warning disable CS8629 // Nullable value type may be null.
+#pragma warning disable CS8629 // Nullable value type may be null.
                         ApprovedStatus = (EnumPersonalLeaveRequestStatus)item.Approved,
-                        #pragma warning restore CS8629 // Nullable value type may be null.
+#pragma warning restore CS8629 // Nullable value type may be null.
 
-                        #pragma warning disable CS8601 // Possible null reference assignment.
+#pragma warning disable CS8601 // Possible null reference assignment.
                         ApprovedText = EnumExtension<EnumPersonalLeaveRequestStatus>.GetDisplayValue((EnumPersonalLeaveRequestStatus)item.Approved),
-                        #pragma warning restore CS8601 // Possible null reference assignment.
-                       
+#pragma warning restore CS8601 // Possible null reference assignment.
 
                         Cancelled = item.Cancelled,
                         DateRequested = item.DateRequested,
@@ -78,7 +77,7 @@ namespace PersonalInformationSystem.Business.Implementation
                     var leaveRequest = _mapper.Map<PersonalLeaveRequestVM, PersonalLeaveRequest>(model);
                     leaveRequest.RequestingPersonalId = user.LoginId;
                     leaveRequest.Cancelled = false;
-                    leaveRequest.Approved = (int) EnumPersonalLeaveRequestStatus.Send_Approved;
+                    leaveRequest.Approved = (int)EnumPersonalLeaveRequestStatus.Send_Approved;
                     leaveRequest.DateRequested = DateTime.Now;
 
                     _unitOfWork.PersonalLeaveRequestRepository.Add(leaveRequest);

@@ -33,7 +33,9 @@
         public IActionResult Create(PersonalLeaveRequestVM model)
         {
             var user = JsonConvert.DeserializeObject<SessionContext>(HttpContext.Session.GetString(ResultConstant.LoginUserInfo));
+
             #region CreateOrEditExample
+
             if (model.Id > 0)
             {
                 _personalLeaveRequestBusiness.EditPersonalLeaveRequest(model, user);
@@ -52,7 +54,7 @@
 
         public ActionResult Edit(int? id)
         {
-             ViewBag.PersonalLeaveTypes = _personalLeaveTypesBusiness.GetAllPersonalLeaveType().Data;
+            ViewBag.PersonalLeaveTypes = _personalLeaveTypesBusiness.GetAllPersonalLeaveType().Data;
             if (id > 0)
             {
                 var data = _personalLeaveRequestBusiness.GetAllLeaveRequestById((int)id);

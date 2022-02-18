@@ -17,7 +17,7 @@
         public IPersonalLeaveRequestRepository PersonalLeaveRequestRepository { get; private set; }
         public IPersonalLeaveTypeRepository PersonalLeaveTypeRepository { get; private set; }
         public IPersonalRepository PersonalRepository { get; private set; }
-       
+
         public void Dispose()
         {
             GC.SuppressFinalize(this);
