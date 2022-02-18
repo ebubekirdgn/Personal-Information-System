@@ -49,5 +49,17 @@
 
             #endregion CreateOrEditExample
         }
+
+        public ActionResult Edit(int? id)
+        {
+             ViewBag.PersonalLeaveTypes = _personalLeaveTypesBusiness.GetAllPersonalLeaveType().Data;
+            if (id > 0)
+            {
+                var data = _personalLeaveRequestBusiness.GetAllLeaveRequestById((int)id);
+                return View(data.Data);
+            }
+            else
+                return View();
+        }
     }
 }
