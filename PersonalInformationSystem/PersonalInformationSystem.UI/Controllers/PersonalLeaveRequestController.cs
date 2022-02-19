@@ -30,13 +30,13 @@
         }
 
         [HttpPost]
-        public IActionResult Create(PersonalLeaveRequestVM model)
+        public IActionResult Create(PersonalLeaveRequestVM model, int? id)
         {
             var user = JsonConvert.DeserializeObject<SessionContext>(HttpContext.Session.GetString(ResultConstant.LoginUserInfo));
 
             #region CreateOrEditExample
 
-            if (model.Id > 0)
+            if (id > 0)
             {
                 _personalLeaveRequestBusiness.EditPersonalLeaveRequest(model, user);
                 return RedirectToAction("Index");
