@@ -13,7 +13,7 @@ namespace PersonalInformationSystem.Common.VModels
         public PersonalVM ApprovedPersonal { get; set; }
 
         [Required]
-        public int PersonalLeaveTypeId { get; set; }
+        public int? PersonalLeaveTypeId { get; set; }
 
         public string LeaveTypeText { get; set; }
         public PersonalLeaveTypeVM PersonalLeaveType { get; set; }

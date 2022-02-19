@@ -105,6 +105,7 @@ namespace PersonalInformationSystem.Business.Implementation
                 try
                 {
                     var leaveRequest = _mapper.Map<PersonalLeaveRequestVM, PersonalLeaveRequest>(model);
+                    leaveRequest.Approved = (int)model.ApprovedStatus;
                     leaveRequest.RequestingPersonalId = user.LoginId;
                     _unitOfWork.PersonalLeaveRequestRepository.Update(leaveRequest);
                     _unitOfWork.Save();

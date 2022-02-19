@@ -12,8 +12,6 @@
             <label class="col-sm-3 control-label no-padding-right" asp-for="LeaveTypeText">İzin Tipi</label>
 
             <div class="col-sm-4">
-                @*<input asp-for="EmployeeLeaveTypeId" type="text" id="form-field-1" placeholder="Tatil Sebep Tipi" class="col-xs-10 col-sm-5" />
-                <span asp-validation-for="EmployeeLeaveTypeId"></span>*@
                 @Html.DropDownListFor(l => l.PersonalLeaveTypeId, new SelectList(ViewBag.PersonalLeaveTypes, "Id", "Name"), "Lütfen İzin Tipi Seçiniz", new { @class = "form-control col-sm-4" })
             </div>
         </div>
@@ -76,5 +74,3 @@
         });
     </script>
 }
-
-

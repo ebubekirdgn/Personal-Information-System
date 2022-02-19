@@ -294,7 +294,6 @@ namespace PersonalInformationSystem.DataAccess.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("RequestingPersonalId")
-                        .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<DateTime>("StartDate")
@@ -444,8 +443,7 @@ namespace PersonalInformationSystem.DataAccess.Migrations
                     b.HasOne("PersonalInformationSystem.Data.Models.Personal", "RequestingPersonal")
                         .WithMany()
                         .HasForeignKey("RequestingPersonalId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
+                        .OnDelete(DeleteBehavior.Restrict);
 
                     b.Navigation("ApprovedPersonal");
 

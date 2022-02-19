@@ -1,4 +1,7 @@
-﻿#nullable disable
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
+
+#nullable disable
 
 namespace PersonalInformationSystem.DataAccess.Migrations
 {
@@ -207,7 +210,7 @@ namespace PersonalInformationSystem.DataAccess.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    RequestingPersonalId = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    RequestingPersonalId = table.Column<string>(type: "nvarchar(450)", nullable: true),
                     ApprovedPersonalId = table.Column<string>(type: "nvarchar(450)", nullable: true),
                     PersonalLeaveTypeId = table.Column<int>(type: "int", nullable: false),
                     StartDate = table.Column<DateTime>(type: "datetime2", nullable: false),

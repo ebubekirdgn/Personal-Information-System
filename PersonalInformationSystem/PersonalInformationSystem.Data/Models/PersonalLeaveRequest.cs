@@ -4,10 +4,10 @@
     {
         //------------------------------------------------------------//
         //TODO:Talepte Bulunan Kullanıcı Bilgileri
-        public string RequestingPersonalId { get; set; }
+        public string? RequestingPersonalId { get; set; }
 
         [ForeignKey("RequestingPersonalId")]
-        public Personal RequestingPersonal { get; set; }
+        public Personal? RequestingPersonal { get; set; }
 
         //TODO:Onaylayan Kullanıcı Bilgileri
         public string? ApprovedPersonalId { get; set; } // string vermemizin sebebi tablo ile alakalı normalde yine int
