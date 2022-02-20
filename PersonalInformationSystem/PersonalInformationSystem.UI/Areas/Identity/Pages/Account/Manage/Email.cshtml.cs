@@ -95,9 +95,7 @@ namespace PersonalInformationSystem.UI.Areas.Identity.Pages.Account.Manage
                     pageHandler: null,
                     values: new { userId, email = Input.NewEmail, code },
                     protocol: Request.Scheme);
-                await _emailSender.SendEmailAsync(
-                    Input.NewEmail,
-                    "Confirm your email",
+                await _emailSender.SendEmailAsync(Input.NewEmail, "Confirm your email",
                     $"Please confirm your account by <a href='{HtmlEncoder.Default.Encode(value: callbackUrl)}'>clicking here</a>.");
 
                 StatusMessage = "Confirmation link to change email sent. Please check your email.";
