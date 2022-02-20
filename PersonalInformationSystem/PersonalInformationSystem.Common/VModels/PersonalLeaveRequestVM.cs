@@ -4,13 +4,13 @@ namespace PersonalInformationSystem.Common.VModels
 {
     public class PersonalLeaveRequestVM : BaseVM
     {
-        public string RequestingPersonalId { get; set; }
-        public PersonalVM RequestingPersonal { get; set; }
+        public string? RequestingPersonalId { get; set; }
+        public PersonalVM? RequestingPersonal { get; set; }
 
         //TODO:Onaylayan Kullanıcı Bilgileri
-        public string ApprovedPersonalId { get; set; }
+        public string? ApprovedPersonalId { get; set; }
 
-        public PersonalVM ApprovedPersonal { get; set; }
+        public PersonalVM? ApprovedPersonal { get; set; }
 
         [Required]
         public int? PersonalLeaveTypeId { get; set; }

@@ -2,7 +2,7 @@
 
 namespace PersonalInformationSystem.Common.Extension
 {
-    public static class EnumExtension<T>
+    public static class EnumExtension<T> where T : struct, Enum
     {
         public static IList<T> GetValues(Enum value)
         {
@@ -12,7 +12,6 @@ namespace PersonalInformationSystem.Common.Extension
             {
                 enumValues.Add((T)Enum.Parse(value.GetType(), fi.Name, false));
             }
-
             return enumValues;
         }
 
@@ -26,17 +25,22 @@ namespace PersonalInformationSystem.Common.Extension
             return value.GetType().GetFields(BindingFlags.Static | BindingFlags.Public).Select(fi => fi.Name).ToList();
         }
 
-        public static IList<string> GetDisplayValues(Enum value) => GetNames(value).Select(obj => GetDisplayValue(Parse(obj))).ToList();
+        public static IList<string> GetDisplayValues(Enum value)
+        {
+            #pragma warning disable CS8619 // Nullability of reference types in value doesn't match target type.
+            return GetNames(value).Select(obj => GetDisplayValue(Parse(obj))).ToList();
+            #pragma warning restore CS8619 // Nullability of reference types in value doesn't match target type.
+        }
 
         private static string lookupResource(Type resourceManagerProvider, string resourceKey)
         {
-            foreach (var staticProperty in resourceManagerProvider.GetProperties(BindingFlags.Static | BindingFlags.NonPublic | BindingFlags.Public))
+            var resourceKeyProperty = resourceManagerProvider.GetProperty(resourceKey,
+                BindingFlags.Static | BindingFlags.Public, null, typeof(string),
+                new Type[0], null);
+            if (resourceKeyProperty != null)
             {
-                if (staticProperty.PropertyType == typeof(System.Resources.ResourceManager))
-                {
-                    System.Resources.ResourceManager resourceManager = (System.Resources.ResourceManager)staticProperty.GetValue(null, null);
-                    return resourceManager.GetString(resourceKey);
-                }
+                string? v = (string)resourceKeyProperty.GetMethod.Invoke(null, null);
+                return v;
             }
 
             return resourceKey; // Fallback with the key name
@@ -44,35 +48,17 @@ namespace PersonalInformationSystem.Common.Extension
 
         public static string? GetDisplayValue(T value)
         {
-#pragma warning disable CS8602 // Dereference of a possibly null reference.
             var fieldInfo = value.GetType().GetField(value.ToString());
-#pragma warning restore CS8602 // Dereference of a possibly null reference.
 
             var descriptionAttributes = fieldInfo.GetCustomAttributes(
                 typeof(DisplayAttribute), false) as DisplayAttribute[];
 
             if (descriptionAttributes[0].ResourceType != null)
-            {
-                return lookupResource(resourceManagerProvider: descriptionAttributes[0].ResourceType, descriptionAttributes[0].Name);
-            }
+                return lookupResource(resourceManagerProvider: descriptionAttributes[0].ResourceType,
+                                      resourceKey: descriptionAttributes[0].Name);
 
             if (descriptionAttributes == null) return string.Empty;
             return (descriptionAttributes.Length > 0) ? descriptionAttributes[0].Name : value.ToString();
-        }
-
-        public static T ToEnum(char charToConvert)
-        {
-            try
-            {
-                int intValue = Convert.ToInt32(charToConvert);
-                if (Enum.IsDefined(typeof(T), intValue))
-                {
-                    return (T)Enum.ToObject(typeof(T), intValue);
-                }
-            }
-            catch { }
-
-            return default(T);
         }
     }
 }

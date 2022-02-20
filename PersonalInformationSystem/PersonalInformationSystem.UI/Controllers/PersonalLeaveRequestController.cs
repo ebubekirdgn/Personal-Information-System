@@ -13,7 +13,7 @@
 
         public IActionResult Index()
         {
-            var user = JsonConvert.DeserializeObject<SessionContext?>(HttpContext.Session.GetString(ResultConstant.LoginUserInfo));
+            var user = JsonConvert.DeserializeObject<SessionContext>(HttpContext.Session.GetString(ResultConstant.LoginUserInfo));
 
             var requestModel = _personalLeaveRequestBusiness.GetAllLeaveRequestByUserId(user.LoginId);
             ViewBag.PersonalLeaveTypes = _personalLeaveTypesBusiness.GetAllPersonalLeaveType();
@@ -62,6 +62,19 @@
             }
             else
                 return View();
+        }
+
+        [HttpDelete]
+        public IActionResult Delete(int id)
+        {
+            if (id <= 0)
+                return Json(new { success = false, message = "Silmek için Kayıt Seçiniz" });
+
+            var data = _personalLeaveRequestBusiness.RemovePersonalRequest(id);
+            if (data.IsSuccess)
+                return Json(new { success = data.IsSuccess, message = data.Message });
+            else
+                return Json(new { success = data.IsSuccess, message = data.Message });
         }
     }
 }

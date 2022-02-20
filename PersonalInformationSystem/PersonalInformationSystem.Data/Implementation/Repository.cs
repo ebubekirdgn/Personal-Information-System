@@ -61,7 +61,9 @@
                     query = query.Include(item);
                 }
             }
+            #pragma warning disable CS8603 // Possible null reference return.
             return query.FirstOrDefault();
+            #pragma warning restore CS8603 // Possible null reference return.
         }
 
         public void Remove(T entity)
