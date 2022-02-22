@@ -40,7 +40,7 @@ namespace PersonalInformationSystem.Common.VModels
 
         public EnumPersonalLeaveRequestStatus ApprovedStatus
         {
-            get => _approvedStatusValue != 0 || Approved == null ? _approvedStatusValue : (EnumPersonalLeaveRequestStatus)Approved;
+            get => _approvedStatusValue == 0 || Approved == null ? EnumPersonalLeaveRequestStatus.Send_Approved : (EnumPersonalLeaveRequestStatus)Approved;
             set => _approvedStatusValue = value;
         }
 
