@@ -141,6 +141,41 @@ namespace PersonalInformationSystem.Business.Implementation
             else
                 return new Result<PersonalLeaveRequestVM>(false, ResultConstant.RecordCreateNotSuccessfully);
         }
+        
+        public Result<List<PersonalLeaveRequestVM>> GetSendApprovedLeaveRequests()
+        {
+            var data = _unitOfWork.PersonalLeaveRequestRepository.GetAll(
+                u => u.Approved == (int)EnumPersonalLeaveRequestStatus.Send_Approved
+                && u.Cancelled == false,
+                includeProperties: "RequestingPersonal,PersonalLeaveType").ToList();
+
+            if (data != null)
+            {
+                List<PersonalLeaveRequestVM> returnData = new List<PersonalLeaveRequestVM>();
+                foreach (var item in data)
+                {
+                    returnData.Add(new PersonalLeaveRequestVM()
+                    {
+                        Id = item.Id,
+                        ApprovedStatus = (EnumPersonalLeaveRequestStatus)item.Approved,
+                        ApprovedText = EnumExtension<EnumPersonalLeaveRequestStatus>.GetDisplayValue((EnumPersonalLeaveRequestStatus)item.Approved),
+                        ApprovedPersonalId = item.ApprovedPersonalId,
+                        Cancelled = item.Cancelled,
+                        DateRequested = item.DateRequested,
+                        PersonalLeaveTypeId = item.PersonalLeaveTypeId,
+                        LeaveTypeText = item.PersonalLeaveType.Name,
+                        EndDate = item.EndDate,
+                        StartDate = item.StartDate,
+                        RequestComments = item.RequestComments,
+                        RequestingPersonalId = item.RequestingPersonalId,
+                        //RequestPersonalName = item.RequestingPersonal.Email
+                    });
+                }
+                return new Result<List<PersonalLeaveRequestVM>>(true, ResultConstant.RecordFound, returnData);
+            }
+            else
+                return new Result<List<PersonalLeaveRequestVM>>(false, ResultConstant.RecordNotFound);
+        }
 
         #endregion CustomMethods
     }
