@@ -11,7 +11,7 @@
         [ForeignKey("PersonalId")]
         public Personal Personal { get; set; }
 
-        public int PersonalLeaveTypelId { get; set; }
+        public int PersonalLeaveTypeId { get; set; }
 
         [ForeignKey("PersonalLeaveTypelId")]
         public PersonalLeaveType PersonalLeaveType { get; set; }

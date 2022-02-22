@@ -122,7 +122,6 @@ namespace PersonalInformationSystem.Business.Implementation
                 //leaveRequest.ApprovedStatus = (EnumPersonalLeaveRequestStatus)data.Approved;
                 //leaveRequest.ApprovedText = EnumExtension<EnumPersonalLeaveRequestStatus>.GetDisplayValue((EnumPersonalLeaveRequestStatus)data.Approved);
                 return new Result<PersonalLeaveRequestVM>(true, ResultConstant.RecordFound, leaveRequest);
-
             }
             else
                 return new Result<PersonalLeaveRequestVM>(false, ResultConstant.RecordNotFound);
@@ -141,7 +140,7 @@ namespace PersonalInformationSystem.Business.Implementation
             else
                 return new Result<PersonalLeaveRequestVM>(false, ResultConstant.RecordCreateNotSuccessfully);
         }
-        
+
         public Result<List<PersonalLeaveRequestVM>> GetSendApprovedLeaveRequests()
         {
             var data = _unitOfWork.PersonalLeaveRequestRepository.GetAll(

@@ -2,7 +2,7 @@
 {
     public interface IUnitOfWork : IDisposable
     {
-        IPersonalLeaveAllocationRepository PersonalLeaveAllocationRepository { get; }
+        IPersonalLeaveAllocationRepository PersonalLeaveAllocation { get; }
         IPersonalLeaveRequestRepository PersonalLeaveRequestRepository { get; }
         IPersonalLeaveTypeRepository PersonalLeaveTypeRepository { get; }
         IPersonalRepository PersonalRepository { get; }

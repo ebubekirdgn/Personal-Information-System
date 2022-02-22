@@ -2,5 +2,6 @@
 {
     public interface IPersonalLeaveAssignBusiness
     {
+        Result<bool> ApprovedPersonalRequest(int id);
     }
 }
