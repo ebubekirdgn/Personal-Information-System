@@ -142,5 +142,10 @@ namespace PersonalInformationSystem.UI.Areas.Identity.Pages.Account.Manage
             return obj is EmailModel model &&
                    EqualityComparer<SignInManager<IdentityUser>>.Default.Equals(_signInManager, model._signInManager);
         }
+
+        public override int GetHashCode()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

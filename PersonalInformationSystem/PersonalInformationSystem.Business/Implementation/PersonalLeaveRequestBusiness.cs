@@ -119,8 +119,8 @@ namespace PersonalInformationSystem.Business.Implementation
             if (data != null)
             {
                 var leaveRequest = _mapper.Map<PersonalLeaveRequest, PersonalLeaveRequestVM>(data);
-                leaveRequest.ApprovedStatus = (EnumPersonalLeaveRequestStatus)data.Approved;
-                leaveRequest.ApprovedText = EnumExtension<EnumPersonalLeaveRequestStatus>.GetDisplayValue((EnumPersonalLeaveRequestStatus)data.Approved);
+                //leaveRequest.ApprovedStatus = (EnumPersonalLeaveRequestStatus)data.Approved;
+                //leaveRequest.ApprovedText = EnumExtension<EnumPersonalLeaveRequestStatus>.GetDisplayValue((EnumPersonalLeaveRequestStatus)data.Approved);
                 return new Result<PersonalLeaveRequestVM>(true, ResultConstant.RecordFound, leaveRequest);
 
             }

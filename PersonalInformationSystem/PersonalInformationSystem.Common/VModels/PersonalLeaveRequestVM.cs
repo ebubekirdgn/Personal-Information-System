@@ -1,4 +1,5 @@
 ﻿using PersonalInformationSystem.Common.ConstantsModels;
+using PersonalInformationSystem.Common.Extension;
 
 namespace PersonalInformationSystem.Common.VModels
 {
@@ -30,9 +31,27 @@ namespace PersonalInformationSystem.Common.VModels
         [MaxLength(300, ErrorMessage = "300 Karakterden Fazla Değer Girilemez")]
         public string RequestComments { get; set; }
 
-       // public EnumPersonalLeaveRequestStatus ApprovedStatus { get { return (EnumPersonalLeaveRequestStatus)Approved; }}
-        public EnumPersonalLeaveRequestStatus ApprovedStatus { get; set; }
-        public string ApprovedText { get; set; }
+        // public EnumPersonalLeaveRequestStatus ApprovedStatus { get { return (EnumPersonalLeaveRequestStatus)Approved; }}
+        //public EnumPersonalLeaveRequestStatus ApprovedStatus { get; set; }
+        // public string ApprovedText { get; set; }
+        private EnumPersonalLeaveRequestStatus _approvedStatusValue = 0;
+
+        public int? Approved { get; set; }
+
+        public EnumPersonalLeaveRequestStatus ApprovedStatus
+        {
+            get => _approvedStatusValue != 0 || Approved == null ? _approvedStatusValue : (EnumPersonalLeaveRequestStatus)Approved;
+            set => _approvedStatusValue = value;
+        }
+
+        private string _approvedText;
+
+        public string ApprovedText
+        {
+            get => _approvedText ?? EnumExtension<EnumPersonalLeaveRequestStatus>.GetDisplayValue(ApprovedStatus);
+            set => _approvedText = value;
+        }
+
         public bool Cancelled { get; set; }
     }
 }

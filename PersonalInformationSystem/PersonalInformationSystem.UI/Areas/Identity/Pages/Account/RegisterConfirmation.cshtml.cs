@@ -6,6 +6,7 @@ namespace PersonalInformationSystem.UI.Areas.Identity.Pages.Account
     [AllowAnonymous]
     public class RegisterConfirmationModel : PageModel
     {
+        private const string PageName = "/Account/ConfirmEmail";
         private readonly UserManager<IdentityUser> _userManager;
         private readonly IEmailSender _sender;
 
@@ -21,7 +22,7 @@ namespace PersonalInformationSystem.UI.Areas.Identity.Pages.Account
 
         public string EmailConfirmationUrl { get; set; }
 
-        public async Task<IActionResult> OnGetAsync(string email, string returnUrl = null)
+        public async Task<IActionResult> OnGetAsync(string email, string? returnUrl = null)
         {
             if (email == null)
             {
@@ -43,9 +44,9 @@ namespace PersonalInformationSystem.UI.Areas.Identity.Pages.Account
                 var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
                 code = WebEncoders.Base64UrlEncode(Encoding.UTF8.GetBytes(code));
                 EmailConfirmationUrl = Url.Page(
-                    "/Account/ConfirmEmail",
+                    PageName,
                     pageHandler: null,
-                    values: new { area = "Identity", userId = userId, code = code, returnUrl = returnUrl },
+                    values: new { area = "Identity", userId, code, returnUrl },
                     protocol: Request.Scheme);
             }
 

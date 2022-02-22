@@ -47,7 +47,6 @@ namespace PersonalInformationSystem.Common.Extension
 
         public static string? GetDisplayValue(T value)
         {
-            var deneme = value.GetType();
             var fieldInfo = value.GetType().GetField(value.ToString());
 
             var descriptionAttributes = fieldInfo.GetCustomAttributes(

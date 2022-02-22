@@ -35,7 +35,7 @@ namespace PersonalInformationSystem.UI.Areas.Identity.Pages.Account
             public string Code { get; set; }
         }
 
-        public IActionResult OnGet(string code = null)
+        public IActionResult OnGet(string? code = null)
         {
             if (code == null)
             {
