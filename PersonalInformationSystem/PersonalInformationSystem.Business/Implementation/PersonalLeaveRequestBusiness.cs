@@ -38,15 +38,8 @@ namespace PersonalInformationSystem.Business.Implementation
                     returnData.Add(new PersonalLeaveRequestVM()
                     {
                         Id = item.Id,
-
-#pragma warning disable CS8629 // Nullable value type may be null.
                         ApprovedStatus = (EnumPersonalLeaveRequestStatus)item.Approved,
-#pragma warning restore CS8629 // Nullable value type may be null.
-
-#pragma warning disable CS8601 // Possible null reference assignment.
                         ApprovedText = EnumExtension<EnumPersonalLeaveRequestStatus>.GetDisplayValue((EnumPersonalLeaveRequestStatus)item.Approved),
-#pragma warning restore CS8601 // Possible null reference assignment.
-
                         Cancelled = item.Cancelled,
                         DateRequested = item.DateRequested,
                         PersonalLeaveTypeId = item.PersonalLeaveTypeId,
@@ -126,7 +119,10 @@ namespace PersonalInformationSystem.Business.Implementation
             if (data != null)
             {
                 var leaveRequest = _mapper.Map<PersonalLeaveRequest, PersonalLeaveRequestVM>(data);
+                leaveRequest.ApprovedStatus = (EnumPersonalLeaveRequestStatus)data.Approved;
+                leaveRequest.ApprovedText = EnumExtension<EnumPersonalLeaveRequestStatus>.GetDisplayValue((EnumPersonalLeaveRequestStatus)data.Approved);
                 return new Result<PersonalLeaveRequestVM>(true, ResultConstant.RecordFound, leaveRequest);
+
             }
             else
                 return new Result<PersonalLeaveRequestVM>(false, ResultConstant.RecordNotFound);
