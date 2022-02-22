@@ -251,14 +251,14 @@ namespace PersonalInformationSystem.DataAccess.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<int>("PersonalLeaveTypelId")
+                    b.Property<int>("PersonalLeaveTypeId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
                     b.HasIndex("PersonalId");
 
-                    b.HasIndex("PersonalLeaveTypelId");
+                    b.HasIndex("PersonalLeaveTypeId");
 
                     b.ToTable("PersonalLeaveAllocations");
                 });
@@ -419,7 +419,7 @@ namespace PersonalInformationSystem.DataAccess.Migrations
 
                     b.HasOne("PersonalInformationSystem.Data.Models.PersonalLeaveType", "PersonalLeaveType")
                         .WithMany()
-                        .HasForeignKey("PersonalLeaveTypelId")
+                        .HasForeignKey("PersonalLeaveTypeId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

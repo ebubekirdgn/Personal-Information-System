@@ -12,7 +12,7 @@ using PersonalInformationSystem.Data.DataContext;
 namespace PersonalInformationSystem.DataAccess.Migrations
 {
     [DbContext(typeof(PersonalInformationContext))]
-    [Migration("20220219220402_Initial")]
+    [Migration("20220222224456_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -253,14 +253,14 @@ namespace PersonalInformationSystem.DataAccess.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<int>("PersonalLeaveTypelId")
+                    b.Property<int>("PersonalLeaveTypeId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
                     b.HasIndex("PersonalId");
 
-                    b.HasIndex("PersonalLeaveTypelId");
+                    b.HasIndex("PersonalLeaveTypeId");
 
                     b.ToTable("PersonalLeaveAllocations");
                 });
@@ -421,7 +421,7 @@ namespace PersonalInformationSystem.DataAccess.Migrations
 
                     b.HasOne("PersonalInformationSystem.Data.Models.PersonalLeaveType", "PersonalLeaveType")
                         .WithMany()
-                        .HasForeignKey("PersonalLeaveTypelId")
+                        .HasForeignKey("PersonalLeaveTypeId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

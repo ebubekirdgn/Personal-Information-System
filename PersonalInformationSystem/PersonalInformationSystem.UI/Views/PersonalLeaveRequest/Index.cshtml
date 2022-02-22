@@ -26,6 +26,7 @@
                     <th>Başlangıç Tarihi</th>
                     <th>Bitiş Tarihi</th>
                     <th>Sebep</th>
+                    <th>Açıklama</th>
                     <th>Durum</th>
                     <th>İşlemler</th>
                 </tr>
@@ -38,6 +39,8 @@
                         <td>@item.StartDate.ToShortDateString()</td>
                         <td> @item.EndDate.ToShortDateString()</td>
                         <td>@item.LeaveTypeText</td>
+                        <td>@item.RequestComments</td>
+                       
                         @if (item.ApprovedStatus == EnumPersonalLeaveRequestStatus.Approved)
                         {
                             <td style="color:blue">@item.ApprovedText</td>

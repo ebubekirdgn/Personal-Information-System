@@ -1,4 +1,7 @@
-﻿#nullable disable
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
+
+#nullable disable
 
 namespace PersonalInformationSystem.DataAccess.Migrations
 {
@@ -182,7 +185,7 @@ namespace PersonalInformationSystem.DataAccess.Migrations
                     DateCreated = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Period = table.Column<int>(type: "int", nullable: false),
                     PersonalId = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    PersonalLeaveTypelId = table.Column<int>(type: "int", nullable: false)
+                    PersonalLeaveTypeId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -194,8 +197,8 @@ namespace PersonalInformationSystem.DataAccess.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_PersonalLeaveAllocations_PersonalLeaveTypes_PersonalLeaveTypelId",
-                        column: x => x.PersonalLeaveTypelId,
+                        name: "FK_PersonalLeaveAllocations_PersonalLeaveTypes_PersonalLeaveTypeId",
+                        column: x => x.PersonalLeaveTypeId,
                         principalTable: "PersonalLeaveTypes",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
@@ -284,9 +287,9 @@ namespace PersonalInformationSystem.DataAccess.Migrations
                 column: "PersonalId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_PersonalLeaveAllocations_PersonalLeaveTypelId",
+                name: "IX_PersonalLeaveAllocations_PersonalLeaveTypeId",
                 table: "PersonalLeaveAllocations",
-                column: "PersonalLeaveTypelId");
+                column: "PersonalLeaveTypeId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_PersonalLeaveRequests_ApprovedPersonalId",
