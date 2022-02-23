@@ -1,6 +1,4 @@
-﻿using System.Reflection;
-
-namespace PersonalInformationSystem.Common.Extension
+﻿namespace PersonalInformationSystem.Common.Extension
 {
     public static class EnumExtension<T>
     {
