@@ -5,6 +5,7 @@ namespace PersonalInformationSystem.Common.VModels
 {
     public class PersonalLeaveRequestVM : BaseVM
     {
+        public string RequestPersonalName { get; set; }
         public string? RequestingPersonalId { get; set; }
         public PersonalVM? RequestingPersonal { get; set; }
 

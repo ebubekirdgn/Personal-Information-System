@@ -167,7 +167,7 @@ namespace PersonalInformationSystem.Business.Implementation
                         StartDate = item.StartDate,
                         RequestComments = item.RequestComments,
                         RequestingPersonalId = item.RequestingPersonalId,
-                        //RequestPersonalName = item.RequestingPersonal.Email
+                        RequestPersonalName = item.RequestingPersonal.Email
                     });
                 }
                 return new Result<List<PersonalLeaveRequestVM>>(true, ResultConstant.RecordFound, returnData);

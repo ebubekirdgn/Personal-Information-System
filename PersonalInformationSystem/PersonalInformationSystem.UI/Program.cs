@@ -18,6 +18,7 @@ builder.Services.AddRazorPages();
 
 builder.Services.AddScoped<IPersonalLeaveTypesBusiness, PersonalLeaveTypesBusiness>();
 builder.Services.AddScoped<IPersonalLeaveRequestBusiness, PersonalLeaveRequestBusiness>();
+builder.Services.AddScoped<IPersonalLeaveAssignBusiness, PersonalLeaveAssignBusiness>();
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddAutoMapper(typeof(Maps));
 

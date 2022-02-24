@@ -32,7 +32,7 @@
                 @foreach (var item in Model)
                 {
                     <tr>
-                        <td>@item.RequestEmployeeName</td>
+                        <td>@item.RequestPersonalName</td>
                         <td>@item.StartDate.ToShortDateString()</td>
                         <td> @item.EndDate.ToShortDateString()</td>
                         <td>@item.LeaveTypeText</td>
@@ -43,7 +43,7 @@
                                 <div class="hidden-sm hidden-xs btn-group">
                                     <a class="btn btn-success" id="btnRequestAssign"  data-id="@item.Id">Onayla</a>
 
-                                    <a asp-controller="EmployeeLeaveRequest" asp-action="Reject" asp-route-id="@item.Id"  class="btn  btn-danger" >
+                                    <a asp-controller="PersonalLeaveRequest" asp-action="Reject" asp-route-id="@item.Id"  class="btn  btn-danger" >
                                         Reddet
                                     </a>
                                 </div>

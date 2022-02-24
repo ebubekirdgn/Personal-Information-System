@@ -130,19 +130,27 @@
 								<a asp-controller="PersonalLeaveTypes" asp-action="Index">
 									<i class="menu-icon fa fa-user"></i>
 									<span class="menu-text">
-										Personel İzin
+										Çalışan İzin Tipi
+									</span>
+								</a>
+							</li>
+							<li class="">
+								<a asp-controller="PersonalLeaveAssign" asp-action="Index">
+									<i class="menu-icon fa fa-user"></i>
+									<span class="menu-text">
+										 İzin Talep Listesi
 									</span>
 								</a>
 							</li>
 						}
-							<li class="">
-								<a asp-controller="PersonalLeaveRequest" asp-action="Index">
-									<i class="menu-icon fa fa-user"></i>
-									<span class="menu-text">
-										İzin Talep
-									</span>
-								</a>
-							</li>
+						  <li class="">
+                        <a asp-controller="PersonalLeaveRequest" asp-action="Index">
+                            <i class="menu-icon fa fa-caret-right"></i>
+                            Çalışan İzin Talebi
+                        </a>
+                        <b class="arrow"></b>
+                    </li>
+							
 					}
 				</ul><!-- /.nav-list -->
 
