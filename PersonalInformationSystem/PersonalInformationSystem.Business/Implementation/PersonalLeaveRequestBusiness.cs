@@ -1,5 +1,4 @@
-﻿using PersonalInformationSystem.Common.Extension;
-
+﻿
 namespace PersonalInformationSystem.Business.Implementation
 {
     public class PersonalLeaveRequestBusiness : IPersonalLeaveRequestBusiness
@@ -196,6 +195,7 @@ namespace PersonalInformationSystem.Business.Implementation
             else
                 return new Result<bool>(false, ResultConstant.RecordCreateNotSuccessfully);
         }
+
         #endregion CustomMethods
     }
 }
