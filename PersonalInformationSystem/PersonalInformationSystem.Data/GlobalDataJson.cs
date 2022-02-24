@@ -6,7 +6,6 @@ global using PersonalInformationSystem.Data.Contracts;
 global using PersonalInformationSystem.Data.DataContext;
 global using PersonalInformationSystem.Data.Models;
 global using PersonalInformationSystem.DataAccess.Contracts;
-global using System;
 global using System.ComponentModel.DataAnnotations;
 global using System.ComponentModel.DataAnnotations.Schema;
 global using System.Linq.Expressions;

@@ -6,3 +6,4 @@ global using PersonalInformationSystem.Common.Session;
 global using PersonalInformationSystem.Common.VModels;
 global using PersonalInformationSystem.Data.Contracts;
 global using PersonalInformationSystem.Data.Models;
+global using PersonalInformationSystem.Common.Extension;
