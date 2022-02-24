@@ -36,7 +36,7 @@ if (scopedFactory is not null)
 {
     using var scope = scopedFactory.CreateScope();
 
-    // Veritabýnýný siler ve yeniden oluþturur.
+    // VeritabÃ½nÃ½nÃ½ siler ve yeniden oluÃ¾turur.
 
     // drop create database always
     /*var context = scope.ServiceProvider.GetRequiredService<PersonalInformationContext>();
@@ -47,7 +47,6 @@ if (scopedFactory is not null)
     var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
     SeedData.Seed(userManager, roleManager);
 }
-
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
