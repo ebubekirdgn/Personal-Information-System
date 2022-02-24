@@ -13,5 +13,7 @@
         Result<PersonalLeaveRequestVM> GetAllLeaveRequestById(int id);
 
         Result<List<PersonalLeaveRequestVM>> GetSendApprovedLeaveRequests();
+
+        Result<bool> RejectPersonalLeaveRequest(int id);
     }
 }

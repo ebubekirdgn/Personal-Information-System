@@ -176,6 +176,26 @@ namespace PersonalInformationSystem.Business.Implementation
                 return new Result<List<PersonalLeaveRequestVM>>(false, ResultConstant.RecordNotFound);
         }
 
+        public Result<bool> RejectPersonalLeaveRequest(int id)
+        {
+            var data = _unitOfWork.PersonalLeaveRequestRepository.Get(id);
+            if (data != null)
+            {
+                try
+                {
+                    data.Approved = (int)EnumPersonalLeaveRequestStatus.Rejected;
+                    _unitOfWork.PersonalLeaveRequestRepository.Update(data);
+                    _unitOfWork.Save();
+                    return new Result<bool>(true, ResultConstant.RecordCreateSuccessfully);
+                }
+                catch (Exception ex)
+                {
+                    return new Result<bool>(false, ex.Message.ToString());
+                }
+            }
+            else
+                return new Result<bool>(false, ResultConstant.RecordCreateNotSuccessfully);
+        }
         #endregion CustomMethods
     }
 }
