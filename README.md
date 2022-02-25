@@ -60,20 +60,6 @@
 │       │   └── Identity
 │       │       └── Pages
 │       │           ├── Account
-│       │           │   ├── AccessDenied.cshtml
-│       │           │   ├── AccessDenied.cshtml.cs
-│       │           │   ├── ConfirmEmailChange.cshtml
-│       │           │   ├── ConfirmEmailChange.cshtml.cs
-│       │           │   ├── ConfirmEmail.cshtml
-│       │           │   ├── ConfirmEmail.cshtml.cs
-│       │           │   ├── ExternalLogin.cshtml
-│       │           │   ├── ExternalLogin.cshtml.cs
-│       │           │   ├── ForgotPasswordConfirmation.cshtml
-│       │           │   ├── ForgotPasswordConfirmation.cshtml.cs
-│       │           │   ├── ForgotPassword.cshtml
-│       │           │   ├── ForgotPassword.cshtml.cs
-│       │           │   ├── Lockout.cshtml
-│       │           │   ├── Lockout.cshtml.cs
 │       │           │   ├── Login.cshtml
 │       │           │   ├── Login.cshtml.cs
 │       │           │   ├── LoginWith2fa.cshtml
