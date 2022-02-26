@@ -2,7 +2,6 @@
 {
     public class WorkOrder : BaseEntity
     {
-
         public DateTime CreateDate { get; set; }
 
         public DateTime? ModifiedDate { get; set; }
@@ -19,6 +18,7 @@
         public string WorkOrderNumber { get; set; }
 
         public string AssignPersonalId { get; set; }
+
         [ForeignKey("AssignPersonalId")]
         public Personal AssignPersonal { get; set; }
     }
