@@ -33,7 +33,7 @@
                      Id = 2,
                      Name = "Doğum İzni",
                      IsActive = true,
-                 }
+                 } 
                 );*/
         }
     }
